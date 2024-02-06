@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 
-const header = () => {
+const Header = () => {
   return (
     <header className="header">
       <div className="header-links">
@@ -10,11 +10,12 @@ const header = () => {
         <NavLink className="link"> Web Development</NavLink>
         <NavLink className="link"> Music</NavLink>
         <NavLink className="link"> Photography & Cinematography</NavLink>
-        <NavLink className="link"> A Wheelie Good Fucking Time</NavLink>
+        <NavLink className="link"> A Wheelie Good Time</NavLink>
+        <NavLink className="link"> Design</NavLink>
         <NavLink className="link"> Contact </NavLink>
       </div>
     </header>
   );
 };
 
-export default App;
+export default Header;
