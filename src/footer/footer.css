@@ -16,6 +16,14 @@
   flex: 1;
 }
 
+.social-media-icon .social-svg-icon {
+  fill: grey !important;
+}
+
+.social-media-icon:hover .social-svg-icon {
+  fill: black !important;
+}
+
 .body {
   display: flex;
 }
