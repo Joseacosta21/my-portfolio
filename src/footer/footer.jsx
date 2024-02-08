@@ -1,6 +1,5 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./footer.css";
 
 const Footer = () => {
@@ -10,7 +9,6 @@ const Footer = () => {
         <div className="body">
           <div className="column">
             <ul className="footerLink">
-              <FontAwesomeIcon  icon="fa-brands fa-instagram" />
               <SocialIcon
                 className="social-media-icon"
                 fgColor="currentColor"

@@ -1,9 +1,12 @@
 import React from "react";
+import "./engineering.css";
 
 const Engineering = () => {
   return (
     <>
-      <p>What ive done </p>
+      <div className="engineering-container">
+        <p>What ive done </p>
+      </div>
     </>
   );
 };
