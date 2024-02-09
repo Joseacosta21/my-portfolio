@@ -3,5 +3,6 @@
   width: 100%;
   background-color: black;
   color: white;
+  position: static;
   padding: 2rem;
 }

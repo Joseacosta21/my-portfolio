@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Righteous&family=Roboto&family=Varela+Round&display=swap");
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
 }
@@ -12,3 +16,6 @@ link:hover {
   color: inherit;
 }
 
+.layout-container {
+  width: 100%;
+}

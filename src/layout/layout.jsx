@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
       <main className="content">{children}</main>
       <Footer />
     </div>
-  );
+  );a
 };
 
 export default Layout;

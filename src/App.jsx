@@ -6,7 +6,7 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className="layout-container">
         <Layout />
       </div>
     </Router>
@@ -14,5 +14,3 @@ const App = () => {
 };
 
 export default App;
-
-

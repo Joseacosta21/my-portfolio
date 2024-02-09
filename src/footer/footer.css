@@ -1,4 +1,4 @@
-.Container {
+.footer-container {
   width: 100%;
   margin: 0 auto;
   background-color: black;
@@ -22,8 +22,4 @@
 
 .social-media-icon:hover .social-svg-icon {
   fill: black !important;
-}
-
-.body {
-  display: flex;
 }
