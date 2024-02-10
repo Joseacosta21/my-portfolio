@@ -5,7 +5,8 @@ const Engineering = () => {
   return (
     <>
       <div className="engineering-container">
-        <p>What ive done </p>
+        <h1>Engineering</h1>
+        <h3>Some engineering projects ive made: </h3>
       </div>
     </>
   );
