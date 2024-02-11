@@ -32,9 +32,13 @@
     #dfc5a4,
     #fffef7
   );
-  background-size: 200% 100%; /* Set background-size to cover the entire text */
+  background-size: 200%; /* Set background-size to cover the entire text */
   animation: gradientAnimation 3s infinite alternate;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
   text-align: center;
+}
+
+.bio {
+  bottom: 0;
 }

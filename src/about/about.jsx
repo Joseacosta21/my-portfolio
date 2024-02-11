@@ -7,17 +7,20 @@ const About = () => {
       <div className="about-container">
         <div className="container-column">
           <div className="column">
-            <p>Hey there! Im</p>
+            <h2>Hey there! Im</h2>
           </div>
         </div>
-        <p className="my-name">Jose Acosta Aldrete</p>
+
+        <div className="my-name">
+          <p className="my-name">Jose Acosta Aldrete</p>
+        </div>
         <div className="container-column">
           <div className="column">
-            <p>
+            <h2 className="bio">
               Im from San Luis Potosi, Mexico, currently based in Montreal. This
               is my portfolio/digital-CV/personal-website. It has things that I
               like, things I've made, and a hidden game. Hope you like it!
-            </p>
+            </h2>
           </div>
         </div>
 
