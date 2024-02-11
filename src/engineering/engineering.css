@@ -1,4 +1,13 @@
+@font-face {
+  font-family: "Cotham Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Cotham Sans Regular"), local("CothamSans-Regular"),
+    url("public/fonts/Cotham_Sans/CothamSans.otf") format("opentype");
+}
+
 .engineering-container {
+  font-family: "Cotham Sans", regular;
   margin: 0 auto;
   display: flex;
   width: 100%;
