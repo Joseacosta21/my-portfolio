@@ -5,6 +5,7 @@ const Design = () => {
   return (
     <>
       <div className="design-container">
+        <h1>Design</h1>
         <p>Stuff ive made</p>
       </div>
     </>
