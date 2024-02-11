@@ -21,7 +21,6 @@ const Layout = ({ children }) => {
       <Music />
       <PhotoFilmmaking />
       <Design />
-      <Contact />
       <main className="content">{children}</main>
       <Footer />
     </div>

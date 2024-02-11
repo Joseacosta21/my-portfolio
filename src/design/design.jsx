@@ -1,9 +1,12 @@
 import React from "react";
+import "./design.css";
 
 const Design = () => {
   return (
     <>
-      <p>Stuff ive made</p>
+      <div className="design-container">
+        <p>Stuff ive made</p>
+      </div>
     </>
   );
 };
