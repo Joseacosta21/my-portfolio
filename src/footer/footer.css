@@ -5,7 +5,7 @@
   color: white;
   padding: 20px;
   text-align: center;
-  position: static;
+  position: relative;
   height: 10rem;
   line-height: 2.5;
   display: flex;

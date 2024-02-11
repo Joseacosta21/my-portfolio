@@ -11,7 +11,6 @@ const Header = () => {
         <NavLink className="link">Web Development</NavLink>
         <NavLink className="link">Music</NavLink>
         <NavLink className="link">Photo & Filmmaking</NavLink>
-        <NavLink className="link">F1 Podcast</NavLink>
         <NavLink className="link">Design</NavLink>
         <NavLink className="link">Contact</NavLink>
       </div>

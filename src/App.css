@@ -10,6 +10,10 @@ body::-webkit-scrollbar {
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: white;
+  color: black;
+  width: 100%;
+  word-wrap: break-word;
 }
 
 link:hover {
