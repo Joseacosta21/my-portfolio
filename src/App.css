@@ -6,6 +6,7 @@ body::-webkit-scrollbar {
 
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -23,4 +24,14 @@ link:hover {
 
 .layout-container {
   width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  cursor: pointer;
 }
