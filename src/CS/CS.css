@@ -9,3 +9,13 @@
   padding: 2rem;
   flex-direction: column;
 }
+
+.projects-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 50rem;
+  height: 60rem;
+}

@@ -53,32 +53,38 @@ const Footer = () => {
           <div className="column">
             <ul className="footerLink">
               <li>
-                <a href="https://github.com/Joseacosta21">
+                <a href="https://github.com/Joseacosta21" target="_blank">
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/524441737109">
+                <a href="https://wa.me/524441737109" target="_blank">
                   <FontAwesomeIcon icon={faWhatsapp} />
                 </a>
               </li>
               <li>
-                <a href="mailto:joseacostaaldrete@gmail.com">
+                <a href="mailto:joseacostaaldrete@gmail.com" target="_blank">
                   <FontAwesomeIcon icon={faEnvelope} />
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/joseacostaaldrete/">
+                <a
+                  href="https://www.linkedin.com/in/joseacostaaldrete/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </li>
               <li>
-                <a href="https://www.youtube.com/channel/UCEK1R1HfFmtuCfA9Bcmeu7w">
+                <a
+                  href="https://www.youtube.com/channel/UCEK1R1HfFmtuCfA9Bcmeu7w"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faYoutube} />
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/jacosta_foto">
+                <a href="https://instagram.com/jacosta_foto" target="_blank">
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </li>

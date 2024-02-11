@@ -17,7 +17,7 @@ const CSProjectsCard = ({
         <div className="overlay">
           <div className="overlay-text">{projectDescription}</div>
           <div className="overlay-website">
-            <img src={websiteIcon} className="website-icon"></img>
+            <img className="website-icon"></img>
             <NavLink to={projectLink} className="website-link">
               Take a look
             </NavLink>
@@ -29,7 +29,7 @@ const CSProjectsCard = ({
           <div className="card-title">{projectTitle}</div>
           <div className="card-links">
             <NavLink to={projectGitHub}>
-              <img src={githubIcon} className="github-link"></img>
+              <img className="github-link"></img>
             </NavLink>
           </div>
         </div>
