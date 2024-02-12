@@ -1,5 +1,5 @@
 import React from "react";
-import "./CSProjectsCard.css";
+import "./ProjectsCard.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 
 const CSProjectsCard = ({

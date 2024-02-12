@@ -1,6 +1,6 @@
 import React from "react";
 import "./CS.css";
-import CSProjectsCard from "../CSProjectsCard/CSProjectsCard.jsx";
+import CSProjectsCard from "../ProjectsCard/ProjectsCard.jsx";
 
 const CS = () => {
   const casinoStic = {
