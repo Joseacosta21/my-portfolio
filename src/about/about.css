@@ -28,15 +28,24 @@
     45deg,
     #babbbd,
     #2e3257,
-    #627d9a,
     #dfc5a4,
+    #627d9a,
     #fffef7
   );
-  background-size: 200%; /* Set background-size to cover the entire text */
+  background-size: 200% 100%;
   animation: gradientAnimation 3s infinite alternate;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
   text-align: center;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 .bio {

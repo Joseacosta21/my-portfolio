@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Righteous&family=Roboto&family=Varela+Round&display=swap");
 
-
-
 body::-webkit-scrollbar {
   display: none;
 }
@@ -57,4 +55,9 @@ a:hover {
 h1 {
   font-size: 5rem;
   font-weight: bold;
+}
+
+.spinner {
+  height: 1rem;
+  color: white;
 }

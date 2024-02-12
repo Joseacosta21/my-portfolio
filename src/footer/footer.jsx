@@ -1,5 +1,4 @@
 import React from "react";
-import { SocialIcon } from "react-social-icons";
 import "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

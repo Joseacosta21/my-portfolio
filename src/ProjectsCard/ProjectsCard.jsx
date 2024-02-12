@@ -1,6 +1,9 @@
 import React from "react";
 import "./ProjectsCard.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const CSProjectsCard = ({
   projectImg,
@@ -12,24 +15,21 @@ const CSProjectsCard = ({
 }) => {
   return (
     <div className="card-container">
-      <div className="img-container">
-        <img src={projectImg} className="project-image" />
-        <div className="overlay">
-          <div className="overlay-text">{projectDescription}</div>
-          <div className="overlay-website">
-            <img className="website-icon"></img>
-            <NavLink to={projectLink} className="website-link">
-              Take a look
-            </NavLink>
+      <a to={projectLink}>
+        <div className="img-container">
+          <img src={projectImg} className="project-image" />
+          <div className="overlay">
+            <div className="overlay-text">{projectDescription}</div>
+            <p>Click to take a look</p>
           </div>
         </div>
-      </div>
+      </a>
       <div className="card-info">
         <div className="title-link-pair">
           <div className="card-title">{projectTitle}</div>
           <div className="card-links">
             <NavLink to={projectGitHub}>
-              <img className="github-link"></img>
+              <FontAwesomeIcon icon={faGithub} className="github-logo" />
             </NavLink>
           </div>
         </div>
