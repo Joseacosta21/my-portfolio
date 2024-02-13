@@ -14,7 +14,6 @@
 }
 
 .footerLink {
-  list-style: none;
   display: flex;
   padding: 0;
   justify-content: end;

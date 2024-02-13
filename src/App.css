@@ -61,3 +61,15 @@ h1 {
   height: 1rem;
   color: white;
 }
+
+.no-list {
+  list-style: none;
+}
+
+.projects-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rem;
+}

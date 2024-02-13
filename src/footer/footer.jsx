@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
         <div className="column-container">
           <div className="column">
-            <ul className="footerLink">
+            <ul className="footerLink no-list">
               <li>
                 <a href="https://github.com/Joseacosta21" target="_blank">
                   <FontAwesomeIcon icon={faGithub} />

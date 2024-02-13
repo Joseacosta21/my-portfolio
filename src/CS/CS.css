@@ -19,10 +19,3 @@
   flex-direction: column;
 }
 
-.projects-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60rem;
-}
