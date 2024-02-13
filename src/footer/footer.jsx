@@ -92,6 +92,12 @@ const Footer = () => {
         </div>
         <div className="column-container">
           <div className="column">
+            <p>
+              Inspiration and help from{" "}
+              <b>
+                <a href="noahburns.com">Noah Burns</a>
+              </b>
+            </p>
             <p>&copy; 2023 Jose Acosta Aldrete. Bad ideas, good times.</p>
           </div>
         </div>

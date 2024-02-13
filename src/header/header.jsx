@@ -20,7 +20,12 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > prevScrollY) {
+      // If the user is scrolling down and the user is not at the top of the page
+      if (
+        currentScrollY > prevScrollY &&
+        (document.body.scrollTop > 80 ||
+          document.documentElement.scrollTop > 80)
+      ) {
         // Scrolling down, switch to icon state
         setScrolling(true);
       } else {
@@ -43,60 +48,56 @@ const Header = () => {
       <div className="header-links">
         <NavLink className="link">
           {scrolling ? (
-            /* Font Awesome icon for About */ <FontAwesomeIcon icon={faUser} />
+            /* Font Awesome icon for About */
+            <FontAwesomeIcon icon={faUser} />
           ) : (
             "About"
           )}
         </NavLink>
         <NavLink className="link">
           {scrolling ? (
-            /* Font Awesome icon for Engineering */ <FontAwesomeIcon
-              icon={faGear}
-              spin
-            />
+            /* Font Awesome icon for Engineering */
+            <FontAwesomeIcon icon={faGear} spin />
           ) : (
             "Engineering"
           )}
         </NavLink>
         <NavLink className="link">
           {scrolling ? (
-            /* Font Awesome icon for Web Development */ <FontAwesomeIcon
-              icon={faCode}
-            />
+            /* Font Awesome icon for Web Development */
+            <FontAwesomeIcon icon={faCode} />
           ) : (
             "Programming"
           )}
         </NavLink>
         <NavLink className="link">
           {scrolling ? (
-            /* Font Awesome icon for Music */ <FontAwesomeIcon icon={faMusic} />
+            /* Font Awesome icon for Music */
+            <FontAwesomeIcon icon={faMusic} />
           ) : (
             "Music"
           )}
         </NavLink>
         <NavLink className="link">
           {scrolling ? (
-            /* Font Awesome icon for Photo & Filmmaking */ <FontAwesomeIcon
-              icon={faCamera}
-            />
+            /* Font Awesome icon for Photo & Filmmaking */
+            <FontAwesomeIcon icon={faCamera} />
           ) : (
             "Photo & Filmmaking"
           )}
         </NavLink>
         <NavLink className="link">
           {scrolling ? (
-            /* Font Awesome icon for Design */ <FontAwesomeIcon
-              icon={faPencil}
-            />
+            /* Font Awesome icon for Design */
+            <FontAwesomeIcon icon={faPencil} />
           ) : (
             "Design"
           )}
         </NavLink>
         <NavLink className="link">
           {scrolling ? (
-            /* Font Awesome icon for Contact */ <FontAwesomeIcon
-              icon={faEnvelope}
-            />
+            /* Font Awesome icon for Contact */
+            <FontAwesomeIcon icon={faEnvelope} />
           ) : (
             "Contact"
           )}
