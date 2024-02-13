@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-const CSProjectsCard = ({
+const ProjectsCard = ({
   projectImg,
   projectTitle,
   projectDescription,
@@ -45,4 +45,4 @@ const CSProjectsCard = ({
   );
 };
 
-export default CSProjectsCard;
+export default ProjectsCard;
