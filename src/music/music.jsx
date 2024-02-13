@@ -7,11 +7,11 @@ const Music = () => {
     projectImg: "",
     projectTitle: "Tech House",
     projectDescription: "Tech house set - Fisher",
-    projectTags: [""],
+    projectTags: "",
     projectGitHub: "",
     projectLink: "youtube.com/video-link",
   };
-  
+
   return (
     <>
       <div className="music-container">

@@ -2,8 +2,9 @@ import React from "react";
 import "./ProjectsCard.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
+// ... (your existing imports)
 
 const ProjectsCard = ({
   projectImg,
@@ -15,9 +16,9 @@ const ProjectsCard = ({
 }) => {
   return (
     <div className="card-container">
-      <a to={projectLink}>
+      <a href={projectLink} target="_blank" rel="noopener noreferrer">
         <div className="img-container">
-          <img src={projectImg} className="project-image" />
+          <img src={projectImg} className="project-image" alt={projectTitle} />
           <div className="overlay">
             <div className="overlay-text">{projectDescription}</div>
             <p>Click to take a look</p>
@@ -28,18 +29,26 @@ const ProjectsCard = ({
         <div className="title-link-pair">
           <div className="card-title">{projectTitle}</div>
           <div className="card-links">
-            <NavLink to={projectGitHub}>
-              <FontAwesomeIcon icon={faGithub} className="github-logo" />
-            </NavLink>
+            {projectGitHub && (
+              <NavLink
+                to={projectGitHub}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithub} className="github-logo" />
+              </NavLink>
+            )}
           </div>
         </div>
-        <div className="card-tags">
-          {projectTags.map((tag, index) => (
-            <span key={index} className="tag">
-              {tag}
-            </span>
-          ))}
-        </div>
+        {projectTags.length > 0 && (
+          <div className="card-tags">
+            {projectTags.map((tag, index) => (
+              <span key={index} className="tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
