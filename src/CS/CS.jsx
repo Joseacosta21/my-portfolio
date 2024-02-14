@@ -33,8 +33,10 @@ const CS = () => {
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />
           <div className="loading-projects">
-            <FontAwesomeIcon icon={faSpinner} spinPulse />
-            <p>More to come...</p>
+            <p>
+              <FontAwesomeIcon icon={faSpinner} spinPulse />
+              &nbsp; More to come...
+            </p>
           </div>
         </div>
       </div>
