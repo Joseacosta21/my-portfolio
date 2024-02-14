@@ -3,6 +3,7 @@ import "./ProjectsCard.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 // ... (your existing imports)
 
@@ -21,7 +22,10 @@ const ProjectsCard = ({
           <img src={projectImg} className="project-image" alt={projectTitle} />
           <div className="overlay">
             <div className="overlay-text">{projectDescription}</div>
-            <p>Click to take a look</p>
+            <p>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+              &nbsp; Click to take a look
+            </p>
           </div>
         </div>
       </a>

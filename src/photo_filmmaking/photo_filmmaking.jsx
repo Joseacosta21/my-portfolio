@@ -14,7 +14,8 @@ const PhotoFilmmaking = () => {
     projectDescription: "Product photography for minimalist steel bike racks",
     projectTags: "",
     projectGitHub: "",
-    projectLink: "drive.google.com/linktophoto",
+    projectLink:
+      "https://drive.google.com/drive/folders/1t7q7h6590RVRFubmaYB3fK5dsQ7JVkNt?usp=sharing",
   };
   const hoodClub = {
     projectImg: "src/assets/project-card-photos/photo-filmmaking/HoodClub.jpg",
@@ -25,15 +26,57 @@ const PhotoFilmmaking = () => {
     projectLink:
       "https://drive.google.com/drive/folders/1GJ69SSPT035CO531c5k5eZJV5dbEQq7g?usp=share_link",
   };
+  const djDuck = {
+    projectImg: "src/assets/project-card-photos/photo-filmmaking/DJ_Duck.jpg",
+    projectTitle: "DJ Duck",
+    projectDescription: "Photoshoot for weddings and events DJ",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink:
+      "https://drive.google.com/drive/folders/1HhR8Oz4xhqtS8Bck6Qi2N0xjCnweIH_1?usp=sharing",
+  };
+  const solenDance = {
+    projectImg:
+      "src/assets/project-card-photos/photo-filmmaking/SolenDance.jpg",
+    projectTitle: "Solen Dance",
+    projectDescription: "Dancer photoshoot in downtown Montreal",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "TODO.com",
+  };
+  const santaUrsula = {
+    projectImg: "src/assets/project-card-photos/photo-filmmaking/tvCamp.JPG",
+    projectTitle: "Camp Santa Ursula - TV Camp",
+    projectDescription:
+      "Videographer for best-rated camp in Mexico; nominated for best staff member",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "TODO.com",
+  };
+  const stingers = {
+    projectImg: "src/assets/project-card-photos/photo-filmmaking/Stingers.jpg",
+    projectTitle: "Concordia Stingers - The Concordian",
+    projectDescription:
+      "Photography contribution to The Concordian, university newspaper",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "TODO.com",
+  };
 
   return (
     <>
       <div className="photo-container">
         <h1>Photography and Filmmaking</h1>
-        <p>Commissioned work</p>
+        <p>Commissioned work & collaborations</p>
         <div className="projects-container">
           <ProjectsCard {...steelRack} />
           <ProjectsCard {...hoodClub} />
+          <ProjectsCard {...djDuck} />
+        </div>
+        <div className="projects-container">
+          <ProjectsCard {...solenDance} />
+          <ProjectsCard {...santaUrsula} />
+          <ProjectsCard {...stingers} />
         </div>
         <p>Personal photography page: </p>
         <div id="insta-embed-container">
