@@ -64,15 +64,30 @@ h1 {
 
 .projects-container {
   position: relative;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 2rem 0 2rem;
+
+  justify-content: space-around;
+  margin: 1rem 0 1rem 0;
 }
 
 /* Screen width */
 @media (max-width: 800px) {
   .projects-container {
     flex-direction: column;
+    margin: 0;
+  }
+
+  .card-container {
+    margin: 1rem;
+  }
+
+  .contactform {
+    flex-direction: column;
+  }
+
+  .submit {
+    height: 6rem;
   }
 }

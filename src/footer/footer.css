@@ -51,7 +51,7 @@
 
 .submit {
   height: 2rem;
-  width: 100rem;
+  width: 100%;
   flex: 1;
   background-color: transparent;
   border: 1px solid lightgrey;
