@@ -14,6 +14,7 @@ const ProjectsCard = ({
   projectTags,
   projectGitHub,
   projectLink,
+  fitType
 }) => {
   return (
     <div className="card-container">
