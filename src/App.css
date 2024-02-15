@@ -1,25 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Righteous&family=Roboto&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Righteous&family=Roboto&family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-p {
-  font-weight: lighter;
-}
-
 * {
   margin: 0;
   box-sizing: border-box;
-  font-weight: 100;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  font-weight: normal;
+  font-family: "Inter", sans-serif, light;
   background-color: white;
   color: black;
+  font-weight: 300;
   width: 100%;
   word-wrap: break-word;
 }
@@ -80,6 +75,4 @@ h1 {
   .projects-container {
     flex-direction: column;
   }
-
-  
 }

@@ -11,6 +11,7 @@
   bottom: 0;
   align-items: center;
   flex-direction: column;
+  font-weight: 300;
 }
 
 .footerLink {
@@ -28,14 +29,6 @@
 .footerLink li:hover {
   color: white;
   transition: 0.6s;
-}
-
-.social-media-icon .social-svg-icon {
-  fill: grey !important;
-}
-
-.social-media-icon:hover .social-svg-icon {
-  fill: black !important;
 }
 
 .custom-input {
@@ -80,4 +73,14 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+
+#cv-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#cv-link:hover {
+  text-decoration: underline;
 }

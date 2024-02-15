@@ -56,7 +56,9 @@ const Footer = () => {
                 <a
                   href="src/assets/files/Jose Acosta Aldrete.pdf"
                   target="_blank"
+                  id="cv-link"
                 >
+                  <p style={{ margin: 0, marginRight: "1rem" }}>CV</p>
                   <FontAwesomeIcon icon={faFile} />
                 </a>
               </li>
