@@ -11,6 +11,22 @@ const Music = () => {
     projectGitHub: "",
     projectLink: "youtube.com/video-link",
   };
+  const TimeoutMarket = {
+    projectImg: "",
+    projectTitle: "Timeout Market",
+    projectDescription: "Timeout Market Bar, Montreal",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "youtube.com/video-link",
+  };
+  const FanaBox = {
+    projectImg: "",
+    projectTitle: "FanaBox GP",
+    projectDescription: "F1 store, Montreal GP weekend",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "youtube.com/video-link",
+  };
 
   return (
     <>
@@ -23,9 +39,14 @@ const Music = () => {
           <li>Rekordbox</li>
           <li>Serato</li>
         </ul>
-        <h3>DJ sets</h3>
+        <h3>Youtube DJ sets</h3>
         <div className="projects-container">
           <ProjectsCard {...TechHouse} />
+        </div>
+        <h3>Experience</h3>
+        <div className="projects-container">
+          <ProjectsCard {...TimeoutMarket} />
+          <ProjectsCard {...FanaBox} />
         </div>
       </div>
     </>

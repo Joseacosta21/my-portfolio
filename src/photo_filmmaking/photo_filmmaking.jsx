@@ -46,16 +46,16 @@ const PhotoFilmmaking = () => {
   };
   const santaUrsula = {
     projectImg: "src/assets/project-card-photos/photo-filmmaking/tvCamp.JPG",
-    projectTitle: "Camp Santa Ursula - TV Camp",
+    projectTitle: "Camp Santa Ursula",
     projectDescription:
-      "Videographer for best-rated camp in Mexico; nominated for best staff member",
+      "Videographer/TV Camp for best-rated camp in Mexico; nominated for best staff member",
     projectTags: "",
     projectGitHub: "",
     projectLink: "TODO.com",
   };
   const stingers = {
     projectImg: "src/assets/project-card-photos/photo-filmmaking/Stingers.jpg",
-    projectTitle: "Concordia Stingers - The Concordian",
+    projectTitle: "The Concordian",
     projectDescription:
       "Photography contribution to The Concordian, university newspaper",
     projectTags: "",
@@ -68,7 +68,9 @@ const PhotoFilmmaking = () => {
     <>
       <div className="photo-container">
         <h1>Photography and Filmmaking</h1>
+        <br />
         <p>Commissioned work & collaborations</p>
+        <br />
         <div className="projects-container">
           <ProjectsCard {...steelRack} />
           <ProjectsCard {...hoodClub} />
@@ -79,7 +81,9 @@ const PhotoFilmmaking = () => {
           <ProjectsCard {...santaUrsula} />
           <ProjectsCard {...stingers} />
         </div>
+        <br />
         <p>Personal photography page: </p>
+        <br />
         <div id="insta-embed-container">
           <FeedEmbed />
         </div>

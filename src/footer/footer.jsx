@@ -9,6 +9,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
@@ -51,6 +52,14 @@ const Footer = () => {
         <div className="column-container">
           <div className="column">
             <ul className="footerLink no-list">
+              <li>
+                <a
+                  href="src/assets/files/Jose Acosta Aldrete.pdf"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faFile} />
+                </a>
+              </li>
               <li>
                 <a href="https://github.com/Joseacosta21" target="_blank">
                   <FontAwesomeIcon icon={faGithub} />
