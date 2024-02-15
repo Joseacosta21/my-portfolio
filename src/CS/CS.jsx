@@ -27,8 +27,8 @@ const CS = () => {
     <>
       <div className="cs-container">
         <h1>Computer Science</h1>
+        <br />
         <p>coding stuff</p>
-
         <div className="projects-container">
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />

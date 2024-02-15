@@ -60,7 +60,8 @@ const PhotoFilmmaking = () => {
       "Photography contribution to The Concordian, university newspaper",
     projectTags: "",
     projectGitHub: "",
-    projectLink: "TODO.com",
+    projectLink:
+      "https://theconcordian.com/2023/11/stingers-football-to-face-laval-rouge-et-or-in-rseq-playoff-semi-final/",
   };
 
   return (
