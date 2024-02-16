@@ -6,7 +6,7 @@ const About = () => {
     <>
       <div className="about-container">
         <div className="column-container">
-          <div className="column bio">
+          <div className="column" id="bio">
             <h2>Hey there, I'm</h2>
           </div>
         </div>
@@ -14,16 +14,14 @@ const About = () => {
         <p className="my-name">Jose Acosta Aldrete</p>
 
         <div className="column-container">
-          <div className="column bio">
-            <h2>
-              Im from San Luis Potosi, Mexico, based in Montreal. This is my
+          <div className="column" id="bio">
+            <h2 style={{ fontWeight: "lighter", lineHeight: "2" }}>
+              Im from San Luis Potosi, Mexico, based in Montréal. This is my
               portfolio/digital-CV/personal website. I love anything tech
-              related and artsy.
+              related and artsy. Hope you like it!
             </h2>
           </div>
         </div>
-
-        <p className="page-title">About</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"

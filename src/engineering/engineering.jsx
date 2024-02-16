@@ -24,7 +24,7 @@ const Engineering = () => {
         <p>Something cool</p>
         <br />
         <p>Some engineering projects ive made: </p>
-        <div className="projcts-container">
+        <div className="projects-container">
           <ProjectsCard {...pillDispenser} />
         </div>
       </div>
