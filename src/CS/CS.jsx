@@ -26,10 +26,10 @@ const CS = () => {
   return (
     <>
       <div className="cs-container" id="cs">
-        <h1>Computer Science</h1>
+        <h1 style={{ fontWeight: "normal" }}>Computer Science</h1>
         <br />
-        <p>Curriculum? // TODO </p>
-        <ul>
+        <p style={{ color: "#569CD6" }}>Curriculum:</p>
+        <ul style={{ color: "#CE9178" }}>
           <li>Harvard CS50 - C, Python, HTML, CSS, JS, mySQL </li>
           <li>ENGR 215 - C++, Arduino</li>
           <li>Self Taught? - React, JSX</li>
@@ -38,7 +38,7 @@ const CS = () => {
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />
           <div className="loading-projects">
-            <p>
+            <p style={{ color: "#6A9955" }}>
               <FontAwesomeIcon icon={faSpinner} spinPulse />
               &nbsp; More to come...
             </p>
