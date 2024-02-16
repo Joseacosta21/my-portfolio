@@ -49,8 +49,7 @@
 }
 
 .bio {
-  bottom: 30%;
-  position: absolute;
+  padding: 2rem 4rem 0 4rem;
 }
 
 .chevron-arrow {

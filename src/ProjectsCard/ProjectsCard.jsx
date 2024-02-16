@@ -14,13 +14,17 @@ const ProjectsCard = ({
   projectTags,
   projectGitHub,
   projectLink,
-  fitType
+  fitType,
 }) => {
   return (
     <div className="card-container">
       <a href={projectLink} target="_blank" rel="noopener noreferrer">
         <div className="img-container">
-          <img src={projectImg} className="project-image" alt={projectTitle} />
+          <img
+            src={projectImg}
+            className="project-image blur"
+            alt={projectTitle}
+          />
           <div className="overlay">
             <div className="overlay-text">{projectDescription}</div>
             <p>
