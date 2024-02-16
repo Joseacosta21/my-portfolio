@@ -30,7 +30,7 @@ const Music = () => {
 
   return (
     <>
-      <div className="music-container">
+      <div className="music-container" id="music">
         <h1>Music</h1>
         <p></p>
         <h3>Skills</h3>

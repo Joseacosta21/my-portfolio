@@ -14,7 +14,7 @@ import { faFile } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
   return (
     <>
-      <div className="footer-container">
+      <div className="footer-container" id="contact">
         <div className="column-container">
           <div className="column">
             <h3>Contact me!</h3>

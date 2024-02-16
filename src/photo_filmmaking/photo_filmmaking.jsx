@@ -66,7 +66,7 @@ const PhotoFilmmaking = () => {
 
   return (
     <>
-      <div className="photo-container">
+      <div className="photo-container" id="photoFilmmaking">
         <h1>Photography and Filmmaking</h1>
         <br />
         <p>Commissioned work & collaborations</p>

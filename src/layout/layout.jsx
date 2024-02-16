@@ -15,16 +15,16 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <Header />
-      <About />
-      <Engineering />
-      <CS />
-      <Music />
-      <PhotoFilmmaking />
-      <Design />
-      <main className="content">{children}</main>
-      <Footer />
+      <About id="about" />
+      <Engineering id="engineering" />
+      <CS id="cs" />
+      <Music id="music" />
+      <PhotoFilmmaking id="photoFilmmaking" />
+      <Design id="design" />
+      <Footer id="contact" />
     </div>
-  );a
+  );
+  a;
 };
 
 export default Layout;

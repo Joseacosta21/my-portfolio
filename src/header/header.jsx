@@ -11,7 +11,7 @@ import {
   faPencil,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
   // Scrolling icons change
@@ -59,7 +59,14 @@ const Header = () => {
   return (
     <header className={`header-container ${scrolling ? "scrolling" : ""}`}>
       <div className="header-links">
-        <NavLink className="link">
+        <ScrollLink
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="link"
+        >
           {iconDisplay ? (
             <FontAwesomeIcon icon={faUser} />
           ) : scrolling ? (
@@ -67,8 +74,16 @@ const Header = () => {
           ) : (
             "About"
           )}
-        </NavLink>
-        <NavLink className="link">
+        </ScrollLink>
+        <ScrollLink
+          to="engineering"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="link"
+        >
+          {" "}
           {iconDisplay ? (
             <FontAwesomeIcon icon={faGear} spin />
           ) : scrolling ? (
@@ -76,8 +91,16 @@ const Header = () => {
           ) : (
             "Engineering"
           )}
-        </NavLink>
-        <NavLink className="link">
+        </ScrollLink>
+        <ScrollLink
+          to="cs"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="link"
+        >
+          {" "}
           {iconDisplay ? (
             <FontAwesomeIcon icon={faCode} />
           ) : scrolling ? (
@@ -85,8 +108,16 @@ const Header = () => {
           ) : (
             "Programming"
           )}
-        </NavLink>
-        <NavLink className="link">
+        </ScrollLink>
+        <ScrollLink
+          to="music"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="link"
+        >
+          {" "}
           {iconDisplay ? (
             <FontAwesomeIcon icon={faMusic} />
           ) : scrolling ? (
@@ -94,8 +125,16 @@ const Header = () => {
           ) : (
             "Music"
           )}
-        </NavLink>
-        <NavLink className="link">
+        </ScrollLink>
+        <ScrollLink
+          to="photoFilmmaking"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="link"
+        >
+          {" "}
           {iconDisplay ? (
             <FontAwesomeIcon icon={faCamera} />
           ) : scrolling ? (
@@ -103,8 +142,17 @@ const Header = () => {
           ) : (
             "Photo & Filmmaking"
           )}
-        </NavLink>
-        <NavLink className="link">
+        </ScrollLink>
+
+        <ScrollLink
+          to="design"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="link"
+        >
+          {" "}
           {iconDisplay ? (
             <FontAwesomeIcon icon={faPencil} />
           ) : scrolling ? (
@@ -112,8 +160,16 @@ const Header = () => {
           ) : (
             "Design"
           )}
-        </NavLink>
-        <NavLink className="link">
+        </ScrollLink>
+        <ScrollLink
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="link"
+        >
+          {" "}
           {iconDisplay ? (
             <FontAwesomeIcon icon={faEnvelope} />
           ) : scrolling ? (
@@ -121,7 +177,7 @@ const Header = () => {
           ) : (
             "Contact"
           )}
-        </NavLink>
+        </ScrollLink>
       </div>
     </header>
   );

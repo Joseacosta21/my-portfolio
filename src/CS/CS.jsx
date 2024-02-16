@@ -25,7 +25,7 @@ const CS = () => {
 
   return (
     <>
-      <div className="cs-container">
+      <div className="cs-container" id="cs">
         <h1>Computer Science</h1>
         <br />
         <p>Curriculum? // TODO </p>

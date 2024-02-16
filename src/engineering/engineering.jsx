@@ -15,7 +15,7 @@ const Engineering = () => {
 
   return (
     <>
-      <div className="engineering-container">
+      <div className="engineering-container" id="engineering">
         <h1>Engineering</h1>
         <br />
         <p>
