@@ -15,7 +15,7 @@
 /* TODO , scrolling shi*/
 
 .header-links {
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px 5px var(--shadow-color);
   margin: 2rem;
   padding: 1rem;
   border-radius: 2rem;
@@ -47,4 +47,10 @@
   opacity: 1;
   color: inherit;
   color: white;
+}
+
+@media (max-width: 800px) {
+  .link {
+    margin-right: 1.5rem;
+  }
 }

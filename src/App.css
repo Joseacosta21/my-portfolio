@@ -86,8 +86,4 @@ h1 {
   .contactform {
     flex-direction: column;
   }
-
-  .submit {
-    height: 6rem;
-  }
 }

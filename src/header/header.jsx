@@ -13,90 +13,109 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  // Scrolling icons change
   const [scrolling, setScrolling] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
+  const [isNarrowScreen, setIsNarrowScreen] = useState(
+    window.innerWidth <= 800
+  );
+  const [iconDisplay, setIconDisplay] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // If the user is scrolling down and the user is not at the top of the page
       if (
         currentScrollY > prevScrollY &&
         (document.body.scrollTop > 80 ||
           document.documentElement.scrollTop > 80)
       ) {
-        // Scrolling down, switch to icon state
         setScrolling(true);
       } else {
-        // Scrolling up, switch to text state
         setScrolling(false);
       }
 
       setPrevScrollY(currentScrollY);
     };
 
+    const handleResize = () => {
+      setIsNarrowScreen(window.innerWidth <= 800);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, [prevScrollY]);
+
+  useEffect(() => {
+    setIconDisplay(scrolling || isNarrowScreen);
+  }, [scrolling, isNarrowScreen]);
 
   return (
     <header className={`header-container ${scrolling ? "scrolling" : ""}`}>
       <div className="header-links">
         <NavLink className="link">
-          {scrolling ? (
-            /* Font Awesome icon for About */
+          {iconDisplay ? (
+            <FontAwesomeIcon icon={faUser} />
+          ) : scrolling ? (
             <FontAwesomeIcon icon={faUser} />
           ) : (
             "About"
           )}
         </NavLink>
         <NavLink className="link">
-          {scrolling ? (
-            /* Font Awesome icon for Engineering */
+          {iconDisplay ? (
+            <FontAwesomeIcon icon={faGear} spin />
+          ) : scrolling ? (
             <FontAwesomeIcon icon={faGear} spin />
           ) : (
             "Engineering"
           )}
         </NavLink>
         <NavLink className="link">
-          {scrolling ? (
-            /* Font Awesome icon for Web Development */
+          {iconDisplay ? (
+            <FontAwesomeIcon icon={faCode} />
+          ) : scrolling ? (
             <FontAwesomeIcon icon={faCode} />
           ) : (
             "Programming"
           )}
         </NavLink>
         <NavLink className="link">
-          {scrolling ? (
-            /* Font Awesome icon for Music */
+          {iconDisplay ? (
+            <FontAwesomeIcon icon={faMusic} />
+          ) : scrolling ? (
             <FontAwesomeIcon icon={faMusic} />
           ) : (
             "Music"
           )}
         </NavLink>
         <NavLink className="link">
-          {scrolling ? (
-            /* Font Awesome icon for Photo & Filmmaking */
+          {iconDisplay ? (
+            <FontAwesomeIcon icon={faCamera} />
+          ) : scrolling ? (
             <FontAwesomeIcon icon={faCamera} />
           ) : (
             "Photo & Filmmaking"
           )}
         </NavLink>
         <NavLink className="link">
-          {scrolling ? (
-            /* Font Awesome icon for Design */
+          {iconDisplay ? (
+            <FontAwesomeIcon icon={faPencil} />
+          ) : scrolling ? (
             <FontAwesomeIcon icon={faPencil} />
           ) : (
             "Design"
           )}
         </NavLink>
         <NavLink className="link">
-          {scrolling ? (
-            /* Font Awesome icon for Contact */
+          {iconDisplay ? (
+            <FontAwesomeIcon icon={faEnvelope} />
+          ) : scrolling ? (
             <FontAwesomeIcon icon={faEnvelope} />
           ) : (
             "Contact"
