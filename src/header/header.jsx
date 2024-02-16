@@ -63,8 +63,8 @@ const Header = () => {
           to="about"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={0}
+          duration={1200}
           className="link"
         >
           {iconDisplay ? (
@@ -79,8 +79,8 @@ const Header = () => {
           to="engineering"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={0}
+          duration={1200}
           className="link"
         >
           {" "}
@@ -96,8 +96,8 @@ const Header = () => {
           to="cs"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={0}
+          duration={1200}
           className="link"
         >
           {" "}
@@ -113,8 +113,8 @@ const Header = () => {
           to="music"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={0}
+          duration={1200}
           className="link"
         >
           {" "}
@@ -130,8 +130,8 @@ const Header = () => {
           to="photoFilmmaking"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={0}
+          duration={1200}
           className="link"
         >
           {" "}
@@ -148,8 +148,8 @@ const Header = () => {
           to="design"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={0}
+          duration={1200}
           className="link"
         >
           {" "}
@@ -165,8 +165,8 @@ const Header = () => {
           to="contact"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={-100}
+          duration={1200}
           className="link"
         >
           {" "}

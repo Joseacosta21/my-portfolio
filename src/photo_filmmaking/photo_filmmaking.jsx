@@ -69,7 +69,9 @@ const PhotoFilmmaking = () => {
       <div className="photo-container" id="photoFilmmaking">
         <h1>Photography and Filmmaking</h1>
         <br />
-        <p>Commissioned work & collaborations</p>
+        <p>Me, my camera & my drone vs. the world.</p>
+        <br />
+        <p>Commissioned work & collaborations:</p>
         <br />
         <div className="projects-container">
           <ProjectsCard {...steelRack} />
@@ -83,7 +85,6 @@ const PhotoFilmmaking = () => {
         </div>
         <br />
         <p>Personal photography page: </p>
-        <br />
         <div id="insta-embed-container">
           <FeedEmbed />
         </div>
