@@ -16,7 +16,7 @@ const About = () => {
         <div className="column-container">
           <div className="column" id="bio">
             <h2 style={{ fontWeight: "lighter", lineHeight: "2" }}>
-              Im from San Luis Potosi, Mexico, based in Montréal. This is my
+              I'm from San Luis Potosi, Mexico, based in Montréal. This is my
               portfolio/digital-CV/personal website. I love anything tech
               related and artsy. Hope you like it!
             </h2>

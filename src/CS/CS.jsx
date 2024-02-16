@@ -15,7 +15,7 @@ const CS = () => {
   };
 
   const portfolioPage = {
-    projectImg: "src/assets/project-card-photos/CS/Casino_Stic.png",
+    projectImg: "src/assets/project-card-photos/CS/JoeCool.png",
     projectTitle: "Portfolio",
     projectDescription: "You are looking at it right now :)",
     projectTags: ["React", "JSX", "CSS"],
@@ -28,7 +28,12 @@ const CS = () => {
       <div className="cs-container">
         <h1>Computer Science</h1>
         <br />
-        <p>coding stuff</p>
+        <p>Curriculum? // TODO </p>
+        <ul>
+          <li>Harvard CS50 - C, Python, HTML, CSS, JS, mySQL </li>
+          <li>ENGR 215 - C++, Arduino</li>
+          <li>Self Taught? - React, JSX</li>
+        </ul>
         <div className="projects-container">
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />

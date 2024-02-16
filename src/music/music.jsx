@@ -12,7 +12,7 @@ const Music = () => {
     projectLink: "youtube.com/video-link",
   };
   const TimeoutMarket = {
-    projectImg: "",
+    projectImg: "src/assets/project-card-photos/music/Timeout.png",
     projectTitle: "Timeout Market",
     projectDescription: "Timeout Market Bar, Montreal",
     projectTags: "",
@@ -20,7 +20,7 @@ const Music = () => {
     projectLink: "youtube.com/video-link",
   };
   const FanaBox = {
-    projectImg: "",
+    projectImg: "src/assets/project-card-photos/music/FanaBox.JPG",
     projectTitle: "FanaBox GP",
     projectDescription: "F1 store, Montreal GP weekend",
     projectTags: "",
@@ -39,10 +39,15 @@ const Music = () => {
           <li>Rekordbox</li>
           <li>Serato</li>
         </ul>
+
+        {/* YOUTUBE SETS 
+        <br />
         <h3>Youtube DJ sets</h3>
         <div className="projects-container">
           <ProjectsCard {...TechHouse} />
         </div>
+        */}
+        <br />
         <h3>Experience</h3>
         <div className="projects-container">
           <ProjectsCard {...TimeoutMarket} />
