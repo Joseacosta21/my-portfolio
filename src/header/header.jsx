@@ -12,6 +12,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
+
 const Header = () => {
   // Scrolling icons change
   const [scrolling, setScrolling] = useState(false);

@@ -24,6 +24,7 @@ const ProjectsCard = ({
             src={projectImg}
             className="project-image blur"
             alt={projectTitle}
+            style={{ objectFit: fitType || "cover" }}
           />
           <div className="overlay">
             <div className="overlay-text">{projectDescription}</div>

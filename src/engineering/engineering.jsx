@@ -19,10 +19,11 @@ const Engineering = () => {
         <h1>Engineering</h1>
         <br />
         <p>
-          Currently studying Mechanical Engineering, at Concordia Univeristy.
+          Currently studying B.Eng. Mechanical Engineering at Concordia
+          University.
         </p>
         <br />
-        <p>Something cool</p>
+        <p>The brown puffle from club penguin is my spirit animal</p>
         <br />
         <p>Some engineering projects ive made: </p>
         <div className="projects-container">

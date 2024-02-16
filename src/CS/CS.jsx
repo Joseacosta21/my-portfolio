@@ -11,7 +11,7 @@ const CS = () => {
     projectDescription: "A landing webpage for a sports & events venues.",
     projectTags: ["HTML", "CSS", "JS"],
     projectGitHub: "https://github.com/Joseacosta21/casinoStic",
-    projectLink: "casinostic.com",
+    projectLink: "https://casinostic.com/html/index.html",
   };
 
   const portfolioPage = {
@@ -19,7 +19,7 @@ const CS = () => {
     projectTitle: "Portfolio",
     projectDescription: "You are looking at it right now :)",
     projectTags: ["React", "JSX", "CSS"],
-    projectGitHub: "https://github.com/my-portfolio",
+    projectGitHub: "https://github.com/Joseacosta21/my-portfolio",
     projectLink: "joseacostaaldrete.com",
   };
 
