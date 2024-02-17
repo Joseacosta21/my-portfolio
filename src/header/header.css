@@ -5,11 +5,6 @@
   align-items: center;
   position: fixed;
   z-index: 99;
-  transition: 0.3s ease-in-out;
-}
-
-.header-container.scrolling {
-  transition: 0.3 ease-in-out;
 }
 
 /* TODO , scrolling shi*/
@@ -22,11 +17,7 @@
   background-color: black;
   border: 1px solid grey;
   z-index: 99;
-  transition: 0.3;
-}
-
-.header-links.scrolling {
-  transition: 0.3;
+  transition: all 0.5s;
 }
 
 .link {
@@ -37,8 +28,6 @@
   opacity: 0.7;
   border-bottom: 3px solid transparent;
   margin: 0.5rem;
-  transition: margin 0.3s ease-in-out; /* Add transition for margin change */
-  transition: 0.3;
 }
 
 .link:hover {
