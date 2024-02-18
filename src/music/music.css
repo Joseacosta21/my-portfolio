@@ -15,6 +15,6 @@
   background-color: black;
   color: white;
   position: static;
-  padding: 2rem;
+  padding: 5rem 3rem;
   flex-direction: column;
 }

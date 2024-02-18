@@ -7,9 +7,6 @@
   z-index: 99;
 }
 
-.header-container.scrolling {
-}
-
 /* TODO , scrolling shi*/
 .header-links.scrolling {
   width: 20rem; /* Adjust the width to your desired size when scrolling */
@@ -17,7 +14,7 @@
 
 .header-links {
   box-shadow: 0 0 10px 5px var(--shadow-color);
-  margin: 2rem;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 2rem;
   background-color: black;

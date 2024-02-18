@@ -16,7 +16,7 @@ const Engineering = () => {
   return (
     <>
       <div className="engineering-container" id="engineering">
-        <h1>Engineering</h1>
+        <h1 className="title">Engineering</h1>
         <br />
         <p>
           Currently studying B.Eng. Mechanical Engineering at Concordia
@@ -26,6 +26,7 @@ const Engineering = () => {
         <p>The brown puffle from club penguin is my spirit animal</p>
         <br />
         <p>Some engineering projects ive made: </p>
+        <br />
         <div className="projects-container">
           <ProjectsCard {...pillDispenser} />
         </div>

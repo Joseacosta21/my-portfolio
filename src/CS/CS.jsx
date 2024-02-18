@@ -34,7 +34,9 @@ const CS = () => {
   return (
     <>
       <div className="cs-container" id="cs">
-        <h1 style={{ fontWeight: "normal" }}>Computer Science</h1>
+        <h1 style={{ fontWeight: "normal" }} className="title">
+          Computer Science
+        </h1>
         <br />
         <p style={{ color: "#569CD6" }}>Curriculum:</p>
         <ul style={{ color: "#CE9178" }}>

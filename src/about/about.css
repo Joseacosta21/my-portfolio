@@ -20,7 +20,8 @@
 }
 
 .my-name {
-  font-size: 8rem;
+  padding: 2rem;
+  font-size: 6rem;
   font-weight: 700;
   background-clip: text;
   color: transparent;
@@ -49,7 +50,7 @@
 }
 
 #bio {
-  padding: 6rem 7rem 1rem 7rem;
+  padding: 1rem 7rem 1rem 7rem;
   text-align: justify;
 }
 

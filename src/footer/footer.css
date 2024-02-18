@@ -17,7 +17,7 @@
 .footerLink {
   display: flex;
   padding: 0;
-  justify-content: end;
+  justify-content: start;
 }
 
 .footerLink li {
