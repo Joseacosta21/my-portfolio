@@ -22,6 +22,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("src/assets/project-card-photos/background/TheGreatWaveBlur.jpg");
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: top; /* Align the top of the image with the top of the container */
 }
 
 .overlay {

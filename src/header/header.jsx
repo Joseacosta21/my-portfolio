@@ -58,7 +58,7 @@ const Header = () => {
 
   return (
     <header className={`header-container ${scrolling ? "scrolling" : ""}`}>
-      <div className="header-links">
+      <nav className={`header-links ${scrolling ? "scrolling" : ""}`}>
         <ScrollLink
           to="about"
           spy={true}
@@ -178,7 +178,7 @@ const Header = () => {
             "Contact"
           )}
         </ScrollLink>
-      </div>
+      </nav>
     </header>
   );
 };

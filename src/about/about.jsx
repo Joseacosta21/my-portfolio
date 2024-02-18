@@ -1,6 +1,9 @@
 import React from "react";
 import "./about.css";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
   return (
@@ -16,8 +19,13 @@ const About = () => {
 
         <div className="column-container">
           <div className="column" id="bio">
+            <p style={{ textAlign: "center", color: "grey" }}>
+              <FontAwesomeIcon icon={faLocationDot} />
+              &nbsp;Montréal, CA
+            </p>
+            <br />
             <h2 style={{ fontWeight: "lighter", lineHeight: "2" }}>
-              I'm from San Luis Potosi, Mexico, based in Montréal. This is my
+              I'm from San Luis Potosi, Mexico. This is my
               portfolio/digital-CV/personal website. I love anything tech
               related and artsy. Hope you like it!
             </h2>
