@@ -77,8 +77,6 @@ const PhotoFilmmaking = () => {
           <ProjectsCard {...steelRack} />
           <ProjectsCard {...hoodClub} />
           <ProjectsCard {...djDuck} />
-        </div>
-        <div className="projects-container">
           <ProjectsCard {...solenDance} />
           <ProjectsCard {...santaUrsula} />
           <ProjectsCard {...stingers} />

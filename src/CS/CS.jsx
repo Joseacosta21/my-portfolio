@@ -22,6 +22,14 @@ const CS = () => {
     projectGitHub: "https://github.com/Joseacosta21/my-portfolio",
     projectLink: "joseacostaaldrete.com",
   };
+  const moreToCome = {
+    projectImg: "src/assets/project-card-photos/CS/DebugDuck.png",
+    projectTitle: <FontAwesomeIcon icon={faSpinner} spinPulse />,
+    projectDescription: "Working on it!",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "",
+  };
 
   return (
     <>
@@ -37,11 +45,10 @@ const CS = () => {
         <div className="projects-container">
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />
+          <ProjectsCard {...moreToCome} />
+
           <div className="loading-projects">
-            <p style={{ color: "#6A9955" }}>
-              <FontAwesomeIcon icon={faSpinner} spinPulse />
-              &nbsp; More to come...
-            </p>
+            <p style={{ color: "#6A9955" }}>&nbsp; More to come...</p>
           </div>
         </div>
       </div>

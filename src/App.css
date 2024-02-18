@@ -66,9 +66,10 @@ h1 {
 .projects-container {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   margin: 1rem 0 1rem 0;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 /* Screen width */

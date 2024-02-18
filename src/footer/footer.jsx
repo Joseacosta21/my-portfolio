@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,8 +10,32 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
+import emailjs from "@emailjs/browser";
 
 const Footer = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_p92yzsm",
+        "template_ytgpmqs",
+        form.current,
+        "knFF7WO7GqcIeYPth"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <>
       <div className="footer-container" id="contact">
@@ -23,7 +47,12 @@ const Footer = () => {
         </div>
         <div className="column-container">
           <div className="column">
-            <form id="contactForm" className="contactform">
+            <form
+              id="contactForm"
+              ref={form}
+              className="contactform"
+              onSubmit={sendEmail}
+            >
               <input
                 type="text"
                 id="from_name"
