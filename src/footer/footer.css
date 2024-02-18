@@ -61,7 +61,13 @@
   font-weight: bold;
 }
 
-.submit:hover {
+.submit.sent {
+  cursor: not-allowed;
+  border: grey;
+  background-color: grey;
+}
+
+.submit:not(.sending):not(.sent):hover {
   background-color: white;
   border: 1px solid white;
   color: black;

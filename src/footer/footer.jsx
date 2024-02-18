@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,9 +14,12 @@ import emailjs from "@emailjs/browser";
 
 const Footer = () => {
   const form = useRef();
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSending(true);
 
     emailjs
       .sendForm(
@@ -29,9 +32,12 @@ const Footer = () => {
         (result) => {
           console.log(result.text);
           console.log("message sent");
+          setIsSending(false);
+          setIsSent(true);
         },
         (error) => {
           console.log(error.text);
+          setIsSending(false);
         }
       );
   };
@@ -71,9 +77,12 @@ const Footer = () => {
               />
               <input
                 type="submit"
-                className="submit"
-                value="Send"
+                className={`submit ${isSending ? "sending" : ""} ${
+                  isSent ? "sent" : ""
+                }`}
+                value={isSending ? "Sending..." : isSent ? "Sent" : "Send"}
                 id="submitButton"
+                disabled={isSending || isSent}
               />
             </form>
           </div>
@@ -135,7 +144,7 @@ const Footer = () => {
             <p>
               Inspiration and help from
               <b>
-                <a href="https://github.com/noahbburns"> Noah Burns</a>
+                <a href="https://github.com/noahbburns"> Mr. Burns</a>
               </b>
             </p>
             <p>&copy; 2023 Jose Acosta Aldrete. Bad ideas, good times.</p>
