@@ -140,7 +140,7 @@ const Header = () => {
           ) : scrolling ? (
             <FontAwesomeIcon icon={faCamera} />
           ) : (
-            "Photo & Filmmaking"
+            "Visual Media"
           )}
         </ScrollLink>
 

@@ -24,9 +24,12 @@ const CS = () => {
   };
   const moreToCome = {
     projectImg: "src/assets/project-card-photos/CS/DebugDuck.png",
-    projectTitle: <FontAwesomeIcon icon={faSpinner} spinPulse />,
-    projectDescription: "Working on it!",
-    projectTags: "",
+    projectTitle: " Podcast webpage",
+    projectDescription: [
+      <FontAwesomeIcon icon={faSpinner} spinPulse />,
+      " Working on it!",
+    ],
+    projectTags: ["React", "JSX", "CSS"],
     projectGitHub: "",
     projectLink: "",
   };
@@ -48,10 +51,6 @@ const CS = () => {
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />
           <ProjectsCard {...moreToCome} />
-
-          <div className="loading-projects">
-            <p style={{ color: "#6A9955" }}>&nbsp; More to come...</p>
-          </div>
         </div>
       </div>
     </>

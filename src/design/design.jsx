@@ -70,8 +70,6 @@ const Design = () => {
           <ProjectsCard {...theMeatSweats} />
           <ProjectsCard {...academicWeapon} />
           <ProjectsCard {...artekPatch} />
-        </div>
-        <div className="projects-container">
           <ProjectsCard {...badIdeasGoodTimes} />
           <ProjectsCard {...peanutsJoe} />
           <ProjectsCard {...phoneStand} />

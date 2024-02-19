@@ -12,6 +12,7 @@
   width: 20rem; /* Adjust the width to your desired size when scrolling */
 }
 
+/* TODO shadow color*/
 .header-links {
   box-shadow: 0 0 10px 5px var(--shadow-color);
   margin: 1rem;
