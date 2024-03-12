@@ -17,12 +17,12 @@ const ProjectsCard = ({
   fitType,
 }) => {
   return (
-    <div className="card-container">
+    <div className="card-container group overflow-hidden">
       <a href={projectLink} target="_blank" rel="noopener noreferrer">
         <div className="img-container">
           <img
             src={projectImg}
-            className="project-image blur"
+            className="project-image"
             alt={projectTitle}
             style={{ objectFit: fitType || "cover" }}
           />

@@ -4,6 +4,10 @@
   color: white;
 }
 
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 #insta-embed {
   width: 100%;
 }

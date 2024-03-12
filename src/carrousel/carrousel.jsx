@@ -1,35 +1,23 @@
-import React from "react";
-import Slider from "react-slick";
-import PropertyCard from "../PropertyCard/PropertyCard";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
 
-const PropertyCardCarousel = ({ properties }) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 8000,
-    cssEase: "ease",
-    swipe: false,
-  };
+const Carousel = ({ children }) => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <div>
-      {properties.length > 0 ? (
-        <Slider {...settings}>
-          {properties.map((property) => (
-            <div key={property.id}>
-              <PropertyCard property={property} />
-            </div>
-          ))}
-        </Slider>
-      ) : (
-        <h1>No properties</h1>
-      )}
-    </div>
+    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+      <div className="sticky top-0 flex h-screen overflow-x-auto">
+        <motion.div style={{ x }} className="flex items-center">
+          {children}
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
-export default PropertyCardCarousel;
+export default Carousel;

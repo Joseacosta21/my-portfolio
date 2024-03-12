@@ -1,20 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .card-container {
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 33%;
-}
-
-@media (max-width: 1200px) {
-  .card-container {
-    width: 48%; /* Two containers in a row for smaller screens */
-  }
-}
-
-@media (max-width: 800px) {
-  .card-container {
-    width: 100%; /* Single container for even smaller screens */
-  }
+  width: 25rem;
 }
 
 .card-link {

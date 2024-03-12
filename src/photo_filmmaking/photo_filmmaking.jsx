@@ -2,6 +2,7 @@ import React from "react";
 import "./photo_filmmaking.css";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
+import Carousel from "../carrousel/carrousel";
 
 // TODO
 
@@ -69,18 +70,18 @@ const PhotoFilmmaking = () => {
       <div className="photo-container topic" id="photoFilmmaking">
         <h1 className="title">Visual Media</h1>
         <br />
-        <p>Me, my camera & my drone vs. the world.</p>
+        <p>Me, my camera & my drone.</p>
         <br />
         <p>Commissioned work & collaborations:</p>
         <br />
-        <div className="projects-container">
+        <Carousel>
           <ProjectsCard {...steelRack} />
           <ProjectsCard {...hoodClub} />
           <ProjectsCard {...djDuck} />
           <ProjectsCard {...solenDance} />
           <ProjectsCard {...santaUrsula} />
           <ProjectsCard {...stingers} />
-        </div>
+        </Carousel>
         <br />
         <p>Personal photography page: </p>
         <div id="insta-embed-container">

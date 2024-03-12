@@ -12,6 +12,7 @@ const CS = () => {
     projectTags: ["HTML", "CSS", "JS"],
     projectGitHub: "https://github.com/Joseacosta21/casinoStic",
     projectLink: "https://casinostic.com/html/index.html",
+    fitType: "contain",
   };
 
   const portfolioPage = {
@@ -22,7 +23,7 @@ const CS = () => {
     projectGitHub: "https://github.com/Joseacosta21/my-portfolio",
     projectLink: "joseacostaaldrete.com",
   };
-  const moreToCome = {
+  const aWheelieGoodTime = {
     projectImg: "src/assets/project-card-photos/CS/DebugDuck.png",
     projectTitle: " Podcast webpage",
     projectDescription: [
@@ -30,7 +31,7 @@ const CS = () => {
       " Working on it!",
     ],
     projectTags: ["React", "JSX", "CSS"],
-    projectGitHub: "",
+    projectGitHub: "https://github.com/noahbburns/AWheelyGoodTime",
     projectLink: "",
   };
 
@@ -76,7 +77,7 @@ const CS = () => {
         <div className="projects-container">
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />
-          <ProjectsCard {...moreToCome} />
+          <ProjectsCard {...aWheelieGoodTime} />
         </div>
       </div>
     </>
