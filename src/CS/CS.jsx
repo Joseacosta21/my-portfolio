@@ -36,17 +36,43 @@ const CS = () => {
 
   return (
     <>
-      <div className="cs-container" id="cs">
-        <h1 style={{ fontWeight: "normal" }} className="title">
-          Computer Science
+      <div className="cs-container topic" id="cs">
+        <h1
+          style={{
+            fontWeight: "normal",
+            letterSpacing: "-0.5rem",
+          }}
+          className="title"
+        >
+          // Computer science
         </h1>
         <br />
-        <p style={{ color: "#569CD6" }}>Curriculum:</p>
-        <ul style={{ color: "#CE9178" }}>
-          <li>Harvard CS50 - C, Python, HTML, CSS, JS, mySQL </li>
-          <li>ENGR 215 - C++, Arduino</li>
-          <li>Self Taught? - React, JSX</li>
+        <p>.curriculum &#123;</p>
+        <ul className="no-list">
+          <li>
+            <a href="https://cs50.harvard.edu/x/2021/" target="_blank">
+              Harvard CS50x 2021:
+            </a>{" "}
+            C, Python, HTML, CSS, JS, mySQL;
+          </li>
+          <li>
+            <a href="https://www.athackctf.com" target="_blank">
+              @Hack 2024:
+            </a>{" "}
+            Cybersecurity Hackathon - PWN, Steg;
+          </li>
+          <li>
+            <a
+              href="https://users.encs.concordia.ca/~bwgordon/mech215_common.html"
+              target="_blank"
+            >
+              ENGR 215:
+            </a>{" "}
+            C++, Arduino;
+          </li>
+          <li>Self Taught: React, JSX;</li>
         </ul>
+        <p>&#125;</p>
         <div className="projects-container">
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />

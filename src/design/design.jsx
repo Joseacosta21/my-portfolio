@@ -60,7 +60,7 @@ const Design = () => {
 
   return (
     <>
-      <div className="design-container" id="design">
+      <div className="design-container topic" id="design">
         <h1>Design</h1>
         <p>
           Several designs ive made with Gimp and Procreate for fun, gifts for

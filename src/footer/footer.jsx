@@ -144,10 +144,12 @@ const Footer = () => {
             <p>
               Inspiration and help from&nbsp;
               <b>
-                <a href="https://github.com/noahbburns">Mr. Burns</a>
+                <a href="https://noah-burns.vercel.app" target="_blank">
+                  Mr. Burns
+                </a>
               </b>
             </p>
-            <p>&copy; 2023 Jose Acosta Aldrete. Bad ideas, good times.</p>
+            <p>&copy; 2023 Jose Acosta Aldrete. 🇲🇽 Bad ideas, good times.</p>
           </div>
         </div>
       </div>

@@ -8,12 +8,6 @@
 
 .engineering-container {
   font-family: "Cotham Sans", regular;
-  margin: 0 auto;
-  display: flex;
-  width: 100%;
   background-color: black;
   color: white;
-  position: relative;
-  flex-direction: column;
-  padding: 5rem 3rem;
 }

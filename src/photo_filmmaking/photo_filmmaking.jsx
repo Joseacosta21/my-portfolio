@@ -66,7 +66,7 @@ const PhotoFilmmaking = () => {
 
   return (
     <>
-      <div className="photo-container" id="photoFilmmaking">
+      <div className="photo-container topic" id="photoFilmmaking">
         <h1 className="title">Visual Media</h1>
         <br />
         <p>Me, my camera & my drone vs. the world.</p>
