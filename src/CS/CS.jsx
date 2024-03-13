@@ -3,6 +3,7 @@ import "./CS.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import Carousel from "../carrousel/carrousel.jsx";
 
 const CS = () => {
   const casinoStic = {
@@ -45,7 +46,7 @@ const CS = () => {
           }}
           className="title"
         >
-          // Computer science
+          Computer science
         </h1>
         <br />
         <p>.curriculum &#123;</p>
@@ -74,11 +75,11 @@ const CS = () => {
           <li>Self Taught: React, JSX;</li>
         </ul>
         <p>&#125;</p>
-        <div className="projects-container">
+        <Carousel>
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />
           <ProjectsCard {...aWheelieGoodTime} />
-        </div>
+        </Carousel>
       </div>
     </>
   );

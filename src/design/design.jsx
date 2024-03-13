@@ -62,6 +62,7 @@ const Design = () => {
     <>
       <div className="design-container topic" id="design">
         <h1>Design</h1>
+        <h1>Why is this tiny? </h1>
         <p>
           Several designs ive made with Gimp and Procreate for fun, gifts for
           friends, and comissions.
