@@ -20,10 +20,8 @@ const Engineering = () => {
         <br />
         <p>
           Currently studying B.Eng. Mechanical Engineering at Concordia
-          University.
+          University. The brown puffle from Club Penguin is my spirit animal.
         </p>
-        <br />
-        <p>The brown puffle from club penguin is my spirit animal</p>
         <br />
         <p>Some engineering projects ive made: </p>
         <br />

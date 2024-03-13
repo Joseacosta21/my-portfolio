@@ -3,6 +3,8 @@ import "./photo_filmmaking.css";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import Carousel from "../carrousel/carrousel";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 // TODO
 
@@ -13,7 +15,7 @@ const PhotoFilmmaking = () => {
     projectImg: "src/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
     projectTitle: "Steelrack",
     projectDescription: "Product photography for minimalist steel bike racks",
-    projectTags: "",
+    projectTags: ["2022"],
     projectGitHub: "",
     projectLink:
       "https://drive.google.com/drive/folders/1t7q7h6590RVRFubmaYB3fK5dsQ7JVkNt?usp=sharing",
@@ -22,7 +24,7 @@ const PhotoFilmmaking = () => {
     projectImg: "src/assets/project-card-photos/photo-filmmaking/HoodClub.jpg",
     projectTitle: "Hoodclub",
     projectDescription: "Product photography for local clothing brand",
-    projectTags: "",
+    projectTags: ["2022"],
     projectGitHub: "",
     projectLink:
       "https://drive.google.com/drive/folders/1GJ69SSPT035CO531c5k5eZJV5dbEQq7g?usp=share_link",
@@ -31,7 +33,7 @@ const PhotoFilmmaking = () => {
     projectImg: "src/assets/project-card-photos/photo-filmmaking/DJ_Duck.jpg",
     projectTitle: "DJ Duck",
     projectDescription: "Photoshoot for weddings and events DJ",
-    projectTags: "",
+    projectTags: ["2022"],
     projectGitHub: "",
     projectLink:
       "https://drive.google.com/drive/folders/1HhR8Oz4xhqtS8Bck6Qi2N0xjCnweIH_1?usp=sharing",
@@ -41,7 +43,7 @@ const PhotoFilmmaking = () => {
       "src/assets/project-card-photos/photo-filmmaking/SolenDance.jpg",
     projectTitle: "Solen Dance",
     projectDescription: "Dancer photoshoot in downtown Montreal",
-    projectTags: "",
+    projectTags: ["2023"],
     projectGitHub: "",
     projectLink: "TODO.com",
   };
@@ -50,7 +52,7 @@ const PhotoFilmmaking = () => {
     projectTitle: "Camp Santa Ursula",
     projectDescription:
       "Videographer/TV Camp for best-rated camp in Mexico; nominated for best staff member",
-    projectTags: "",
+    projectTags: ["2023"],
     projectGitHub: "",
     projectLink: "TODO.com",
   };
@@ -59,34 +61,58 @@ const PhotoFilmmaking = () => {
     projectTitle: "The Concordian",
     projectDescription:
       "Photography contribution to The Concordian, university newspaper",
-    projectTags: "",
+    projectTags: ["2024"],
     projectGitHub: "",
     projectLink:
       "https://theconcordian.com/2023/11/stingers-football-to-face-laval-rouge-et-or-in-rseq-playoff-semi-final/",
   };
+  const laso = {
+    projectImg: "src/assets/project-card-photos/photo-filmmaking/LASO.jpg",
+    projectTitle: "LASO",
+    projectDescription: "Latin American Student Association, UDEM",
+    projectTags: ["2024"],
+    projectGitHub: "",
+    projectLink: "TODO.com",
+  };
+
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
 
   return (
     <>
-      <div className="photo-container topic" id="photoFilmmaking">
-        <h1 className="title">Visual Media</h1>
-        <br />
-        <p>Me, my camera & my drone.</p>
-        <br />
-        <p>Commissioned work & collaborations:</p>
-        <br />
-        <Carousel>
-          <ProjectsCard {...steelRack} />
-          <ProjectsCard {...hoodClub} />
-          <ProjectsCard {...djDuck} />
-          <ProjectsCard {...solenDance} />
-          <ProjectsCard {...santaUrsula} />
-          <ProjectsCard {...stingers} />
-        </Carousel>
-        <br />
-        <p>Personal photography page: </p>
-        <div id="insta-embed-container">
-          <FeedEmbed />
-        </div>
+      <div
+        className="photo-container topic relative h-[300vh]"
+        id="photoFilmmaking"
+        ref={targetRef}
+      >
+        <section className="sticky top-0 flex h-screen items-center overflow-hidden">
+          <motion.div style={{ x }} className="flex gap-1">
+            <div class="text-center">
+              <h1 className="title">Visual Media</h1>
+              <br />
+              <p>Me, my camera & my drone.</p>
+              <br />
+              <p>Commissioned work & collaborations:</p>
+              <br />
+            </div>
+            <ProjectsCard {...steelRack} />
+            <ProjectsCard {...hoodClub} />
+            <ProjectsCard {...djDuck} />
+            <ProjectsCard {...solenDance} />
+            <ProjectsCard {...santaUrsula} />
+            <ProjectsCard {...stingers} />
+            <ProjectsCard {...laso} />
+          </motion.div>
+          <br />
+          <p>Personal photography page: </p>
+          <div id="insta-embed-container">
+            <FeedEmbed />
+          </div>
+        </section>
       </div>
     </>
   );

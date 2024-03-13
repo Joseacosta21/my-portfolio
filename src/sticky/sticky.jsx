@@ -7,7 +7,7 @@ const Sticky = ({ children }) => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">
