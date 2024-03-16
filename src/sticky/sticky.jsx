@@ -1,13 +1,13 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 
-const Carousel = ({ children }) => {
+const Sticky = ({ children }) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh]">

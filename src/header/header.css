@@ -18,11 +18,12 @@
   margin: 1rem;
   padding: 1rem;
   border-radius: 2rem;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+
   border: 1px solid grey;
   z-index: 99; /* ??? */
   width: 40rem;
-  transition: width 0.3s ease;
+  transition: 0.3s ease;
   display: flex;
   justify-content: space-around;
   white-space: nowrap; /* Prevent text from wrapping */

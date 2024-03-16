@@ -47,16 +47,16 @@ const Footer = () => {
       <div className="footer-container" id="contact">
         <div className="column-container">
           <div className="column">
-            <h3>Contact me!</h3>
+            <h2>Contact me!</h2>
             <p>Enter your info and ill get back to you!</p>
           </div>
         </div>
         <div className="column-container">
-          <div className="column">
+          <div className="column px-0 gap-10">
             <form
               id="contactForm"
               ref={form}
-              className="contactform"
+              className="contactform gap-10"
               onSubmit={sendEmail}
             >
               <input
@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="column-container">
-          <div className="column">
+          <div className="column px-0">
             <ul className="footerLink no-list">
               <li>
                 <a
