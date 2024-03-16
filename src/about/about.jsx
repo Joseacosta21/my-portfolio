@@ -2,7 +2,6 @@ import React from "react";
 import "./about.css";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
