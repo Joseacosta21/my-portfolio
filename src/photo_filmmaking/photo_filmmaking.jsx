@@ -54,7 +54,8 @@ const PhotoFilmmaking = () => {
       "Videographer/TV Camp for best-rated camp in Mexico; nominated for best staff member",
     projectTags: ["2023"],
     projectGitHub: "",
-    projectLink: "TODO.com",
+    projectLink:
+      "https://drive.google.com/file/d/1AB1I1DSlFzxNEnzy1I6j-w7zHPGkuCuY/view?usp=sharing",
   };
   const stingers = {
     projectImg: "src/assets/project-card-photos/photo-filmmaking/Stingers.jpg",
@@ -89,7 +90,7 @@ const PhotoFilmmaking = () => {
         id="photoFilmmaking"
         ref={targetRef}
       >
-        <section className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <section className="sticky top-0 flex h-screen items-center overflow-hidden  pt-12">
           <motion.div style={{ x }} className="flex gap-1">
             <div class="text-center">
               <h1 className="title">Visual Media</h1>

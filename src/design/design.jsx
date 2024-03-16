@@ -76,7 +76,7 @@ const Design = () => {
         id="design"
         ref={targetRef}
       >
-        <section className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <section className="sticky top-0 flex h-screen items-center overflow-hidden pt-12">
           <motion.div style={{ x }} className="flex gap-1">
             <div class="text-center">
               <h1>Design</h1>
