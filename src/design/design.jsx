@@ -78,9 +78,8 @@ const Design = () => {
       >
         <section className="sticky top-0 flex h-screen items-center overflow-hidden pt-12">
           <motion.div style={{ x }} className="flex gap-1">
-            <div class="text-center">
+            <div class="text-center self-center mb-[117px]">
               <h1>Design</h1>
-              <h1>Why is this tiny? </h1>
               <p>
                 Several designs ive made with Gimp and Procreate for fun, gifts
                 for friends, and comissions.

@@ -31,7 +31,7 @@ const Engineering = () => {
         id="engineering"
         ref={targetRef}
       >
-        <section className="sticky top-0 flex justify-center h-screen items-center overflow-hidden  pt-12">
+        <section className="sticky top-0 flex justify-center h-screen items-center  overflow-hidden  pt-12">
           <motion.div style={{ x }} className="flex gap-1">
             <div className="text-center mr-4 p-10">
               <h1 className="title text-center">Engineering</h1>
