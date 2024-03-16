@@ -13,13 +13,6 @@
   z-index: 1;
 }
 
-.footerLink {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  justify-content: end;
-}
-
 .my-name {
   padding: 2rem;
   font-size: 6rem;
