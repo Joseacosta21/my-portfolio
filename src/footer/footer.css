@@ -3,7 +3,7 @@
   margin: 0 auto;
   background-color: black;
   color: white;
-  padding: 1rem;
+  padding: 1rem 3%;
   text-align: center;
   position: relative;
   line-height: 2.5;
@@ -14,15 +14,19 @@
   font-weight: 300;
 }
 
+.footer-container p {
+  color: rgb(155, 161, 166);
+}
+
 .footerLink {
   display: flex;
   padding: 0;
-  justify-content: start;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .footerLink li {
   color: grey;
-  margin-right: 2rem; /* Adjust the spacing between items as needed */
   font-size: 2rem;
 }
 
@@ -37,12 +41,10 @@
   width: 100%;
   border: none;
   border-bottom: 1px solid grey; /* Change the color as needed */
-  padding: 5px;
   font-size: 16px; /* Adjust the font size as needed */
   margin-bottom: 20px;
   outline: none; /* Remove the focus outline */
   color: white;
-  margin: 1rem;
 }
 
 .custom-input:focus {

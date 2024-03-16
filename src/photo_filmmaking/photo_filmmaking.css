@@ -1,7 +1,15 @@
 .photo-container {
   font-family: "Roboto", thins;
-  background-color: rgb(28, 27, 27);
+  background-color: rgb(21, 23, 24);
   color: white;
+}
+
+.photo-container h1 {
+  color: rgb(236, 237, 238);
+}
+
+.photo-container p {
+  color: rgb(155, 161, 166);
 }
 
 @import "tailwindcss/base";

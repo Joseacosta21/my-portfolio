@@ -10,4 +10,9 @@
   font-family: "Cotham Sans", regular;
   background-color: black;
   color: white;
+
+}
+
+.engineering-container p {
+  color: rgb(155, 161, 166);
 }

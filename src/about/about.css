@@ -5,11 +5,12 @@
   background-color: white;
   color: black;
   flex-direction: column;
-  position: relative;
+  position: sticky;
   display: flex;
   padding: 2rem;
   justify-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .footerLink {
