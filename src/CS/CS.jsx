@@ -22,7 +22,7 @@ const CS = () => {
     projectImg: "src/assets/project-card-photos/CS/JoeCool.png",
     projectTitle: "Portfolio",
     projectDescription: "You are looking at it right now :)",
-    projectTags: ["React", "JSX", "CSS"],
+    projectTags: ["React", "JSX", "CSS", "TW"],
     projectGitHub: "https://github.com/Joseacosta21/my-portfolio",
     projectLink: "joseacostaaldrete.com",
   };
