@@ -15,7 +15,7 @@ const Music = () => {
     projectLink: "youtube.com/video-link",
   };
   const TimeoutMarket = {
-    projectImg: "public/assets/project-card-photos/music/Timeout.jpg",
+    projectImg: "/assets/project-card-photos/music/Timeout.jpg",
     projectTitle: "Timeout Market",
     projectDescription: "Timeout Market Bar, Montreal",
     projectTags: "",
@@ -23,7 +23,7 @@ const Music = () => {
     projectLink: "youtube.com/video-link",
   };
   const FanaBox = {
-    projectImg: "public/assets/project-card-photos/music/FanaBox.JPG",
+    projectImg: "/assets/project-card-photos/music/FanaBox.JPG",
     projectTitle: "FanaBox GP",
     projectDescription: "F1 store, Montreal GP weekend",
     projectTags: "",
@@ -57,15 +57,15 @@ const Music = () => {
                 <h3>Software Skills</h3>
                 <ul>
                   <li>
-                    <img src="src/assets/svgs/Logicpro-icon.png" />
+                    <img src="/assets/svgs/Logicpro-icon.png" />
                     <p>Logic Pro X</p>
                   </li>
                   <li>
-                    <img src="src/assets/svgs/3bqjml6owsw91.png" />
+                    <img src="/assets/svgs/3bqjml6owsw91.png" />
                     <p>Rekordbox</p>
                   </li>
                   <li>
-                    <img src="src/assets/svgs/f6392752316625.5608d9436a75b.jpg" />
+                    <img src="/assets/svgs/f6392752316625.5608d9436a75b.jpg" />
                     <p>Serato</p>
                   </li>
                 </ul>

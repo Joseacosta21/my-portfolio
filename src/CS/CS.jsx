@@ -9,7 +9,7 @@ import { useRef } from "react";
 const CS = () => {
   // Project cards
   const casinoStic = {
-    projectImg: "public/assets/project-card-photos/CS/Casino_Stic.png",
+    projectImg: "/assets/project-card-photos/CS/Casino_Stic.png",
     projectTitle: "Casino STIC",
     projectDescription: "A landing webpage for a sports & events venues.",
     projectTags: ["HTML", "CSS", "JS"],
@@ -19,7 +19,7 @@ const CS = () => {
   };
 
   const portfolioPage = {
-    projectImg: "public/assets/project-card-photos/CS/JoeCool.png",
+    projectImg: "/assets/project-card-photos/CS/JoeCool.png",
     projectTitle: "Portfolio",
     projectDescription: "You are looking at it right now :)",
     projectTags: ["React", "JSX", "CSS", "TW"],
@@ -27,7 +27,7 @@ const CS = () => {
     projectLink: "joseacostaaldrete.com",
   };
   const aWheelieGoodTime = {
-    projectImg: "public/assets/project-card-photos/CS/AWheelieGoodTime.jpg",
+    projectImg: "/assets/project-card-photos/CS/AWheelieGoodTime.jpg",
     projectTitle: " Podcast webpage",
     projectDescription: [
       <FontAwesomeIcon icon={faSpinner} spinPulse />,
@@ -102,31 +102,31 @@ const CS = () => {
                   <p>Languages</p>
                   <ul>
                     <li>
-                      <img src="src/assets/svgs/cpp-svgrepo-com.svg" />
+                      <img src="/assets/svgs/cpp-svgrepo-com.svg" />
                       <p>C++</p>
                     </li>
                     <li>
-                      <img src="src/assets/svgs/python-svgrepo-com.svg" />
+                      <img src="/assets/svgs/python-svgrepo-com.svg" />
                       <p>Python</p>
                     </li>
                     <li>
-                      <img src="src/assets/svgs/C_Programming_Language.svg" />
+                      <img src="/assets/svgs/C_Programming_Language.svg" />
                       <p>C</p>
                     </li>
                     <li>
-                      <img src="src/assets/svgs/js-svgrepo-com.svg" />
+                      <img src="/assets/svgs/js-svgrepo-com.svg" />
                       <p>JS</p>
                     </li>
                     <li>
-                      <img src="src/assets/svgs/html-5-svgrepo-com.svg" />
+                      <img src="/assets/svgs/html-5-svgrepo-com.svg" />
                       <p>HTML</p>
                     </li>
                     <li className="flex">
-                      <img src="src/assets/svgs/css-3-svgrepo-com.svg" />
+                      <img src="/assets/svgs/css-3-svgrepo-com.svg" />
                       <p>CSS</p>
                     </li>
                     <li className="flex">
-                      <img src="src/assets/svgs/arduino-svgrepo-com.svg" />
+                      <img src="/assets/svgs/arduino-svgrepo-com.svg" />
                       <p>Arduino</p>
                     </li>
                   </ul>
@@ -135,15 +135,15 @@ const CS = () => {
                   <p>Frameworks</p>
                   <ul>
                     <li>
-                      <img src="src/assets/svgs/react-svgrepo-com.svg" />
+                      <img src="/assets/svgs/react-svgrepo-com.svg" />
                       <p>ReactJS</p>
                     </li>
                     <li>
-                      <img src="src/assets/svgs/vite-svgrepo-com.svg" />
+                      <img src="/assets/svgs/vite-svgrepo-com.svg" />
                       <p>Vite</p>
                     </li>
                     <li>
-                      <img src="src/assets/svgs/tailwind-svgrepo-com.svg" />
+                      <img src="/assets/svgs/tailwind-svgrepo-com.svg" />
                       <p>TailwindCSS</p>
                     </li>
                   </ul>
@@ -151,11 +151,11 @@ const CS = () => {
                   <p>Tools</p>
                   <ul>
                     <li>
-                      <img src="src/assets/svgs/git-svgrepo-com.svg" />
+                      <img src="/assets/svgs/git-svgrepo-com.svg" />
                       <p>Git</p>
                     </li>
                     <li>
-                      <img src="src/assets/svgs/github-142-svgrepo-com.svg" />
+                      <img src="/assets/svgs/github-142-svgrepo-com.svg" />
                       <p>GitHub</p>
                     </li>
                   </ul>

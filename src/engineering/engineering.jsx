@@ -7,8 +7,7 @@ import { useRef } from "react";
 const Engineering = () => {
   // Project Cards
   const pillDispenser = {
-    projectImg:
-      "public/assets/project-card-photos/engineering/PillDispenser.png",
+    projectImg: "/assets/project-card-photos/engineering/PillDispenser.png",
     projectTitle: "Automatic pill dispenser",
     projectDescription: "3D-printed pill dispenser",
     projectTags: ["Arduino", "Solidworks", "Prusa Splicer"],
