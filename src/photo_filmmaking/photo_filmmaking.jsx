@@ -83,35 +83,32 @@ const PhotoFilmmaking = () => {
 
   return (
     <>
-      <div
-        className="photo-container topic relative h-[300vh]"
-        id="photoFilmmaking"
-        ref={targetRef}
-      >
-        <section className="sticky top-0 flex h-screen items-center overflow-hidden  pt-12">
-          <motion.div style={{ x }} className="flex gap-1">
-            <div class="text-center">
-              <h1 className="title">Visual Media</h1>
-              <br />
-              <p>Me, my camera & my drone.</p>
-              <br />
-              <p>Commissioned work & collaborations:</p>
-              <br />
-            </div>
-            <ProjectsCard {...steelRack} />
-            <ProjectsCard {...hoodClub} />
-            <ProjectsCard {...djDuck} />
-            <ProjectsCard {...solenDance} />
-            <ProjectsCard {...santaUrsula} />
-            <ProjectsCard {...stingers} />
-            <ProjectsCard {...laso} />
-          </motion.div>
-          <br />
-          <p>Personal photography page: </p>
-          <div id="insta-embed-container">
-            <FeedEmbed />
-          </div>
-        </section>
+      <div className="photo-container topic" id="photoFilmmaking">
+        <div ref={targetRef} className="relative h-[300vh]">
+          <section className="sticky top-0 flex h-screen items-center overflow-hidden  pt-12">
+            <motion.div style={{ x }} className="flex gap-1">
+              <div class="text-center">
+                <h1 className="title">Visual Media</h1>
+                <br />
+                <p>Me, my camera & my drone.</p>
+                <br />
+                <p>Commissioned work & collaborations:</p>
+                <br />
+              </div>
+              <ProjectsCard {...steelRack} />
+              <ProjectsCard {...hoodClub} />
+              <ProjectsCard {...djDuck} />
+              <ProjectsCard {...solenDance} />
+              <ProjectsCard {...santaUrsula} />
+              <ProjectsCard {...stingers} />
+              <ProjectsCard {...laso} />
+            </motion.div>
+          </section>
+        </div>
+        <p className="text-center">Personal photography page: </p>
+        <div id="insta-embed-container">
+          <FeedEmbed />
+        </div>
       </div>
     </>
   );

@@ -7,7 +7,7 @@ import { useRef } from "react";
 const Design = () => {
   // Project Cards
   const theMeatSweats = {
-    projectImg: "public/assets/project-card-photos/design/The Meat Sweats.jpg",
+    projectImg: "/assets/project-card-photos/design/The Meat Sweats.jpg",
     projectTitle: "The Meat sweats",
     projectDescription: "They really are a thing.",
     projectTags: ["Gimp"],
@@ -16,8 +16,7 @@ const Design = () => {
     fitType: "contain",
   };
   const academicWeapon = {
-    projectImg:
-      "public/assets/project-card-photos/design/Academic Weapon 1.1.jpg",
+    projectImg: "/assets/project-card-photos/design/Academic Weapon 1.1.jpg",
     projectTitle: "Absolute Academic Weapon",
     projectDescription: "Absolute. Academic. Weapon. ",
     projectTags: ["Gimp"],
@@ -27,7 +26,7 @@ const Design = () => {
     fitType: "contain",
   };
   const artekPatch = {
-    projectImg: "public/assets/project-card-photos/design/Artek Patch V2.0.png",
+    projectImg: "/assets/project-card-photos/design/Artek Patch V2.0.png",
     projectTitle: "Artek Patch",
     projectDescription: "Artek summer camp style patch/sticker design",
     projectTags: ["Gimp"],
@@ -36,8 +35,7 @@ const Design = () => {
     fitType: "contain",
   };
   const badIdeasGoodTimes = {
-    projectImg:
-      "public/assets/project-card-photos/design/BadIdeasGoodTimes.jpg",
+    projectImg: "/assets/project-card-photos/design/BadIdeasGoodTimes.jpg",
     projectTitle: "Bad Ideas, Good Times",
     projectDescription: "Right?",
     projectTags: ["Gimp"],
@@ -46,7 +44,7 @@ const Design = () => {
     fitType: "contain",
   };
   const peanutsJoe = {
-    projectImg: "public/assets/project-card-photos/design/PeanutsJoe.jpg",
+    projectImg: "/assets/project-card-photos/design/PeanutsJoe.jpg",
     projectTitle: "Peanuts Self-portrait",
     projectDescription: "",
     projectTags: ["Procreate"],
@@ -54,7 +52,7 @@ const Design = () => {
     projectLink: "src/assets/project-card-photos/design/PeanutsJoe.jpg",
   };
   const phoneStand = {
-    projectImg: "public/assets/project-card-photos/design/PhoneStand.jpg",
+    projectImg: "/assets/project-card-photos/design/PhoneStand.jpg",
     projectTitle: "Phone Stand",
     projectDescription: "Industrial design sketch for phone stand",
     projectTags: ["Procreate"],
