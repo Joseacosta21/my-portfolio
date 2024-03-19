@@ -35,7 +35,7 @@ const Engineering = () => {
             <h1 className="title text-center">Engineering</h1>
             <br />
             <p>
-              I am a B.Eng. Mechanical Engineering Co-OpStudent in at Concordia
+              I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
               University.
             </p>
             <br />
