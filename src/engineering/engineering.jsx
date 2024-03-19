@@ -13,7 +13,7 @@ const Engineering = () => {
     projectTags: ["Arduino", "Solidworks", "Prusa Splicer"],
     projectGitHub: "https://github.com/Joseacosta21/casinoStic",
     projectLink:
-      "https://drive.google.com/file/d/1mN-1Lkkowt1bzpOdLWnpcD-pWPsil-iG/view?usp=sharing",
+      "public/assets/project-card-photos/engineering/PillDispenser.png",
   };
 
   // Scrolling Goober

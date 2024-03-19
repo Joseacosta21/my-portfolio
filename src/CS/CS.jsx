@@ -9,7 +9,8 @@ import { useRef } from "react";
 const CS = () => {
   // Project cards
   const casinoStic = {
-    projectImg: "src/assets/project-card-photos/CS/Casino_Stic.png",
+    projectImg:
+      "/Users/joseacosta/my-portfolio/public/assets/project-card-photos/CS/Casino_Stic.png",
     projectTitle: "Casino STIC",
     projectDescription: "A landing webpage for a sports & events venues.",
     projectTags: ["HTML", "CSS", "JS"],
@@ -19,7 +20,7 @@ const CS = () => {
   };
 
   const portfolioPage = {
-    projectImg: "src/assets/project-card-photos/CS/JoeCool.png",
+    projectImg: "public/assets/project-card-photos/CS/JoeCool.png",
     projectTitle: "Portfolio",
     projectDescription: "You are looking at it right now :)",
     projectTags: ["React", "JSX", "CSS", "TW"],
@@ -27,7 +28,7 @@ const CS = () => {
     projectLink: "joseacostaaldrete.com",
   };
   const aWheelieGoodTime = {
-    projectImg: "src/assets/project-card-photos/CS/DebugDuck.png",
+    projectImg: "public/assets/project-card-photos/CS/AWheelieGoodTime.jpg",
     projectTitle: " Podcast webpage",
     projectDescription: [
       <FontAwesomeIcon icon={faSpinner} spinPulse />,
