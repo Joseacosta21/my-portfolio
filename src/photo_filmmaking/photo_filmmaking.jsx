@@ -18,10 +18,11 @@ const PhotoFilmmaking = () => {
     projectTags: ["2022"],
     projectGitHub: "",
     projectLink:
-      "https://drive.google.com/drive/folders/1t7q7h6590RVRFubmaYB3fK5dsQ7JVkNt?usp=sharing",
+      "public/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
   };
   const hoodClub = {
-    projectImg: "src/assets/project-card-photos/photo-filmmaking/HoodClub.jpg",
+    projectImg:
+      "public/assets/project-card-photos/photo-filmmaking/HoodClub.jpg",
     projectTitle: "Hoodclub",
     projectDescription: "Product photography for local clothing brand",
     projectTags: ["2022"],
@@ -30,7 +31,8 @@ const PhotoFilmmaking = () => {
       "https://drive.google.com/drive/folders/1GJ69SSPT035CO531c5k5eZJV5dbEQq7g?usp=share_link",
   };
   const djDuck = {
-    projectImg: "src/assets/project-card-photos/photo-filmmaking/DJ_Duck.jpg",
+    projectImg:
+      "public/assets/project-card-photos/photo-filmmaking/DJ_Duck.jpg",
     projectTitle: "DJ Duck",
     projectDescription: "Photoshoot for weddings and events DJ",
     projectTags: ["2022"],
@@ -40,7 +42,7 @@ const PhotoFilmmaking = () => {
   };
   const solenDance = {
     projectImg:
-      "src/assets/project-card-photos/photo-filmmaking/SolenDance.jpg",
+      "public/assets/project-card-photos/photo-filmmaking/SolenDance.jpg",
     projectTitle: "Solen Dance",
     projectDescription: "Dancer photoshoot in downtown Montreal",
     projectTags: ["2023"],
@@ -48,7 +50,7 @@ const PhotoFilmmaking = () => {
     projectLink: "TODO.com",
   };
   const santaUrsula = {
-    projectImg: "src/assets/project-card-photos/photo-filmmaking/tvCamp.JPG",
+    projectImg: "public/assets/project-card-photos/photo-filmmaking/tvCamp.JPG",
     projectTitle: "Camp Santa Ursula",
     projectDescription:
       "Videographer/TV Camp for best-rated camp in Mexico; nominated for best staff member",
@@ -58,7 +60,8 @@ const PhotoFilmmaking = () => {
       "https://drive.google.com/file/d/1AB1I1DSlFzxNEnzy1I6j-w7zHPGkuCuY/view?usp=sharing",
   };
   const stingers = {
-    projectImg: "src/assets/project-card-photos/photo-filmmaking/Stingers.jpg",
+    projectImg:
+      "public/assets/project-card-photos/photo-filmmaking/Stingers.jpg",
     projectTitle: "The Concordian",
     projectDescription:
       "Photography contribution to The Concordian, university newspaper",

@@ -15,7 +15,7 @@ const Music = () => {
     projectLink: "youtube.com/video-link",
   };
   const TimeoutMarket = {
-    projectImg: "src/assets/project-card-photos/music/Timeout.jpg",
+    projectImg: "public/assets/project-card-photos/music/Timeout.jpg",
     projectTitle: "Timeout Market",
     projectDescription: "Timeout Market Bar, Montreal",
     projectTags: "",
@@ -23,7 +23,7 @@ const Music = () => {
     projectLink: "youtube.com/video-link",
   };
   const FanaBox = {
-    projectImg: "src/assets/project-card-photos/music/FanaBox.JPG",
+    projectImg: "public/assets/project-card-photos/music/FanaBox.JPG",
     projectTitle: "FanaBox GP",
     projectDescription: "F1 store, Montreal GP weekend",
     projectTags: "",
