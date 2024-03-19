@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("public/assets/project-card-photos/background/TheGreatWaveBlur.jpg");
+  background-image: url("/assets/project-card-photos/background/TheGreatWaveBlur.jpg");
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: top; /* Align the top of the image with the top of the container */
 }
