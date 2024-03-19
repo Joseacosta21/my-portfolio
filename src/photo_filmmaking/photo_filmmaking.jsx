@@ -2,7 +2,6 @@ import React from "react";
 import "./photo_filmmaking.css";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
-import Carousel from "../carrousel/carrousel";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 
@@ -12,7 +11,8 @@ import { useRef } from "react";
 
 const PhotoFilmmaking = () => {
   const steelRack = {
-    projectImg: "src/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
+    projectImg:
+      "public/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
     projectTitle: "Steelrack",
     projectDescription: "Product photography for minimalist steel bike racks",
     projectTags: ["2022"],
