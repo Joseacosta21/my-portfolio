@@ -42,7 +42,7 @@ const Music = () => {
   return (
     <>
       <div
-        className="music-container topic relative h-[200vh] px-0"
+        className="music-container topic relative h-[200vh] px-0 flex-col"
         id="music"
         ref={targetRef}
       >
