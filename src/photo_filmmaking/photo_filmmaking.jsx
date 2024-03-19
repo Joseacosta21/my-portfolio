@@ -11,8 +11,7 @@ import { useRef } from "react";
 
 const PhotoFilmmaking = () => {
   const steelRack = {
-    projectImg:
-      "public/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
+    projectImg: "/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
     projectTitle: "Steelrack",
     projectDescription: "Product photography for minimalist steel bike racks",
     projectTags: ["2022"],
@@ -21,8 +20,7 @@ const PhotoFilmmaking = () => {
       "public/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
   };
   const hoodClub = {
-    projectImg:
-      "public/assets/project-card-photos/photo-filmmaking/HoodClub.jpg",
+    projectImg: "/assets/project-card-photos/photo-filmmaking/HoodClub.jpg",
     projectTitle: "Hoodclub",
     projectDescription: "Product photography for local clothing brand",
     projectTags: ["2022"],
@@ -31,8 +29,7 @@ const PhotoFilmmaking = () => {
       "https://drive.google.com/drive/folders/1GJ69SSPT035CO531c5k5eZJV5dbEQq7g?usp=share_link",
   };
   const djDuck = {
-    projectImg:
-      "public/assets/project-card-photos/photo-filmmaking/DJ_Duck.jpg",
+    projectImg: "/assets/project-card-photos/photo-filmmaking/DJ_Duck.jpg",
     projectTitle: "DJ Duck",
     projectDescription: "Photoshoot for weddings and events DJ",
     projectTags: ["2022"],
@@ -41,8 +38,7 @@ const PhotoFilmmaking = () => {
       "https://drive.google.com/drive/folders/1HhR8Oz4xhqtS8Bck6Qi2N0xjCnweIH_1?usp=sharing",
   };
   const solenDance = {
-    projectImg:
-      "public/assets/project-card-photos/photo-filmmaking/SolenDance.jpg",
+    projectImg: "/assets/project-card-photos/photo-filmmaking/SolenDance.jpg",
     projectTitle: "Solen Dance",
     projectDescription: "Dancer photoshoot in downtown Montreal",
     projectTags: ["2023"],
@@ -50,7 +46,7 @@ const PhotoFilmmaking = () => {
     projectLink: "TODO.com",
   };
   const santaUrsula = {
-    projectImg: "public/assets/project-card-photos/photo-filmmaking/tvCamp.JPG",
+    projectImg: "/assets/project-card-photos/photo-filmmaking/tvCamp.JPG",
     projectTitle: "Camp Santa Ursula",
     projectDescription:
       "Videographer/TV Camp for best-rated camp in Mexico; nominated for best staff member",
@@ -60,8 +56,7 @@ const PhotoFilmmaking = () => {
       "https://drive.google.com/file/d/1AB1I1DSlFzxNEnzy1I6j-w7zHPGkuCuY/view?usp=sharing",
   };
   const stingers = {
-    projectImg:
-      "public/assets/project-card-photos/photo-filmmaking/Stingers.jpg",
+    projectImg: "/assets/project-card-photos/photo-filmmaking/Stingers.jpg",
     projectTitle: "The Concordian",
     projectDescription:
       "Photography contribution to The Concordian, university newspaper",
@@ -71,7 +66,7 @@ const PhotoFilmmaking = () => {
       "https://theconcordian.com/2023/11/stingers-football-to-face-laval-rouge-et-or-in-rseq-playoff-semi-final/",
   };
   const laso = {
-    projectImg: "src/assets/project-card-photos/photo-filmmaking/LASO.jpg",
+    projectImg: "/assets/project-card-photos/photo-filmmaking/LASO.jpg",
     projectTitle: "LASO",
     projectDescription: "Latin American Student Association, UDEM",
     projectTags: ["2024"],
