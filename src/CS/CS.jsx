@@ -9,8 +9,7 @@ import { useRef } from "react";
 const CS = () => {
   // Project cards
   const casinoStic = {
-    projectImg:
-      "/Users/joseacosta/my-portfolio/public/assets/project-card-photos/CS/Casino_Stic.png",
+    projectImg: "public/assets/project-card-photos/CS/Casino_Stic.png",
     projectTitle: "Casino STIC",
     projectDescription: "A landing webpage for a sports & events venues.",
     projectTags: ["HTML", "CSS", "JS"],

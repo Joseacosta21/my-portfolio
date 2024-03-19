@@ -7,13 +7,14 @@ import { useRef } from "react";
 const Engineering = () => {
   // Project Cards
   const pillDispenser = {
-    projectImg: "src/assets/project-card-photos/engineering/PillDispenser.png",
+    projectImg:
+      "public/assets/project-card-photos/engineering/PillDispenser.png",
     projectTitle: "Automatic pill dispenser",
     projectDescription: "3D-printed pill dispenser",
     projectTags: ["Arduino", "Solidworks", "Prusa Splicer"],
     projectGitHub: "https://github.com/Joseacosta21/casinoStic",
     projectLink:
-      "public/assets/project-card-photos/engineering/PillDispenser.png",
+      "https://drive.google.com/file/d/1mN-1Lkkowt1bzpOdLWnpcD-pWPsil-iG/view?usp=sharing",
   };
 
   // Scrolling Goober
