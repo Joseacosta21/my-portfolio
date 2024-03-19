@@ -83,7 +83,7 @@ const PhotoFilmmaking = () => {
 
   return (
     <>
-      <div className="photo-container topic" id="photoFilmmaking">
+      <div className="photo-container topic flex-col" id="photoFilmmaking">
         <div ref={targetRef} className="relative h-[300vh]">
           <section className="sticky top-0 flex h-screen items-center overflow-hidden  pt-12">
             <motion.div style={{ x }} className="flex gap-1">
