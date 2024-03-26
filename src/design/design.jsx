@@ -61,6 +61,17 @@ const Design = () => {
     fitType: "contain",
   };
 
+  const mockUps = {
+    projectImg: "/assets/project-card-photos/design/MockupApp.jpg",
+    projectTitle: "App UI Design and Mockup",
+    projectDescription:
+      "Complete UI design and mockup for a diabetes managment app; an incomplete app venture.",
+    projectTags: ["Gimp", "Figma"],
+    projectGitHub: "",
+    projectLink:
+      "https://drive.google.com/drive/folders/1r80NNDFtC-O3JftEpoGiGCAL23_7g3Mv?usp=sharing",
+  };
+
   // Scroll goober
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -85,6 +96,7 @@ const Design = () => {
                 for friends, and comissions.
               </p>
             </div>
+            <ProjectsCard {...mockUps} />
             <ProjectsCard {...theMeatSweats} />
             <ProjectsCard {...academicWeapon} />
             <ProjectsCard {...artekPatch} />
