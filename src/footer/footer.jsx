@@ -7,6 +7,7 @@ import {
   faLinkedin,
   faYoutube,
   faInstagram,
+  faSoundcloud,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
@@ -134,6 +135,14 @@ const Footer = () => {
               <li>
                 <a href="https://instagram.com/jacosta_foto" target="_blank">
                   <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://soundcloud.com/jose-acosta-416794409?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={faSoundcloud} />
                 </a>
               </li>
             </ul>
