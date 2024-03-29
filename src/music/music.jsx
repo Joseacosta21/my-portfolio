@@ -6,13 +6,13 @@ import { useRef } from "react";
 
 const Music = () => {
   // Project Cards
-  const TechHouse = {
-    projectImg: "",
-    projectTitle: "Tech House",
-    projectDescription: "Tech house set - Fisher",
+  const JazzHouse = {
+    projectImg: "/assets/project-card-photos/music/JazzHouse.png",
+    projectTitle: "Jazz House DJ Set",
+    projectDescription: "Jazz & Instrumental House DJ Set",
     projectTags: "",
     projectGitHub: "",
-    projectLink: "youtube.com/video-link",
+    projectLink: "https://www.youtube.com/watch?v=-XqFjEXeiYE&t=13s",
   };
   const TimeoutMarket = {
     projectImg: "/assets/project-card-photos/music/Timeout.jpg",
@@ -42,7 +42,7 @@ const Music = () => {
   return (
     <>
       <div
-        className="music-container topic relative h-[200vh] px-0 flex-col"
+        className="music-container topic relative h-[300vh] px-0 flex-col"
         id="music"
         ref={targetRef}
       >
@@ -73,17 +73,11 @@ const Music = () => {
             </div>
           </motion.div>
         </section>
-        {/* YOUTUBE SETS 
-        <br />
-        <h3>Youtube DJ sets</h3>
-        <div className="projects-container">
-          <ProjectsCard {...TechHouse} />
-        </div>
-        */}
         <br />
         <div className="projects-container">
           <ProjectsCard {...TimeoutMarket} />
           <ProjectsCard {...FanaBox} />
+          <ProjectsCard {...JazzHouse} />
         </div>
       </div>
     </>
