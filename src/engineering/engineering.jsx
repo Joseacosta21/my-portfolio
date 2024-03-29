@@ -30,7 +30,7 @@ const Engineering = () => {
         className="engineering-container topic content-center"
         id="engineering"
       >
-        <div className="column-container self-center items-center">
+        <div className="projects-container items-center content-center self-center">
           <div className="text-center mr-4 p-10">
             <h1 className="title text-center">Engineering</h1>
             <br />
