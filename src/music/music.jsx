@@ -78,6 +78,15 @@ const Music = () => {
           <ProjectsCard {...TimeoutMarket} />
           <ProjectsCard {...FanaBox} />
           <ProjectsCard {...JazzHouse} />
+          <div>
+            <iframe
+              src="https://open.spotify.com/embed/playlist/4E4oSQkL1597H572J4LZQb?utm_source=generator"
+              width="100%"
+              height="100%"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
       </div>
     </>

@@ -65,13 +65,14 @@ const PhotoFilmmaking = () => {
     projectLink:
       "https://theconcordian.com/2023/11/stingers-football-to-face-laval-rouge-et-or-in-rseq-playoff-semi-final/",
   };
-  const laso = {
-    projectImg: "/assets/project-card-photos/photo-filmmaking/LASO.jpg",
-    projectTitle: "LASO",
-    projectDescription: "Latin American Student Association, UDEM",
+  const AELAUM = {
+    projectImg: "/assets/project-card-photos/photo-filmmaking/AELAUM.jpg",
+    projectTitle: "AELAUM",
+    projectDescription: "Latin American Student Association, UdeM",
     projectTags: ["2024"],
     projectGitHub: "",
-    projectLink: "TODO.com",
+    projectLink:
+      "https://drive.google.com/drive/folders/1HgYvzYjaSXZnzCpBdbv_JYfwUDMb2BN7?usp=share_link",
   };
 
   const targetRef = useRef(null);
@@ -101,7 +102,7 @@ const PhotoFilmmaking = () => {
               <ProjectsCard {...solenDance} />
               <ProjectsCard {...santaUrsula} />
               <ProjectsCard {...stingers} />
-              <ProjectsCard {...laso} />
+              <ProjectsCard {...AELAUM} />
             </motion.div>
           </section>
         </div>
