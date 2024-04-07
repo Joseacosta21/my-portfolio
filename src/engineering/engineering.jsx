@@ -11,7 +11,7 @@ const Engineering = () => {
     projectTitle: "Automatic pill dispenser",
     projectDescription: "3D-printed pill dispenser",
     projectTags: ["Arduino", "Solidworks", "Prusa Splicer"],
-    projectGitHub: "https://github.com/Joseacosta21/casinoStic",
+    projectGitHub: "https://github.com/Joseacosta21/PillDispenser",
     projectLink:
       "https://drive.google.com/file/d/1mN-1Lkkowt1bzpOdLWnpcD-pWPsil-iG/view?usp=sharing",
   };
