@@ -16,6 +16,17 @@ const Engineering = () => {
       "https://drive.google.com/file/d/1mN-1Lkkowt1bzpOdLWnpcD-pWPsil-iG/view?usp=sharing",
   };
 
+  const PrintedLens = {
+    projectImg: "/assets/project-card-photos/engineering/PrintedLens.png",
+    projectTitle: "3D-printed lens adapter",
+    projectDescription:
+      "3D-printed disposable camera lens to sony e-mount adapter ",
+    projectTags: ["Solidworks", "Prusa Splicer"],
+    projectGitHub: "",
+    projectLink:
+      "https://drive.google.com/file/d/1mN-1Lkkowt1bzpOdLWnpcD-pWPsil-iG/view?usp=sharing",
+  };
+
   // Scrolling Goober
   //const targetRef = useRef(null);
   //const { scrollYProgress } = useScroll({
@@ -44,6 +55,7 @@ const Engineering = () => {
             <p>Some of my engineering curriculum:</p>
           </div>
           <ProjectsCard {...pillDispenser} />
+          <ProjectsCard {...PrintedLens} />
         </div>
       </div>
     </>
