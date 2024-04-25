@@ -93,7 +93,7 @@ const Footer = () => {
             <ul className="footerLink no-list">
               <li>
                 <a
-                  href="src/assets/files/Jose Acosta Aldrete.pdf"
+                  href="public/assets/files/Jose Acosta Aldrete.pdf"
                   target="_blank"
                   id="cv-link"
                 >
