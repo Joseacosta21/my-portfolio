@@ -48,8 +48,8 @@ const Footer = () => {
       <div className="footer-container" id="contact">
         <div className="column-container">
           <div className="column">
-            <h2>Contact me!</h2>
-            <p>Enter your info and ill get back to you!</p>
+            <h2>Contact Me!</h2>
+            <p>Enter your info and I'll get back to you</p>
           </div>
         </div>
         <div className="column-container">
@@ -93,7 +93,7 @@ const Footer = () => {
             <ul className="footerLink no-list">
               <li>
                 <a
-                  href="public/assets/files/Jose Acosta Aldrete.pdf"
+                  href="/assets/files/Jose Acosta Aldrete.pdf"
                   target="_blank"
                   id="cv-link"
                 >
