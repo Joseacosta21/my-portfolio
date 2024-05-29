@@ -31,6 +31,25 @@ const Music = () => {
     projectLink: "youtube.com/video-link",
   };
 
+  const AfroHouse = {
+    projectImg: "/assets/project-card-photos/music/AfroHouse.jpg",
+    projectTitle: "Afro House DJ Set",
+    projectDescription: "Afro House DJ Set",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "https://youtu.be/2_-RP0J6uPE?si=RhmgFNM7i8CyA8m5",
+  };
+
+  const EnjoytheSilence = {
+    projectImg: "/assets/project-card-photos/music/EnjoytheSilence.jpg",
+    projectTitle: "Enjoy the Silence - Dirty Hands Mix",
+    projectDescription:
+      "Depeche Mode - Enjoy the Silence (Hands and Feet Mix) Bootleg",
+    projectTags: "",
+    projectGitHub: "",
+    projectLink: "https://youtu.be/Sejj8WNgzwM?si=RQUoer9u-afScBOO",
+  };
+
   // Scrolling Goober
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -78,6 +97,8 @@ const Music = () => {
           <ProjectsCard {...TimeoutMarket} />
           <ProjectsCard {...FanaBox} />
           <ProjectsCard {...JazzHouse} />
+          <ProjectsCard {...AfroHouse} />
+          <ProjectsCard {...EnjoytheSilence} />
           <div>
             <iframe
               src="https://open.spotify.com/embed/playlist/4E4oSQkL1597H572J4LZQb?utm_source=generator"
