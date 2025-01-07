@@ -20,7 +20,7 @@ const Music = () => {
     projectDescription: "Timeout Market Bar, Montreal",
     projectTags: "",
     projectGitHub: "",
-    projectLink: "youtube.com/video-link",
+    projectLink: "",
   };
   const FanaBox = {
     projectImg: "/assets/project-card-photos/music/FanaBox.JPG",
@@ -28,7 +28,7 @@ const Music = () => {
     projectDescription: "F1 store, Montreal GP weekend",
     projectTags: "",
     projectGitHub: "",
-    projectLink: "youtube.com/video-link",
+    projectLink: "",
   };
 
   const AfroHouse = {
