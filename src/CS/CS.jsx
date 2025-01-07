@@ -131,6 +131,7 @@ const CS = () => {
               </div>
             </div>
           </div>
+          {/* Project Cards */}
           <ProjectsCard {...casinoStic} />
           <ProjectsCard {...portfolioPage} />
         </div>

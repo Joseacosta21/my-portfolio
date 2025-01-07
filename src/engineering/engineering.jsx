@@ -52,7 +52,7 @@ const Engineering = () => {
             <br />
             <p>Bit of my engineering stuff:</p>
           </div>
-          {/* Cards*/}
+          {/* Project Cards */}
           <ProjectsCard {...pillDispenser} />
           <ProjectsCard {...PrintedLens} />
           <ProjectsCard {...Research} />
