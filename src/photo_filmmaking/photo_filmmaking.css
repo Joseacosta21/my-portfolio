@@ -6,6 +6,7 @@
   font-family: "Roboto", thins;
   background-color: rgb(21, 23, 24);
   color: white;
+  padding-bottom: 4rem;
 }
 
 .photo-container h1 {
@@ -21,6 +22,5 @@
 }
 
 #insta-embed-container {
-  border-radius: 4rem;
-  margin: 2rem 1rem 2rem 1rem;
+  margin: 2rem 2rem 0rem 2rem;
 }

@@ -14,26 +14,31 @@
 
 /* TODO shadow color*/
 .header-links {
-  box-shadow: 0 0 10px 5px var(--shadow-color);
   margin: 1rem;
   padding: 1rem;
   border-radius: 2rem;
-  background-color: rgba(0, 0, 0, 0.8);
-
-  border: 1px solid grey;
   z-index: 99; /* ??? */
   width: 40rem;
   transition: 0.3s ease;
   display: flex;
   justify-content: space-around;
   white-space: nowrap; /* Prevent text from wrapping */
+
+  /* Mix blend (inverted color) */
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
 }
 
 .link {
   font-size: 0.9rem;
   text-decoration: none;
   font-weight: 600;
-  color: white;
+  color: #333333;
   transition: 0.6s;
   opacity: 0.7;
 }
@@ -46,7 +51,7 @@
   transition: 0.6s;
   opacity: 1;
   color: inherit;
-  color: white;
+  color: black;
 }
 
 @media (max-width: 800px) {

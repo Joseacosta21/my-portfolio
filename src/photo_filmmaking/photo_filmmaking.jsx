@@ -82,6 +82,7 @@ const PhotoFilmmaking = () => {
             <p>Commissioned work & collaborations:</p>
             <br />
           </div>
+          {/* Project Cards */}
           <ProjectsCard {...steelRack} />
           <ProjectsCard {...hoodClub} />
           <ProjectsCard {...djDuck} />
@@ -90,7 +91,7 @@ const PhotoFilmmaking = () => {
           <ProjectsCard {...stingers} />
           <ProjectsCard {...AELAUM} />
         </div>
-
+        {/* IG Embed */}
         <p className="text-center">Personal photography page: </p>
         <div id="insta-embed-container">
           <FeedEmbed />

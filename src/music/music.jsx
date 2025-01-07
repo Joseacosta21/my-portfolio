@@ -72,6 +72,7 @@ const Music = () => {
               </ul>
             </div>
           </div>
+          {/* Project Cards */}
           <ProjectsCard {...TimeoutMarket} />
           <ProjectsCard {...FanaBox} />
           <ProjectsCard {...JazzHouse} />
