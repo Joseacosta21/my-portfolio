@@ -61,6 +61,7 @@ h1 {
   display: flex;
   overflow-x: scroll;
   padding: 2rem 2rem 2rem 0rem;
+  height: 90vh;
 }
 
 .projects-container::-webkit-scrollbar {

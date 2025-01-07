@@ -15,25 +15,14 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-.footerLink {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  justify-content: end;
-}
-
 .footer-container p {
   color: rgb(155, 161, 166);
 }
 
 .footerLink {
   display: flex;
-  padding: 0;
   justify-content: center;
   gap: 2rem;
-}
-
-.footerLink li {
   color: grey;
   font-size: 1.7rem;
 }
@@ -50,13 +39,17 @@
   border: none;
   border-bottom: 1px solid grey; /* Change the color as needed */
   font-size: 16px; /* Adjust the font size as needed */
-  margin-bottom: 20px;
   outline: none; /* Remove the focus outline */
   color: white;
+
+  /* Fix vertical alignment */
+  padding: 5px 0; /* Adds vertical space inside the input */
+  line-height: normal; /* Ensures the line height matches the font size */
+  box-sizing: border-box; /* Ensures padding doesn't affect dimensions */
 }
 
 .custom-input:focus {
-  border-bottom: 1px solid white; /* Change the color as needed */
+  border-bottom: 1px solid white;
 }
 
 .submit {
@@ -65,10 +58,18 @@
   flex: 1;
   background-color: transparent;
   border: 1px solid grey;
-  color: lightgrey;
+  color: grey;
   border-radius: 1rem;
   transition: ease 0.4s;
   font-weight: bold;
+
+  /* Ensure text is centered */
+  line-height: 2rem; /* Matches the height of the input */
+  text-align: center;
+
+  /* Remove default input padding */
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .submit.sent {
