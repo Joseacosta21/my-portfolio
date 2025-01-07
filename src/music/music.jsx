@@ -47,39 +47,36 @@ const Music = () => {
 
   return (
     <>
-      <div className="music-container content-center" id="music">
+      <div className="music-container" id="music">
         <div className="projects-container">
-          {/*Still dont know why this div is needed */}
-          <div className="flex gap-1">
-            {/* Text */}
-            <div className="text-container">
-              <h1 className="title">Music</h1>
-              <p>Matching BPMs and heart rates</p>
-              <br />
-              <div className="skills">
-                <h3>Software Skills</h3>
-                <ul>
-                  <li>
-                    <img src="/assets/svgs/Logicpro-icon.png" />
-                    <p>Logic Pro X</p>
-                  </li>
-                  <li>
-                    <img src="/assets/svgs/3bqjml6owsw91.png" />
-                    <p>Rekordbox</p>
-                  </li>
-                  <li>
-                    <img src="/assets/svgs/f6392752316625.5608d9436a75b.jpg" />
-                    <p>Serato</p>
-                  </li>
-                </ul>
-              </div>
+          {/* Text */}
+          <div className="text-container">
+            <h1 className="title">Music</h1>
+            <p>Matching BPMs and heart rates</p>
+            <br />
+            <div className="skills">
+              <h3>Software Skills</h3>
+              <ul>
+                <li>
+                  <img src="/assets/svgs/Logicpro-icon.png" />
+                  <p>Logic Pro X</p>
+                </li>
+                <li>
+                  <img src="/assets/svgs/3bqjml6owsw91.png" />
+                  <p>Rekordbox</p>
+                </li>
+                <li>
+                  <img src="/assets/svgs/f6392752316625.5608d9436a75b.jpg" />
+                  <p>Serato</p>
+                </li>
+              </ul>
             </div>
-            <ProjectsCard {...TimeoutMarket} />
-            <ProjectsCard {...FanaBox} />
-            <ProjectsCard {...JazzHouse} />
-            <ProjectsCard {...AfroHouse} />
-            <ProjectsCard {...EnjoytheSilence} />
           </div>
+          <ProjectsCard {...TimeoutMarket} />
+          <ProjectsCard {...FanaBox} />
+          <ProjectsCard {...JazzHouse} />
+          <ProjectsCard {...AfroHouse} />
+          <ProjectsCard {...EnjoytheSilence} />
         </div>
       </div>
     </>

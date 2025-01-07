@@ -53,13 +53,16 @@ h1 {
 
 /* TODO */
 .projects-container {
-  position: relative;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.2rem;
+  align-content: center;
+  gap: 4px;
   display: flex;
   overflow-x: scroll;
   padding: 2rem;
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Chrome/Safari */
 }
 
 .text-container {
@@ -68,7 +71,7 @@ h1 {
   padding: 2rem;
   justify-content: center;
   align-content: center;
-  min-width: 30rem;
+  min-width: 50rem;
 }
 
 .skills {

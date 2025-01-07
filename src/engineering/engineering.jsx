@@ -37,27 +37,25 @@ const Engineering = () => {
 
   return (
     <>
-      <div className="engineering-container content-center" id="engineering">
-        <div className="projects-container items-center content-center self-center">
-          <div className="flex gap-1 content-center ">
-            {/* Text */}
-            <div className="text-container">
-              <h1 className="title">Engineering</h1>
-              <br />
-              <p>
-                I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
-                University.
-              </p>
-              <br />
-              <p>The brown puffle from Club Penguin is my spirit animal.</p>
-              <br />
-              <p>Bit of my engineering stuff:</p>
-            </div>
-            {/* Cards*/}
-            <ProjectsCard {...pillDispenser} />
-            <ProjectsCard {...PrintedLens} />
-            <ProjectsCard {...Research} />
+      <div className="engineering-container" id="engineering">
+        <div className="projects-container">
+          {/* Text */}
+          <div className="text-container">
+            <h1 className="title">Engineering</h1>
+            <br />
+            <p>
+              I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
+              University.
+            </p>
+            <br />
+            <p>The brown puffle from Club Penguin is my spirit animal.</p>
+            <br />
+            <p>Bit of my engineering stuff:</p>
           </div>
+          {/* Cards*/}
+          <ProjectsCard {...pillDispenser} />
+          <ProjectsCard {...PrintedLens} />
+          <ProjectsCard {...Research} />
         </div>
       </div>
     </>
