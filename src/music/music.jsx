@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import "./music.css";
 
@@ -12,9 +12,9 @@ const Music = () => {
     projectLink: "https://www.youtube.com/watch?v=-XqFjEXeiYE&t=13s",
   };
   const TimeoutMarket = {
-    projectImg: "/assets/project-card-photos/music/Timeout.jpg",
-    projectTitle: "Timeout Market",
-    projectDescription: "Timeout Market Bar, Montreal",
+    projectImg: "/assets/project-card-photos/music/Timeout.PNG",
+    projectTitle: "TimeOut Market Montreal",
+    projectDescription: "Resident DJ @ TimeOut Market Bar, Montreal",
     projectTags: "",
     projectGitHub: "",
     projectLink: "",
@@ -22,7 +22,7 @@ const Music = () => {
   const FanaBox = {
     projectImg: "/assets/project-card-photos/music/FanaBox.JPG",
     projectTitle: "FanaBox GP",
-    projectDescription: "F1 store, Montreal GP weekend",
+    projectDescription: "DJ @ FanaBox GP F1 Store, 2023 Montreal GP weekend",
     projectTags: "",
     projectGitHub: "",
     projectLink: "",
@@ -30,7 +30,7 @@ const Music = () => {
   const AfroHouse = {
     projectImg: "/assets/project-card-photos/music/AfroHouse.jpg",
     projectTitle: "Afro House DJ Set",
-    projectDescription: "Afro House DJ Set",
+    projectDescription: "Afro House DJ Set from TimeOut Market",
     projectTags: "",
     projectGitHub: "",
     projectLink: "https://youtu.be/2_-RP0J6uPE?si=RhmgFNM7i8CyA8m5",
@@ -44,6 +44,34 @@ const Music = () => {
     projectGitHub: "",
     projectLink: "https://youtu.be/Sejj8WNgzwM?si=RQUoer9u-afScBOO",
   };
+
+  // API key goober
+  const apiKey = import.meta.env.YOUTUBE_API_KEY;
+
+  // Playlist ID
+  const playlistId = "PL-JzMZN0fZdHMxgSf7JJpmp4JSLE2IojS";
+  const [videos, setVideos] = useState([]);
+
+  // Fetch YouTube Playlist videos
+  useEffect(() => {
+    const fetchPlaylistVideos = async () => {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${apiKey}`
+        );
+        const data = await response.json();
+        if (data.items) {
+          setVideos(data.items);
+        } else {
+          console.error("Error fetching playlist data:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching data from YouTube API:", error);
+      }
+    };
+
+    fetchPlaylistVideos();
+  }, [apiKey, playlistId]);
 
   return (
     <>
@@ -72,12 +100,33 @@ const Music = () => {
               </ul>
             </div>
           </div>
+
+          {/* YouTube Videos */}
+          {videos.length > 0 ? (
+            videos.map((video, index) => {
+              const snippet = video.snippet;
+              return (
+                <ProjectsCard
+                  key={index}
+                  projectImg={snippet.thumbnails.high.url}
+                  projectTitle={snippet.title}
+                  projectDescription={""} // No description for now
+                  projectTags={[]} // No tags for now
+                  projectGitHub={""} // Not used, leave blank
+                  projectLink={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}`}
+                />
+              );
+            })
+          ) : (
+            <p>Loading videos...</p>
+          )}
+
           {/* Project Cards */}
           <ProjectsCard {...TimeoutMarket} />
           <ProjectsCard {...FanaBox} />
           <ProjectsCard {...JazzHouse} />
           <ProjectsCard {...AfroHouse} />
-          <ProjectsCard {...EnjoytheSilence} />
+          {/*<ProjectsCard {...EnjoytheSilence} />*/}
         </div>
       </div>
     </>
