@@ -41,6 +41,9 @@ a:hover {
 h1 {
   font-size: 5rem;
   font-weight: bold;
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Ensures compatibility */
+  white-space: normal;
 }
 
 .no-list {
@@ -53,12 +56,11 @@ h1 {
 
 /* TODO */
 .projects-container {
-  justify-content: center;
   align-content: center;
-  gap: 4px;
+  gap: 10px;
   display: flex;
   overflow-x: scroll;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 0rem;
 }
 
 .projects-container::-webkit-scrollbar {
@@ -67,11 +69,10 @@ h1 {
 
 .text-container {
   text-align: center;
-  margin: 2rem;
   padding: 2rem;
   justify-content: center;
   align-content: center;
-  min-width: 50rem;
+  margin: 0rem 4rem;
 }
 
 .skills {
