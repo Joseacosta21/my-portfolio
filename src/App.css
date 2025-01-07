@@ -54,11 +54,50 @@ h1 {
 /* TODO */
 .projects-container {
   position: relative;
-  display: flex;
   justify-content: center;
-  margin: 1rem 0 0 0;
   flex-wrap: wrap;
   gap: 0.2rem;
+  display: flex;
+  overflow-x: scroll;
+  padding: 2rem;
+}
+
+.text-container {
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  align-content: center;
+  min-width: 30rem;
+}
+
+.skills {
+  text-align: left;
+}
+
+.skills li,
+.skills a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(155, 161, 166);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.skills li:hover,
+.skills a:hover {
+  color: white;
+  transition: 0.3s ease;
+}
+
+.skills img {
+  height: 1rem;
+}
+
+.skills p,
+.skills a {
+  font-size: 1rem;
 }
 
 /* TODO */
@@ -78,4 +117,4 @@ h1 {
   }
 }
 
-/* TODO: flex wrap: wrap */ 
+/* TODO: flex wrap: wrap */

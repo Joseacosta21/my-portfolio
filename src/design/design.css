@@ -10,10 +10,6 @@
   font-family: "Junicode";
   background-color: white;
   color: black;
-  display: flex;
-  overflow-x: scroll;
-  padding: 1rem;
-  height: 100vh;
 }
 
 .design-container h1 {
