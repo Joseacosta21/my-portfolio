@@ -2,12 +2,6 @@ import React from "react";
 import "./photo_filmmaking.css";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
-
-// TODO
-
-// Add photography commisioned work
 
 const PhotoFilmmaking = () => {
   const steelRack = {
@@ -75,36 +69,28 @@ const PhotoFilmmaking = () => {
       "https://drive.google.com/drive/folders/1HgYvzYjaSXZnzCpBdbv_JYfwUDMb2BN7?usp=share_link",
   };
 
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
-
   return (
     <>
-      <div className="photo-container topic flex-col" id="photoFilmmaking">
-        <div ref={targetRef} className="relative h-[300vh]">
-          <section className="sticky top-0 flex h-screen items-center overflow-hidden  pt-12">
-            <motion.div style={{ x }} className="flex gap-1">
-              <div class="text-center">
-                <h1 className="title">Visual Media</h1>
-                <br />
-                <p>Me, my camera & my drone.</p>
-                <br />
-                <p>Commissioned work & collaborations:</p>
-                <br />
-              </div>
-              <ProjectsCard {...steelRack} />
-              <ProjectsCard {...hoodClub} />
-              <ProjectsCard {...djDuck} />
-              <ProjectsCard {...solenDance} />
-              <ProjectsCard {...santaUrsula} />
-              <ProjectsCard {...stingers} />
-              <ProjectsCard {...AELAUM} />
-            </motion.div>
-          </section>
+      <div className="photo-container content-center" id="photoFilmmaking">
+        <div className="sliding-container projects-container items-center self-center">
+          <div className="flex gap-1 content-center">
+            {/* Text */}
+            <div class="text-center">
+              <h1 className="title">Visual Media</h1>
+              <br />
+              <p>Me, my camera & my drone.</p>
+              <br />
+              <p>Commissioned work & collaborations:</p>
+              <br />
+            </div>
+            <ProjectsCard {...steelRack} />
+            <ProjectsCard {...hoodClub} />
+            <ProjectsCard {...djDuck} />
+            <ProjectsCard {...solenDance} />
+            <ProjectsCard {...santaUrsula} />
+            <ProjectsCard {...stingers} />
+            <ProjectsCard {...AELAUM} />
+          </div>
         </div>
         <p className="text-center">Personal photography page: </p>
         <div id="insta-embed-container">

@@ -1,10 +1,6 @@
 import React from "react";
 import "./CS.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard.jsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
 
 const CS = () => {
   // Project cards
@@ -26,35 +22,13 @@ const CS = () => {
     projectGitHub: "https://github.com/Joseacosta21/my-portfolio",
     projectLink: "https://joseacostaaldrete.com",
   };
-  const aWheelieGoodTime = {
-    projectImg: "/assets/project-card-photos/CS/AWheelieGoodTime.jpg",
-    projectTitle: " Podcast webpage",
-    projectDescription: [
-      <FontAwesomeIcon icon={faSpinner} spinPulse />,
-      " Working on it!",
-    ],
-    projectTags: ["React", "JSX", "CSS"],
-    projectGitHub: "https://github.com/noahbburns/AWheelyGoodTime",
-    projectLink: "",
-  };
-
-  // Scrolling Goober
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
 
   return (
     <>
-      <div
-        className="cs-container topic relative h-[300vh]"
-        id="cs"
-        ref={targetRef}
-      >
-        <section className="sticky top-0 flex h-screen items-center overflow-hidden  pt-12">
-          <motion.div style={{ x }} className="flex gap-1">
+      <div className="cs-container topic content-center" id="cs">
+        <div className="projects-container items-center content-center flex gap-1 self-center">
+          <div className="flex gap-1 content-center ">
+            {/* Text */}
             <div class="text-center">
               <h1
                 style={{
@@ -162,12 +136,10 @@ const CS = () => {
                 </div>
               </div>
             </div>
-
             <ProjectsCard {...casinoStic} />
             <ProjectsCard {...portfolioPage} />
-            <ProjectsCard {...aWheelieGoodTime} />
-          </motion.div>
-        </section>
+          </div>
+        </div>
       </div>
     </>
   );

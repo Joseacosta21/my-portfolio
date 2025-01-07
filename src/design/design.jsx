@@ -1,8 +1,6 @@
 import React from "react";
 import "./design.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
 
 const Design = () => {
   // Project Cards
@@ -72,23 +70,12 @@ const Design = () => {
       "https://drive.google.com/drive/folders/1r80NNDFtC-O3JftEpoGiGCAL23_7g3Mv?usp=sharing",
   };
 
-  // Scroll goober
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-60%"]);
-
   return (
     <>
-      <div
-        className="design-container topic relative h-[300vh]"
-        id="design"
-        ref={targetRef}
-      >
-        <section className="sticky top-0 flex h-screen items-center overflow-hidden pt-12">
-          <motion.div style={{ x }} className="flex gap-1">
+      <div className="design-container topic content-center" id="design">
+        <div className="projects-container items-center flex content-center gap-1">
+          <div className="flex gap-1 content-center">
+            {/* Text */}
             <div class="text-center self-center mb-[117px]">
               <h1>Design</h1>
               <p>
@@ -96,6 +83,7 @@ const Design = () => {
                 for friends, and comissions.
               </p>
             </div>
+            {/* Project Cards */}
             <ProjectsCard {...mockUps} />
             <ProjectsCard {...theMeatSweats} />
             <ProjectsCard {...academicWeapon} />
@@ -103,8 +91,8 @@ const Design = () => {
             <ProjectsCard {...badIdeasGoodTimes} />
             <ProjectsCard {...peanutsJoe} />
             <ProjectsCard {...phoneStand} />
-          </motion.div>
-        </section>
+          </div>
+        </div>
       </div>
     </>
   );

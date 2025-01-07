@@ -6,8 +6,8 @@ import CS from "../CS/CS";
 import Music from "../music/music";
 import PhotoFilmmaking from "../photo_filmmaking/photo_filmmaking";
 import Footer from "../footer/footer";
-import "./layout.css";
 import Design from "../design/design";
+import "./layout.css";
 
 const Layout = () => {
   return (

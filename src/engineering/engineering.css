@@ -10,9 +10,12 @@
   font-family: "Cotham Sans", regular;
   background-color: black;
   color: white;
-  min-height: 100vh;
+  height: 100vh;
   align-items: center;
   align-content: center;
+  display: flex;
+  overflow-x: scroll;
+  padding: 1rem;
 }
 
 .engineering-container p {
