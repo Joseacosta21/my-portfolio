@@ -4,8 +4,9 @@
 
 .card-container {
   justify-content: center;
-  align-items: center;
   width: 30rem;
+  flex-shrink: 0;
+  align-content: center;
 }
 
 .card-link {

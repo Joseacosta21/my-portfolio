@@ -1,4 +1,5 @@
 .footer-container {
+  
   width: 100%;
   margin: 0 auto;
   background-color: black;
@@ -12,6 +13,7 @@
   align-items: center;
   flex-direction: column;
   font-weight: 300;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .footerLink {
@@ -105,4 +107,24 @@
   .submit {
     height: 2rem;
   }
+}
+
+.tiles {
+  width: 100%;
+  height: 60px; /* Replace with your image's height */
+  background-image: url("public/assets/photos/tile.webp");
+  background-repeat: repeat-x;
+  background-size: auto 100%; /* Fit the image height to the div height */
+  background-position: bottom;
+}
+
+.column-container {
+  display: flex;
+  width: 100%; /* Take up full available width */
+  justify-content: center;
+}
+
+.column {
+  flex: 1; /* Equal division of space among columns */
+  padding: 1rem; /* Adjust padding as needed */
 }
