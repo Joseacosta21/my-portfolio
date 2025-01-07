@@ -17,7 +17,7 @@ const PhotoFilmmaking = () => {
     projectTags: ["2022"],
     projectGitHub: "",
     projectLink:
-      "public/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
+      "https://drive.google.com/drive/folders/1t7q7h6590RVRFubmaYB3fK5dsQ7JVkNt?usp=sharing",
   };
   const hoodClub = {
     projectImg: "/assets/project-card-photos/photo-filmmaking/HoodClub.jpg",
