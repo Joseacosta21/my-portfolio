@@ -27,10 +27,6 @@ link:hover {
   cursor: pointer;
 }
 
-.layout-container {
-  width: 100%;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -42,31 +38,20 @@ a:hover {
   text-decoration: underline;
 }
 
-.column-container {
-  display: flex;
-  width: 100%; /* Take up full available width */
-  justify-content: center;
-}
-
-.column {
-  flex: 1; /* Equal division of space among columns */
-  padding: 1rem; /* Adjust padding as needed */
-}
-
 h1 {
   font-size: 5rem;
   font-weight: bold;
-}
-
-.spinner {
-  height: 1rem;
-  color: white;
 }
 
 .no-list {
   list-style: none;
 }
 
+.title {
+  font-size: 7rem;
+}
+
+/* TODO */
 .projects-container {
   position: relative;
   display: flex;
@@ -76,22 +61,7 @@ h1 {
   gap: 0.2rem;
 }
 
-.projects-container > * {
-  margin-bottom: 2rem;
-}
-
-.title {
-  font-size: 7rem;
-}
-
-.topic {
-  margin: 0 auto;
-  display: flex;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-}
-
+/* TODO */
 /* Screen width */
 @media (max-width: 800px) {
   .projects-container {
@@ -108,4 +78,4 @@ h1 {
   }
 }
 
-/* TODO: flex wrap: wrap */
+/* TODO: flex wrap: wrap */ 

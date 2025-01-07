@@ -1,8 +1,6 @@
 import React from "react";
 import "./engineering.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
 
 const Engineering = () => {
   // Project Cards
@@ -24,11 +22,11 @@ const Engineering = () => {
     projectTags: ["Solidworks", "Prusa Splicer"],
     projectGitHub: "",
     projectLink:
-      "https://drive.google.com/file/d/1mN-1Lkkowt1bzpOdLWnpcD-pWPsil-iG/view?usp=sharing",
+      "https://drive.google.com/file/d/1U0mmlxIJHtH1CsK2waZbugGHMHBkNu3O/view?usp=sharing",
   };
 
   const Research = {
-    projectImg: "/assets/project-card-photos/engineering/PillDispenser.png",
+    projectImg: "public/assets/project-card-photos/engineering/Rheology.png",
     projectTitle: "Research Assistant Project",
     projectDescription:
       "Investigating Constitutive Equations for Low-Viscosity Polymer Solutions Rheology",
@@ -37,14 +35,6 @@ const Engineering = () => {
     projectLink: "",
   };
 
-  // Scrolling Goober
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-30%"]);
-
   return (
     <>
       <div
@@ -52,26 +42,25 @@ const Engineering = () => {
         id="engineering"
       >
         <div className="projects-container items-center content-center self-center">
-          <div ref={targetRef} className="relative h-[300vh]">
-            <section className="sticky top-0 flex h-screen items-center overflow-hidden  pt-12">
-              <motion.div style={{ x }} className="flex gap-1">
-                <div className="text-center mr-4 p-10">
-                  <h1 className="title text-center">Engineering</h1>
-                  <br />
-                  <p>
-                    I am a B.Eng. Mechanical Engineering Co-Op Student at
-                    Concordia University.
-                  </p>
-                  <br />
-                  <p>The brown puffle from Club Penguin is my spirit animal.</p>
-                  <br />
-                  <p>Bit of my engineering stuff:</p>
-                </div>
-                <ProjectsCard {...pillDispenser} />
-                <ProjectsCard {...PrintedLens} />
-                <ProjectsCard {...Research} />
-              </motion.div>
-            </section>
+          <div className="flex gap-1 content-center ">
+            {/* Text */}
+            <div className="text-center mr-4 p-10 content-center">
+              {" "}
+              <h1 className="title text-center">Engineering</h1>
+              <br />
+              <p>
+                I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
+                University.
+              </p>
+              <br />
+              <p>The brown puffle from Club Penguin is my spirit animal.</p>
+              <br />
+              <p>Bit of my engineering stuff:</p>
+            </div>
+            {/* Cards*/}
+            <ProjectsCard {...pillDispenser} />
+            <ProjectsCard {...PrintedLens} />
+            <ProjectsCard {...Research} />
           </div>
         </div>
       </div>

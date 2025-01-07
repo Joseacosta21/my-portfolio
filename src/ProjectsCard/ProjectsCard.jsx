@@ -17,7 +17,7 @@ const ProjectsCard = ({
   fitType,
 }) => {
   return (
-    <div className="card-container group overflow-hidden">
+    <div className="card-container">
       <a href={projectLink} target="_blank" rel="noopener noreferrer">
         <div className="img-container">
           <img
