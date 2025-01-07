@@ -1,7 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .photo-container {
   font-family: "Roboto", thins;
   background-color: rgb(21, 23, 24);
   color: white;
+  padding-bottom: 4rem;
 }
 
 .photo-container h1 {
@@ -12,15 +17,10 @@
   color: rgb(155, 161, 166);
 }
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
 #insta-embed {
   width: 100%;
 }
 
 #insta-embed-container {
-  border-radius: 4rem;
-  margin: 2rem 1rem 2rem 1rem;
+  margin: 2rem 2rem 0rem 2rem;
 }
