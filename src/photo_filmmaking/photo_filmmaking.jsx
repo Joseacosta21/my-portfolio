@@ -71,28 +71,26 @@ const PhotoFilmmaking = () => {
 
   return (
     <>
-      <div className="photo-container content-center" id="photoFilmmaking">
+      <div className="photo-container" id="photoFilmmaking">
         <div className="projects-container">
-          {/* What? */}
-          <div className="flex gap-1 content-center">
-            {/* Text */}
-            <div class="text-container">
-              <h1 className="title">Visual Media</h1>
-              <br />
-              <p>Me, my camera & my drone.</p>
-              <br />
-              <p>Commissioned work & collaborations:</p>
-              <br />
-            </div>
-            <ProjectsCard {...steelRack} />
-            <ProjectsCard {...hoodClub} />
-            <ProjectsCard {...djDuck} />
-            <ProjectsCard {...solenDance} />
-            <ProjectsCard {...santaUrsula} />
-            <ProjectsCard {...stingers} />
-            <ProjectsCard {...AELAUM} />
+          {/* Text */}
+          <div class="text-container">
+            <h1 className="title">Visual Media</h1>
+            <br />
+            <p>Me, my camera & my drone.</p>
+            <br />
+            <p>Commissioned work & collaborations:</p>
+            <br />
           </div>
+          <ProjectsCard {...steelRack} />
+          <ProjectsCard {...hoodClub} />
+          <ProjectsCard {...djDuck} />
+          <ProjectsCard {...solenDance} />
+          <ProjectsCard {...santaUrsula} />
+          <ProjectsCard {...stingers} />
+          <ProjectsCard {...AELAUM} />
         </div>
+
         <p className="text-center">Personal photography page: </p>
         <div id="insta-embed-container">
           <FeedEmbed />

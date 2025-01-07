@@ -73,25 +73,23 @@ const Design = () => {
   return (
     <>
       <div className="design-container" id="design">
-        <div className="projects-container items-center flex content-center gap-1">
-          <div className="flex gap-1 content-center">
-            {/* Text */}
-            <div class="text-container">
-              <h1>Design</h1>
-              <p>
-                Several designs ive made with Gimp and Procreate for fun, gifts
-                for friends, and comissions.
-              </p>
-            </div>
-            {/* Project Cards */}
-            <ProjectsCard {...mockUps} />
-            <ProjectsCard {...theMeatSweats} />
-            <ProjectsCard {...academicWeapon} />
-            <ProjectsCard {...artekPatch} />
-            <ProjectsCard {...badIdeasGoodTimes} />
-            <ProjectsCard {...peanutsJoe} />
-            <ProjectsCard {...phoneStand} />
+        <div className="projects-container">
+          {/* Text */}
+          <div class="text-container">
+            <h1>Design</h1>
+            <p>
+              Several designs ive made with Gimp and Procreate for fun, gifts
+              for friends, and comissions.
+            </p>
           </div>
+          {/* Project Cards */}
+          <ProjectsCard {...mockUps} />
+          <ProjectsCard {...theMeatSweats} />
+          <ProjectsCard {...academicWeapon} />
+          <ProjectsCard {...artekPatch} />
+          <ProjectsCard {...badIdeasGoodTimes} />
+          <ProjectsCard {...peanutsJoe} />
+          <ProjectsCard {...phoneStand} />
         </div>
       </div>
     </>
