@@ -26,7 +26,7 @@ const Engineering = () => {
   };
 
   const Research = {
-    projectImg: "public/assets/project-card-photos/engineering/Rheology.png",
+    projectImg: "/assets/project-card-photos/engineering/Rheology.png",
     projectTitle: "Research Assistant Project",
     projectDescription:
       "Investigating Constitutive Equations for Low-Viscosity Polymer Solutions Rheology",
