@@ -1,7 +1,7 @@
 import React from "react";
-import "./photo_filmmaking.css";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
+import "./photo_filmmaking.css";
 
 const PhotoFilmmaking = () => {
   const steelRack = {
@@ -72,10 +72,11 @@ const PhotoFilmmaking = () => {
   return (
     <>
       <div className="photo-container content-center" id="photoFilmmaking">
-        <div className="sliding-container projects-container items-center self-center">
+        <div className="projects-container">
+          {/* What? */}
           <div className="flex gap-1 content-center">
             {/* Text */}
-            <div class="text-center">
+            <div class="text-container">
               <h1 className="title">Visual Media</h1>
               <br />
               <p>Me, my camera & my drone.</p>

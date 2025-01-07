@@ -72,11 +72,11 @@ const Design = () => {
 
   return (
     <>
-      <div className="design-container topic content-center" id="design">
+      <div className="design-container" id="design">
         <div className="projects-container items-center flex content-center gap-1">
           <div className="flex gap-1 content-center">
             {/* Text */}
-            <div class="text-center self-center mb-[117px]">
+            <div class="text-container">
               <h1>Design</h1>
               <p>
                 Several designs ive made with Gimp and Procreate for fun, gifts

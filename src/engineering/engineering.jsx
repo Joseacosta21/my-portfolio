@@ -37,16 +37,12 @@ const Engineering = () => {
 
   return (
     <>
-      <div
-        className="engineering-container topic content-center"
-        id="engineering"
-      >
+      <div className="engineering-container content-center" id="engineering">
         <div className="projects-container items-center content-center self-center">
           <div className="flex gap-1 content-center ">
             {/* Text */}
-            <div className="text-center mr-4 p-10 content-center">
-              {" "}
-              <h1 className="title text-center">Engineering</h1>
+            <div className="text-container">
+              <h1 className="title">Engineering</h1>
               <br />
               <p>
                 I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia

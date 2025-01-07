@@ -1,14 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .photo-container {
   font-family: "Roboto", thins;
   background-color: rgb(21, 23, 24);
   color: white;
-}
-
-.sliding-container {
-  display: flex;
-  overflow-x: scroll;
-  padding: 1rem;
-  height: 100vh;
 }
 
 .photo-container h1 {
@@ -18,10 +15,6 @@
 .photo-container p {
   color: rgb(155, 161, 166);
 }
-
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 
 #insta-embed {
   width: 100%;
