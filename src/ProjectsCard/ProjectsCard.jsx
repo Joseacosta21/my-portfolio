@@ -25,6 +25,7 @@ const ProjectsCard = ({
             className="project-image"
             alt={projectTitle}
             style={{ objectFit: fitType || "cover" }}
+            loading="lazy"
           />
           <div className="overlay">
             <div className="overlay-text">{projectDescription}</div>
