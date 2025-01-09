@@ -3,14 +3,6 @@ import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import "./music.css";
 
 const Music = () => {
-  const JazzHouse = {
-    projectImg: "/assets/project-card-photos/music/JazzHouse.png",
-    projectTitle: "Jazz House DJ Set",
-    projectDescription: "Jazz & Instrumental House DJ Set",
-    projectTags: "",
-    projectGitHub: "",
-    projectLink: "https://www.youtube.com/watch?v=-XqFjEXeiYE&t=13s",
-  };
   const TimeoutMarket = {
     projectImg: "/assets/project-card-photos/music/Timeout.PNG",
     projectTitle: "TimeOut Market Montreal",
@@ -27,14 +19,7 @@ const Music = () => {
     projectGitHub: "",
     projectLink: "",
   };
-  const AfroHouse = {
-    projectImg: "/assets/project-card-photos/music/AfroHouse.jpg",
-    projectTitle: "Afro House DJ Set",
-    projectDescription: "Afro House DJ Set from TimeOut Market",
-    projectTags: "",
-    projectGitHub: "",
-    projectLink: "https://youtu.be/2_-RP0J6uPE?si=RhmgFNM7i8CyA8m5",
-  };
+
   const EnjoytheSilence = {
     projectImg: "/assets/project-card-photos/music/EnjoytheSilence.jpg",
     projectTitle: "Enjoy the Silence - Dirty Hands Mix",
@@ -46,7 +31,7 @@ const Music = () => {
   };
 
   // API key goober
-  const apiKey = import.meta.env.YOUTUBE_API_KEY;
+  const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
   // Playlist ID
   const playlistId = "PL-JzMZN0fZdHMxgSf7JJpmp4JSLE2IojS";
@@ -101,6 +86,10 @@ const Music = () => {
             </div>
           </div>
 
+          {/* Project Cards */}
+          <ProjectsCard {...TimeoutMarket} />
+          <ProjectsCard {...FanaBox} />
+          {/*<ProjectsCard {...EnjoytheSilence} />*/}
           {/* YouTube Videos */}
           {videos.length > 0 ? (
             videos.map((video, index) => {
@@ -108,7 +97,7 @@ const Music = () => {
               return (
                 <ProjectsCard
                   key={index}
-                  projectImg={snippet.thumbnails.high.url}
+                  projectImg={snippet.thumbnails.maxres.url}
                   projectTitle={snippet.title}
                   projectDescription={""} // No description for now
                   projectTags={[]} // No tags for now
@@ -120,13 +109,6 @@ const Music = () => {
           ) : (
             <p>Loading videos...</p>
           )}
-
-          {/* Project Cards */}
-          <ProjectsCard {...TimeoutMarket} />
-          <ProjectsCard {...FanaBox} />
-          <ProjectsCard {...JazzHouse} />
-          <ProjectsCard {...AfroHouse} />
-          {/*<ProjectsCard {...EnjoytheSilence} />*/}
         </div>
       </div>
     </>
