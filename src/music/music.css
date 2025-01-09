@@ -12,3 +12,7 @@
   background-color: black;
   color: white;
 }
+
+.music-container .card-title {
+  font-size: medium;
+}
