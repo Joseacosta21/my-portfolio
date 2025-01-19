@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: local("Cotham Sans Regular"), local("CothamSans-Regular"),
-    url("public/fonts/LibreBaskerville-Regular/LibreBaskerville-Regular.otf")
+    url("/fonts/LibreBaskerville-Regular/LibreBaskerville-Regular.otf")
       format("opentype");
 }
 

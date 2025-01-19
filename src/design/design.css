@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: local("Junicode Regular"), local("Junicode-Regular"),
-    url("public/fonts/Junicode/Junicode.ttf") format("truetype");
+    url("/fonts/Junicode/Junicode.ttf") format("truetype");
 }
 
 .design-container {
