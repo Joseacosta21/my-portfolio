@@ -53,7 +53,7 @@ const CS = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.athackctf.com" target="_blank">
+                    <a href="https://2024.athackctf.com" target="blank">
                       @Hack 2024
                     </a>
                   </li>
@@ -63,6 +63,11 @@ const CS = () => {
                       target="_blank"
                     >
                       ENGR 215
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.athackctf.com" target="_blank">
+                      @Hack 2025
                     </a>
                   </li>
                 </ul>
