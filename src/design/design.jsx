@@ -46,7 +46,7 @@ const Design = () => {
     projectTitle: "Peanuts Self-portrait",
     projectDescription: "",
     projectTags: ["Procreate"],
-    projectGitHub: "",
+    projectGitHub: "Self portrait drawing in Peanuts style",
     projectLink: "src/assets/project-card-photos/design/PeanutsJoe.jpg",
   };
   const phoneStand = {
@@ -78,8 +78,7 @@ const Design = () => {
           <div class="text-container">
             <h1>Design</h1>
             <p>
-              Several designs ive made with Gimp and Procreate for fun, gifts
-              for friends, and comissions.
+              Several designs I've made for fun, friends, and comissions.
             </p>
           </div>
           {/* Project Cards */}

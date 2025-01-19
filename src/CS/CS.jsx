@@ -20,7 +20,7 @@ const CS = () => {
     projectDescription: "You are looking at it right now :)",
     projectTags: ["React", "JSX", "CSS", "TW"],
     projectGitHub: "https://github.com/Joseacosta21/my-portfolio",
-    projectLink: "https://joseacostaaldrete.com",
+    projectLink: "",
   };
 
   return (
