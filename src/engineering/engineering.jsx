@@ -18,7 +18,7 @@ const Engineering = () => {
     projectImg: "/assets/project-card-photos/engineering/Lens.webp",
     projectTitle: "3D-printed lens adapter",
     projectDescription:
-      "3D-printed disposable camera lens to sony e-mount adapter ",
+      "3D-printed disposable camera lens to sony e-mount adapter.",
     projectTags: ["SolidWorks", "Prusa Splicer"],
     projectGitHub: "",
     projectLink:
@@ -29,7 +29,7 @@ const Engineering = () => {
     projectImg: "/assets/project-card-photos/engineering/Rheology.png",
     projectTitle: "Research Assistant Project",
     projectDescription:
-      "Investigating Constitutive Equations for Low-Viscosity Polymer Solutions Rheology",
+      "Investigating constitutive equations for low-viscosity polymer solutions in rheology using machine learning.",
     projectTags: ["TensorFlow", "Python"],
     projectGitHub: "",
     projectLink: "",
@@ -38,7 +38,7 @@ const Engineering = () => {
   const Baja = {
     projectImg: "/assets/project-card-photos/engineering/Baja.webp",
     projectTitle: "SAE Baja",
-    projectDescription: "Concordia SAE Baja Drivetrain Team Member",
+    projectDescription: "Concordia SAE Baja drivetrain team member.",
     projectTags: ["SolidWorks", "Manufacturing", "ANSYS"],
     projectGitHub: "",
     projectLink: "https://concordiabaja.racing",
