@@ -15,11 +15,11 @@ const Engineering = () => {
   };
 
   const PrintedLens = {
-    projectImg: "/assets/project-card-photos/engineering/PrintedLens.png",
+    projectImg: "/assets/project-card-photos/engineering/Lens.webp",
     projectTitle: "3D-printed lens adapter",
     projectDescription:
       "3D-printed disposable camera lens to sony e-mount adapter ",
-    projectTags: ["Solidworks", "Prusa Splicer"],
+    projectTags: ["SolidWorks", "Prusa Splicer"],
     projectGitHub: "",
     projectLink:
       "https://drive.google.com/file/d/1U0mmlxIJHtH1CsK2waZbugGHMHBkNu3O/view?usp=sharing",
@@ -33,6 +33,36 @@ const Engineering = () => {
     projectTags: ["ML", "Python"],
     projectGitHub: "",
     projectLink: "",
+  };
+
+  const Baja = {
+    projectImg: "/assets/project-card-photos/engineering/Baja.webp",
+    projectTitle: "SAE Baja",
+    projectDescription: "Concordia SAE Baja Drivetrain Team Member",
+    projectTags: ["SolidWorks", "Manufacturing", "ANSYS"],
+    projectGitHub: "",
+    projectLink: "https://concordiabaja.racing",
+  };
+
+  const LocKick = {
+    projectImg: "/assets/project-card-photos/engineering/LocKick.webp",
+    projectTitle: "LocKick | Auto Door Wedge",
+    projectDescription:
+      "Final project for Concordia Product Design and Development course.",
+    projectTags: ["SolidWorks", "ANSYS"],
+    projectGitHub: "",
+    projectLink:
+      "https://drive.google.com/drive/folders/1fYfTtddTdlOpKhHQ65321L5HJpZ0_M7Q?usp=sharing",
+  };
+
+  const SOS = {
+    projectImg: "/assets/project-card-photos/engineering/SOS.webp",
+    projectTitle: "Digital LED S.O.S. Signal",
+    projectDescription:
+      "Final project for Concordia Electronics and Circuits course.",
+    projectTags: ["Digital Logic Gates"],
+    projectGitHub: "",
+    projectLink: "https://youtu.be/q-ocKNWIzZY",
   };
 
   return (
@@ -53,9 +83,12 @@ const Engineering = () => {
             <p>Bit of my engineering stuff:</p>
           </div>
           {/* Project Cards */}
+          <ProjectsCard {...Baja} />
+          <ProjectsCard {...Research} />
           <ProjectsCard {...pillDispenser} />
           <ProjectsCard {...PrintedLens} />
-          <ProjectsCard {...Research} />
+          <ProjectsCard {...LocKick} />
+          <ProjectsCard {...SOS} />
         </div>
       </div>
     </>
