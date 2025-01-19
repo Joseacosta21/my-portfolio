@@ -99,7 +99,7 @@ const Music = () => {
                   key={index}
                   projectImg={snippet.thumbnails.maxres.url}
                   projectTitle={snippet.title}
-                  projectDescription={""} // No description for now
+                  projectDescription={"Full DJ Set on Youtube"} // No description for now
                   projectTags={[]} // No tags for now
                   projectGitHub={""} // Not used, leave blank
                   projectLink={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}`}

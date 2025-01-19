@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-// ... (your existing imports)
-
 const ProjectsCard = ({
   projectImg,
   projectTitle,
@@ -18,7 +16,26 @@ const ProjectsCard = ({
 }) => {
   return (
     <div className="card-container">
-      <a href={projectLink} target="_blank" rel="noopener noreferrer">
+      {projectLink ? (
+        <a href={projectLink} target="_blank" rel="noopener noreferrer">
+          <div className="img-container">
+            <img
+              src={projectImg}
+              className="project-image"
+              alt={projectTitle}
+              style={{ objectFit: fitType || "cover" }}
+              loading="lazy"
+            />
+            <div className="overlay">
+              <div className="overlay-text">{projectDescription}</div>
+              <p>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                &nbsp; Click to take a look
+              </p>
+            </div>
+          </div>
+        </a>
+      ) : (
         <div className="img-container">
           <img
             src={projectImg}
@@ -29,13 +46,9 @@ const ProjectsCard = ({
           />
           <div className="overlay">
             <div className="overlay-text">{projectDescription}</div>
-            <p>
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              &nbsp; Click to take a look
-            </p>
           </div>
         </div>
-      </a>
+      )}
       <div className="card-info">
         <div className="title-link-pair">
           <div className="card-title">{projectTitle}</div>

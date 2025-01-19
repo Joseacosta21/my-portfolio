@@ -30,7 +30,7 @@ const Engineering = () => {
     projectTitle: "Research Assistant Project",
     projectDescription:
       "Investigating Constitutive Equations for Low-Viscosity Polymer Solutions Rheology",
-    projectTags: ["ML", "Python"],
+    projectTags: ["TensorFlow", "Python"],
     projectGitHub: "",
     projectLink: "",
   };
