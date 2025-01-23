@@ -44,9 +44,6 @@ const ProjectsCard = ({
             style={{ objectFit: fitType || "cover" }}
             loading="lazy"
           />
-          <div className="overlay">
-            <div className="overlay-text">{projectDescription}</div>
-          </div>
         </div>
       )}
       <div className="card-info">

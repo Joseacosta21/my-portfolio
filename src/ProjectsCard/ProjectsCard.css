@@ -23,6 +23,7 @@
   background-image: url("/assets/project-card-photos/background/TheGreatWaveBlur.jpg");
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: top; /* Align the top of the image with the top of the container */
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .overlay {
@@ -56,6 +57,7 @@
   justify-self: center;
   align-self: center;
   background-color: rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .centered-overlay-text {
@@ -120,4 +122,15 @@
 
 .github-logo {
   font-size: 2rem;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
