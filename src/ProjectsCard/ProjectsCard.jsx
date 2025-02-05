@@ -4,6 +4,7 @@ import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const ProjectsCard = ({
   projectImg,
@@ -14,17 +15,22 @@ const ProjectsCard = ({
   projectLink,
   fitType,
 }) => {
+  // Animation duration
+  const duration = 1;
+
+  // Card
   return (
     <div className="card-container">
       {projectLink ? (
         <a href={projectLink} target="_blank" rel="noopener noreferrer">
           <div className="img-container">
-            <img
+            <motion.img
               src={projectImg}
               className="project-image"
               alt={projectTitle}
-              style={{ objectFit: fitType || "cover" }}
-              loading="lazy"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration, ease: "easeInOut" }}
             />
             <div className="overlay">
               <div className="overlay-text">{projectDescription}</div>
@@ -37,12 +43,13 @@ const ProjectsCard = ({
         </a>
       ) : (
         <div className="img-container">
-          <img
+          <motion.img
             src={projectImg}
             className="project-image"
             alt={projectTitle}
-            style={{ objectFit: fitType || "cover" }}
-            loading="lazy"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration, ease: "easeInOut" }}
           />
           <div className="overlay">
             <div className="overlay-text">{projectDescription}</div>
