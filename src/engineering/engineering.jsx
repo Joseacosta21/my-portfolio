@@ -2,7 +2,6 @@ import React from "react";
 import "./engineering.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 
-
 const Engineering = () => {
   // Project Cards
   const pillDispenser = {
@@ -66,6 +65,17 @@ const Engineering = () => {
     projectLink: "https://youtu.be/q-ocKNWIzZY",
   };
 
+  const EcoFlow = {
+    projectImg: "/assets/project-card-photos/engineering/EcoFlow.webp",
+    projectTitle: "EcoFLow Mockups",
+    projectDescription:
+      "Concordia University's UpStart case competition mockups for transportation system.",
+    projectTags: ["Figma"],
+    projectGitHub: "",
+    projectLink:
+      "https://drive.google.com/drive/folders/14FA8nuLCU4KQCLuXx8hOvbH8zMwCel3-?usp=share_link",
+  };
+
   return (
     <>
       <div className="engineering-container" id="engineering">
@@ -86,6 +96,7 @@ const Engineering = () => {
           {/* Project Cards */}
           <ProjectsCard {...Baja} />
           <ProjectsCard {...Research} />
+          <ProjectsCard {...EcoFlow} />
           <ProjectsCard {...pillDispenser} />
           <ProjectsCard {...PrintedLens} />
           <ProjectsCard {...LocKick} />
