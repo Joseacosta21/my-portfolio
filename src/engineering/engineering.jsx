@@ -76,6 +76,17 @@ const Engineering = () => {
       "https://drive.google.com/drive/folders/14FA8nuLCU4KQCLuXx8hOvbH8zMwCel3-?usp=share_link",
   };
 
+  const ThermoCar = {
+    projectImg: "/assets/project-card-photos/engineering/ThermoCar.webp",
+    projectTitle: "Peltier Powered Car",
+    projectDescription:
+      "Peltier powered car for Concordia's Thermodynamics II course.",
+    projectTags: ["SolidWorks", "3D Printing", "Soldering"],
+    projectGitHub: "",
+    projectLink:
+      "",
+  };
+
   return (
     <>
       <div className="engineering-container" id="engineering">
@@ -96,6 +107,7 @@ const Engineering = () => {
           {/* Project Cards */}
           <ProjectsCard {...Baja} />
           <ProjectsCard {...Research} />
+          <ProjectsCard {...ThermoCar} />
           <ProjectsCard {...EcoFlow} />
           <ProjectsCard {...pillDispenser} />
           <ProjectsCard {...PrintedLens} />
