@@ -158,7 +158,7 @@ const Footer = () => {
                 </a>
               </b>
             </p>
-            <p>&copy; 2023 Jose Acosta Aldrete. 🇲🇽 Bad ideas, good times.</p>
+            <p>&copy; 2023 Jose Acosta Aldrete.🇲🇽</p>
           </div>
         </div>
       </div>
