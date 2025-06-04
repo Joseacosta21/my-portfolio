@@ -1,11 +1,22 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./CS.css";
-import ProjectsCard from "../ProjectsCard/ProjectsCard.jsx";
+import ProjectsCard from "../ProjectsCard/ProjectsCard";
+import { useDragScroll } from "../utils/useDragScroll";
 
 const CS = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+
+  // Initialize drag scroll functionality
+  const { dragScrollRef } = useDragScroll(true);
+
+  // Sync refs - use the same ref for both scroll tracking and drag functionality
+  useEffect(() => {
+    if (dragScrollRef.current !== scrollContainerRef.current) {
+      dragScrollRef.current = scrollContainerRef.current;
+    }
+  }, [dragScrollRef]);
 
   const updateScrollButtons = () => {
     const container = scrollContainerRef.current;
@@ -21,10 +32,16 @@ const CS = () => {
     if (container) {
       updateScrollButtons();
       container.addEventListener("scroll", updateScrollButtons);
-      window.addEventListener('resize', updateScrollButtons);
+      window.addEventListener("resize", updateScrollButtons);
+
+      // Update scroll buttons after content has loaded
+      const updateAfterLoad = () => setTimeout(updateScrollButtons, 100);
+      window.addEventListener("load", updateAfterLoad);
+
       return () => {
         container.removeEventListener("scroll", updateScrollButtons);
-        window.removeEventListener('resize', updateScrollButtons);
+        window.removeEventListener("resize", updateScrollButtons);
+        window.removeEventListener("load", updateAfterLoad);
       };
     }
   }, []);
@@ -63,10 +80,14 @@ const CS = () => {
       <div className="cs-container" id="cs">
         <div className="projects-wrapper">
           <button
-            className={`scroll-button scroll-button--dark left ${!canScrollLeft ? 'hidden' : ''}`}
+            className={`scroll-button scroll-button--dark left ${
+              !canScrollLeft ? "hidden" : ""
+            }`}
             onClick={() => scroll("left")}
           >
-            ‹
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
           </button>
           <div className="projects-container" ref={scrollContainerRef}>
             {/* Text */}
@@ -182,14 +203,18 @@ const CS = () => {
               </div>
             </div>
             {/* Project Cards */}
-            <ProjectsCard {...casinoStic} />
-            <ProjectsCard {...portfolioPage} />
+            <ProjectsCard {...casinoStic} animationDelay={0} />
+            <ProjectsCard {...portfolioPage} animationDelay={100} />
           </div>
           <button
-            className={`scroll-button scroll-button--dark right ${!canScrollRight ? 'hidden' : ''}`}
+            className={`scroll-button scroll-button--dark right ${
+              !canScrollRight ? "hidden" : ""
+            }`}
             onClick={() => scroll("right")}
           >
-            ›
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+            </svg>
           </button>
         </div>
       </div>

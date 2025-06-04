@@ -1,11 +1,22 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./design.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
+import { useDragScroll } from "../utils/useDragScroll";
 
 const Design = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+
+  // Initialize drag scroll functionality
+  const { dragScrollRef } = useDragScroll(true);
+
+  // Sync refs - use the same ref for both scroll tracking and drag functionality
+  useEffect(() => {
+    if (dragScrollRef.current !== scrollContainerRef.current) {
+      dragScrollRef.current = scrollContainerRef.current;
+    }
+  }, [dragScrollRef]);
 
   const updateScrollButtons = () => {
     const container = scrollContainerRef.current;
@@ -20,17 +31,17 @@ const Design = () => {
     const container = scrollContainerRef.current;
     if (container) {
       updateScrollButtons();
-      container.addEventListener('scroll', updateScrollButtons);
-      window.addEventListener('resize', updateScrollButtons);
-      
+      container.addEventListener("scroll", updateScrollButtons);
+      window.addEventListener("resize", updateScrollButtons);
+
       // Update scroll buttons after content has loaded
       const updateAfterLoad = () => setTimeout(updateScrollButtons, 100);
-      window.addEventListener('load', updateAfterLoad);
-      
+      window.addEventListener("load", updateAfterLoad);
+
       return () => {
-        container.removeEventListener('scroll', updateScrollButtons);
-        window.removeEventListener('resize', updateScrollButtons);
-        window.removeEventListener('load', updateAfterLoad);
+        container.removeEventListener("scroll", updateScrollButtons);
+        window.removeEventListener("resize", updateScrollButtons);
+        window.removeEventListener("load", updateAfterLoad);
       };
     }
   }, []);
@@ -116,10 +127,14 @@ const Design = () => {
       <div className="design-container" id="design">
         <div className="projects-wrapper">
           <button
-            className={`scroll-button scroll-button--light left ${!canScrollLeft ? 'hidden' : ''}`}
+            className={`scroll-button scroll-button--light left ${
+              !canScrollLeft ? "hidden" : ""
+            }`}
             onClick={() => scroll("left")}
           >
-            ‹
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
           </button>
           <div className="projects-container" ref={scrollContainerRef}>
             {/* Text */}
@@ -128,19 +143,23 @@ const Design = () => {
               <p>Several designs I've made for fun, friends, and comissions.</p>
             </div>
             {/* Project Cards */}
-            <ProjectsCard {...mockUps} />
-            <ProjectsCard {...theMeatSweats} />
-            <ProjectsCard {...academicWeapon} />
-            <ProjectsCard {...artekPatch} />
-            <ProjectsCard {...badIdeasGoodTimes} />
-            <ProjectsCard {...peanutsJoe} />
-            <ProjectsCard {...phoneStand} />
+            <ProjectsCard {...mockUps} animationDelay={0} />
+            <ProjectsCard {...theMeatSweats} animationDelay={100} />
+            <ProjectsCard {...academicWeapon} animationDelay={200} />
+            <ProjectsCard {...artekPatch} animationDelay={300} />
+            <ProjectsCard {...badIdeasGoodTimes} animationDelay={400} />
+            <ProjectsCard {...peanutsJoe} animationDelay={500} />
+            <ProjectsCard {...phoneStand} animationDelay={600} />
           </div>
           <button
-            className={`scroll-button scroll-button--light right ${!canScrollRight ? 'hidden' : ''}`}
+            className={`scroll-button scroll-button--light right ${
+              !canScrollRight ? "hidden" : ""
+            }`}
             onClick={() => scroll("right")}
           >
-            ›
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+            </svg>
           </button>
         </div>
       </div>

@@ -1,11 +1,22 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./engineering.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
+import { useDragScroll } from "../utils/useDragScroll";
 
 const Engineering = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+
+  // Initialize drag scroll functionality
+  const { dragScrollRef } = useDragScroll(true);
+
+  // Sync refs - use the same ref for both scroll tracking and drag functionality
+  useEffect(() => {
+    if (dragScrollRef.current !== scrollContainerRef.current) {
+      dragScrollRef.current = scrollContainerRef.current;
+    }
+  }, [dragScrollRef]);
 
   const updateScrollButtons = () => {
     const container = scrollContainerRef.current;
@@ -20,11 +31,17 @@ const Engineering = () => {
     const container = scrollContainerRef.current;
     if (container) {
       updateScrollButtons();
-      container.addEventListener('scroll', updateScrollButtons);
-      window.addEventListener('resize', updateScrollButtons);
+      container.addEventListener("scroll", updateScrollButtons);
+      window.addEventListener("resize", updateScrollButtons);
+
+      // Update scroll buttons after content has loaded
+      const updateAfterLoad = () => setTimeout(updateScrollButtons, 100);
+      window.addEventListener("load", updateAfterLoad);
+
       return () => {
-        container.removeEventListener('scroll', updateScrollButtons);
-        window.removeEventListener('resize', updateScrollButtons);
+        container.removeEventListener("scroll", updateScrollButtons);
+        window.removeEventListener("resize", updateScrollButtons);
+        window.removeEventListener("load", updateAfterLoad);
       };
     }
   }, []);
@@ -126,10 +143,14 @@ const Engineering = () => {
       <div className="engineering-container" id="engineering">
         <div className="projects-wrapper">
           <button
-            className={`scroll-button scroll-button--dark left ${!canScrollLeft ? 'hidden' : ''}`}
+            className={`scroll-button scroll-button--dark left ${
+              !canScrollLeft ? "hidden" : ""
+            }`}
             onClick={() => scroll("left")}
           >
-            ‹
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
           </button>
           <div className="projects-container" ref={scrollContainerRef}>
             {/* Text */}
@@ -146,20 +167,24 @@ const Engineering = () => {
               <p>Bit of my engineering stuff:</p>
             </div>
             {/* Project Cards */}
-            <ProjectsCard {...Baja} />
-            <ProjectsCard {...Research} />
-            <ProjectsCard {...ThermoCar} />
-            <ProjectsCard {...EcoFlow} />
-            <ProjectsCard {...pillDispenser} />
-            <ProjectsCard {...PrintedLens} />
-            <ProjectsCard {...LocKick} />
-            <ProjectsCard {...SOS} />
+            <ProjectsCard {...Baja} animationDelay={0} />
+            <ProjectsCard {...Research} animationDelay={100} />
+            <ProjectsCard {...ThermoCar} animationDelay={200} />
+            <ProjectsCard {...EcoFlow} animationDelay={300} />
+            <ProjectsCard {...pillDispenser} animationDelay={400} />
+            <ProjectsCard {...PrintedLens} animationDelay={500} />
+            <ProjectsCard {...LocKick} animationDelay={600} />
+            <ProjectsCard {...SOS} animationDelay={700} />
           </div>
           <button
-            className={`scroll-button scroll-button--dark right ${!canScrollRight ? 'hidden' : ''}`}
+            className={`scroll-button scroll-button--dark right ${
+              !canScrollRight ? "hidden" : ""
+            }`}
             onClick={() => scroll("right")}
           >
-            ›
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+            </svg>
           </button>
         </div>
       </div>
