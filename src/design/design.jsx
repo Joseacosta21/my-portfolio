@@ -9,14 +9,7 @@ const Design = () => {
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   // Initialize drag scroll functionality
-  const { dragScrollRef } = useDragScroll(true);
-
-  // Sync refs - use the same ref for both scroll tracking and drag functionality
-  useEffect(() => {
-    if (dragScrollRef.current !== scrollContainerRef.current) {
-      dragScrollRef.current = scrollContainerRef.current;
-    }
-  }, [dragScrollRef]);
+  useDragScroll(scrollContainerRef, true);
 
   const updateScrollButtons = () => {
     const container = scrollContainerRef.current;

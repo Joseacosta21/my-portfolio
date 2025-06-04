@@ -138,7 +138,7 @@ a:hover {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   flex: 1;
-  align-content: flex-start;
+  align-content: center;
   gap: 10px;
   padding: var(--spacing-xl) var(--spacing-md) calc(var(--spacing-xl) + 3rem) 0;
   min-height: 500px; /* Minimum height but can grow with content */
