@@ -1,10 +1,51 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import "./photo_filmmaking.css";
+import { useDragScroll } from "../utils/useDragScroll";
 
 const PhotoFilmmaking = () => {
   const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  // Initialize drag scroll functionality
+  const { dragScrollRef } = useDragScroll(true);
+
+  // Sync refs - use the same ref for both scroll tracking and drag functionality
+  useEffect(() => {
+    if (dragScrollRef.current !== scrollContainerRef.current) {
+      dragScrollRef.current = scrollContainerRef.current;
+    }
+  }, [dragScrollRef]);
+
+  const updateScrollButtons = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      updateScrollButtons();
+      container.addEventListener("scroll", updateScrollButtons);
+      window.addEventListener("resize", updateScrollButtons);
+
+      // Update scroll buttons after content has loaded
+      const updateAfterLoad = () => setTimeout(updateScrollButtons, 100);
+      window.addEventListener("load", updateAfterLoad);
+
+      return () => {
+        container.removeEventListener("scroll", updateScrollButtons);
+        window.removeEventListener("resize", updateScrollButtons);
+        window.removeEventListener("load", updateAfterLoad);
+      };
+    }
+  }, []);
 
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
@@ -84,8 +125,15 @@ const PhotoFilmmaking = () => {
     <>
       <div className="photo-container" id="photoFilmmaking">
         <div className="projects-wrapper">
-          <button className="scroll-button left" onClick={() => scroll("left")}>
-            ‹
+          <button
+            className={`scroll-button scroll-button--dark left ${
+              !canScrollLeft ? "hidden" : ""
+            }`}
+            onClick={() => scroll("left")}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
           </button>
           <div className="projects-container" ref={scrollContainerRef}>
             {/* Text */}
@@ -98,19 +146,23 @@ const PhotoFilmmaking = () => {
               <br />
             </div>
             {/* Project Cards */}
-            <ProjectsCard {...steelRack} />
-            <ProjectsCard {...hoodClub} />
-            <ProjectsCard {...djDuck} />
-            <ProjectsCard {...solenDance} />
-            <ProjectsCard {...santaUrsula} />
-            <ProjectsCard {...stingers} />
-            <ProjectsCard {...AELAUM} />
+            <ProjectsCard {...steelRack} animationDelay={0} />
+            <ProjectsCard {...hoodClub} animationDelay={100} />
+            <ProjectsCard {...djDuck} animationDelay={200} />
+            <ProjectsCard {...solenDance} animationDelay={300} />
+            <ProjectsCard {...santaUrsula} animationDelay={400} />
+            <ProjectsCard {...stingers} animationDelay={500} />
+            <ProjectsCard {...AELAUM} animationDelay={600} />
           </div>
           <button
-            className="scroll-button right"
+            className={`scroll-button scroll-button--dark right ${
+              !canScrollRight ? "hidden" : ""
+            }`}
             onClick={() => scroll("right")}
           >
-            ›
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+            </svg>
           </button>
         </div>
         {/* IG Embed */}
