@@ -2,17 +2,17 @@ import { useRef, useEffect } from 'react';
 
 /**
  * Custom hook for implementing drag-to-scroll functionality
+ * @param {React.RefObject} elementRef - Ref to the scrollable element
  * @param {boolean} enabled - Whether drag scrolling is enabled
- * @returns {Object} - Ref to attach to scrollable element and drag state
+ * @returns {Object} - Drag state and utility functions
  */
-export const useDragScroll = (enabled = true) => {
-  const scrollRef = useRef(null);
+export const useDragScroll = (elementRef, enabled = true) => {
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
   useEffect(() => {
-    const element = scrollRef.current;
+    const element = elementRef?.current;
     if (!element || !enabled) return;
 
     const handleMouseDown = (e) => {
@@ -41,37 +41,44 @@ export const useDragScroll = (enabled = true) => {
     };
 
     const handleMouseUp = () => {
+      if (!isDragging.current) return;
       isDragging.current = false;
-      element.style.cursor = 'grab';
-      element.style.userSelect = '';
+      if (element) {
+        element.style.cursor = 'grab';
+        element.style.userSelect = '';
+      }
     };
 
     const handleMouseLeave = () => {
+      if (!isDragging.current) return;
       isDragging.current = false;
-      element.style.cursor = 'grab';
-      element.style.userSelect = '';
+      if (element) {
+        element.style.cursor = 'grab';
+        element.style.userSelect = '';
+      }
     };
 
     // Set initial cursor
     element.style.cursor = 'grab';
 
     // Add event listeners
-    element.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-    element.addEventListener('mouseleave', handleMouseLeave);
+    element.addEventListener('mousedown', handleMouseDown, { passive: false });
+    document.addEventListener('mousemove', handleMouseMove, { passive: false });
+    document.addEventListener('mouseup', handleMouseUp, { passive: true });
+    element.addEventListener('mouseleave', handleMouseLeave, { passive: true });
 
     // Cleanup
     return () => {
-      element.removeEventListener('mousedown', handleMouseDown);
+      if (element) {
+        element.removeEventListener('mousedown', handleMouseDown);
+        element.removeEventListener('mouseleave', handleMouseLeave);
+      }
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
-      element.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [enabled]);
+  }, [elementRef, enabled]);
 
   return {
-    dragScrollRef: scrollRef,
     isDragging: isDragging.current
   };
 };
