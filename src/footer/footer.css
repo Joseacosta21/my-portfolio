@@ -1,9 +1,9 @@
 .footer-container {
   width: 100%;
   margin: 0 auto;
-  background-color: black;
-  color: white;
-  padding: 1rem 3%;
+  background-color: var(--color-secondary-bg);
+  color: var(--color-secondary-text);
+  padding: var(--spacing-sm) 3%;
   text-align: center;
   position: relative;
   line-height: 2.5;
@@ -11,25 +11,25 @@
   bottom: 0;
   align-items: center;
   flex-direction: column;
-  font-weight: 300;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  font-weight: var(--font-weight-light);
+  box-shadow: var(--shadow-light);
 }
 
 .footer-container p {
-  color: rgb(155, 161, 166);
+  color: var(--color-accent-text);
 }
 
 .footerLink {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: var(--spacing-md);
   color: grey;
   font-size: 1.7rem;
 }
 
 .footerLink li:hover {
-  color: white;
-  transition: 0.6s;
+  color: var(--color-secondary-text);
+  transition: var(--transition-slow);
 }
 
 .custom-input {
@@ -49,7 +49,7 @@
 }
 
 .custom-input:focus {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--color-secondary-text);
 }
 
 .submit {
@@ -59,7 +59,7 @@
   background-color: transparent;
   border: 1px solid grey;
   color: grey;
-  border-radius: 1rem;
+  border-radius: var(--spacing-sm);
   transition: ease 0.4s;
   font-weight: bold;
 
@@ -79,9 +79,9 @@
 }
 
 .submit:not(.sending):not(.sent):hover {
-  background-color: white;
-  border: 1px solid white;
-  color: black;
+  background-color: var(--color-secondary-text);
+  border: 1px solid var(--color-secondary-text);
+  color: var(--color-secondary-bg);
   box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
 }
 
@@ -125,5 +125,5 @@
 
 .column {
   flex: 1; /* Equal division of space among columns */
-  padding: 1rem; /* Adjust padding as needed */
+  padding: var(--spacing-sm); /* Adjust padding as needed */
 }

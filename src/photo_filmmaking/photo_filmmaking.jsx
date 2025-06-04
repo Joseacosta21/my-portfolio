@@ -1,10 +1,34 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import "./photo_filmmaking.css";
 
 const PhotoFilmmaking = () => {
   const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollButtons = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      updateScrollButtons();
+      container.addEventListener("scroll", updateScrollButtons);
+      window.addEventListener('resize', updateScrollButtons);
+      return () => {
+        container.removeEventListener("scroll", updateScrollButtons);
+        window.removeEventListener('resize', updateScrollButtons);
+      };
+    }
+  }, []);
 
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
@@ -84,7 +108,10 @@ const PhotoFilmmaking = () => {
     <>
       <div className="photo-container" id="photoFilmmaking">
         <div className="projects-wrapper">
-          <button className="scroll-button left" onClick={() => scroll("left")}>
+          <button
+            className={`scroll-button scroll-button--dark left ${!canScrollLeft ? 'hidden' : ''}`}
+            onClick={() => scroll("left")}
+          >
             ‹
           </button>
           <div className="projects-container" ref={scrollContainerRef}>
@@ -107,7 +134,7 @@ const PhotoFilmmaking = () => {
             <ProjectsCard {...AELAUM} />
           </div>
           <button
-            className="scroll-button right"
+            className={`scroll-button scroll-button--dark right ${!canScrollRight ? 'hidden' : ''}`}
             onClick={() => scroll("right")}
           >
             ›

@@ -23,11 +23,11 @@
   background-image: url("/assets/project-card-photos/background/TheGreatWaveBlur.jpg");
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: top; /* Align the top of the image with the top of the container */
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease,
-    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: var(--shadow-heavy);
+  transition: box-shadow var(--transition-medium) ease,
+    transform var(--transition-slow) cubic-bezier(0.23, 1, 0.32, 1);
   transform-style: preserve-3d;
   will-change: transform;
   --mouse-x: 50%;
@@ -51,7 +51,7 @@
   );
   border-radius: 14px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-medium) ease;
   pointer-events: none;
   z-index: -1;
 }
@@ -66,7 +66,7 @@
   height: 100%;
   color: white;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity var(--transition-medium) ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +83,7 @@
   font-weight: 500;
   padding: 1rem;
   /* Removed translateZ to keep overlay text stable within the 3D image container */
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-medium) ease;
 }
 
 .project-image {
@@ -108,19 +108,19 @@
 }
 
 .card-container:hover .img-container {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-glow);
 }
 
 /* Remove 3D effects from text elements - keep them stable */
 .card-container:hover .tag {
   /* Removed 3D transform */
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-medium) ease;
 }
 
 /* Remove 3D effect from title */
 .card-container:hover .card-title {
   /* Removed 3D transform */
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-medium) ease;
 }
 
 .card-info {
@@ -162,19 +162,19 @@
   align-items: center;
   font-weight: 500;
   color: grey;
-  transition: 0.3s ease;
+  transition: var(--transition-medium) ease;
 }
 
 .tag:hover {
   background-color: lightgrey;
   border: 1px solid lightgrey;
   color: black;
-  transition: 0.3s ease;
+  transition: var(--transition-medium) ease;
 }
 
 .github-logo {
   font-size: 2rem;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-medium) ease;
 }
 
 .card-container:hover .github-logo {
