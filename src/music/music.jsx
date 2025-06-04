@@ -1,8 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import "./music.css";
 
 const Music = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    const scrollAmount = 350; // Adjust this value as needed
+    if (direction === "left") {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
   const TimeoutMarket = {
     projectImg: "/assets/project-card-photos/music/Timeout.PNG",
     projectTitle: "TimeOut Market Montreal",
@@ -61,54 +72,65 @@ const Music = () => {
   return (
     <>
       <div className="music-container" id="music">
-        <div className="projects-container">
-          {/* Text */}
-          <div className="text-container">
-            <h1 className="title">Music</h1>
-            <p>Matching BPMs and heart rates</p>
-            <br />
-            <div className="skills">
-              <h3>Software Skills</h3>
-              <ul>
-                <li>
-                  <img src="/assets/svgs/Logicpro-icon.png" />
-                  <p>Logic Pro X</p>
-                </li>
-                <li>
-                  <img src="/assets/svgs/3bqjml6owsw91.png" />
-                  <p>Rekordbox</p>
-                </li>
-                <li>
-                  <img src="/assets/svgs/f6392752316625.5608d9436a75b.jpg" />
-                  <p>Serato</p>
-                </li>
-              </ul>
+        <div className="projects-wrapper">
+          <button className="scroll-button left" onClick={() => scroll("left")}>
+            ‹
+          </button>
+          <div className="projects-container" ref={scrollContainerRef}>
+            {/* Text */}
+            <div className="text-container">
+              <h1 className="title">Music</h1>
+              <p>Matching BPMs and heart rates</p>
+              <br />
+              <div className="skills">
+                <h3>Software Skills</h3>
+                <ul>
+                  <li>
+                    <img src="/assets/svgs/Logicpro-icon.png" />
+                    <p>Logic Pro X</p>
+                  </li>
+                  <li>
+                    <img src="/assets/svgs/3bqjml6owsw91.png" />
+                    <p>Rekordbox</p>
+                  </li>
+                  <li>
+                    <img src="/assets/svgs/f6392752316625.5608d9436a75b.jpg" />
+                    <p>Serato</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          {/* Project Cards */}
-          <ProjectsCard {...TimeoutMarket} />
-          <ProjectsCard {...FanaBox} />
-          {/*<ProjectsCard {...EnjoytheSilence} />*/}
-          {/* YouTube Videos */}
-          {videos.length > 0 ? (
-            videos.map((video, index) => {
-              const snippet = video.snippet;
-              return (
-                <ProjectsCard
-                  key={index}
-                  projectImg={snippet.thumbnails.maxres.url}
-                  projectTitle={snippet.title}
-                  projectDescription={"Full DJ Set on Youtube"} // No description for now
-                  projectTags={[]} // No tags for now
-                  projectGitHub={""} // Not used, leave blank
-                  projectLink={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}`}
-                />
-              );
-            })
-          ) : (
-            <p>Loading videos...</p>
-          )}
+            {/* Project Cards */}
+            <ProjectsCard {...TimeoutMarket} />
+            <ProjectsCard {...FanaBox} />
+            {/*<ProjectsCard {...EnjoytheSilence} />*/}
+            {/* YouTube Videos */}
+            {videos.length > 0 ? (
+              videos.map((video, index) => {
+                const snippet = video.snippet;
+                return (
+                  <ProjectsCard
+                    key={index}
+                    projectImg={snippet.thumbnails.maxres.url}
+                    projectTitle={snippet.title}
+                    projectDescription={"Full DJ Set on Youtube"} // No description for now
+                    projectTags={[]} // No tags for now
+                    projectGitHub={""} // Not used, leave blank
+                    projectLink={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}`}
+                  />
+                );
+              })
+            ) : (
+              <p>Loading videos...</p>
+            )}
+          </div>
+          <button
+            className="scroll-button right"
+            onClick={() => scroll("right")}
+          >
+            ›
+          </button>
         </div>
       </div>
     </>

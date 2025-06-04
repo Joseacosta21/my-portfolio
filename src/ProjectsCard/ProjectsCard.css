@@ -23,6 +23,41 @@
   background-image: url("/assets/project-card-photos/background/TheGreatWaveBlur.jpg");
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: top; /* Align the top of the image with the top of the container */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease,
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+/* Dynamic border effect that follows mouse */
+.img-container::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: radial-gradient(
+    200px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3) 30%,
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent 100%
+  );
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card-container:hover .img-container::before {
+  opacity: 1;
 }
 
 .overlay {
@@ -47,6 +82,8 @@
   font-size: 2rem;
   font-weight: 500;
   padding: 1rem;
+  /* Removed translateZ to keep overlay text stable within the 3D image container */
+  transition: transform 0.3s ease;
 }
 
 .project-image {
@@ -70,11 +107,28 @@
   opacity: 1;
 }
 
+.card-container:hover .img-container {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Remove 3D effects from text elements - keep them stable */
+.card-container:hover .tag {
+  /* Removed 3D transform */
+  transition: transform 0.3s ease;
+}
+
+/* Remove 3D effect from title */
+.card-container:hover .card-title {
+  /* Removed 3D transform */
+  transition: transform 0.3s ease;
+}
+
 .card-info {
   width: 100%;
   padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
+  /* Removed translateZ to keep text stable */
 }
 
 .title-link-pair {
@@ -120,4 +174,10 @@
 
 .github-logo {
   font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.card-container:hover .github-logo {
+  /* Removed 3D transform - keep stable */
+  transform: scale(1.1);
 }

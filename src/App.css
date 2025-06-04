@@ -11,6 +11,22 @@ body::-webkit-scrollbar {
 * {
   margin: 0;
   box-sizing: border-box;
+  cursor: none !important; /* Hide default cursor everywhere */
+}
+
+/* Ensure cursor is hidden on all interactive elements */
+a,
+button,
+input,
+textarea,
+select,
+[role="button"],
+.scroll-button,
+.link,
+.card-container,
+.tag,
+.github-logo {
+  cursor: none !important;
 }
 
 body {
@@ -22,9 +38,28 @@ body {
   word-wrap: break-word;
 }
 
-link:hover {
-  color: inherit;
-  cursor: pointer;
+/* Custom ball cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+  mix-blend-mode: difference;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.custom-cursor.hover {
+  transform: scale(1.4);
+  background: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+    0 0 60px rgba(255, 255, 255, 0.3);
 }
 
 a {
@@ -34,7 +69,6 @@ a {
 
 a:hover {
   color: inherit;
-  cursor: pointer;
   text-decoration: underline;
 }
 
