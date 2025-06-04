@@ -6,46 +6,69 @@ import "./App.css";
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const moveCursor = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    // Detect mobile devices
+    const checkMobile = () => {
+      const isMobileDevice =
+        window.innerWidth <= 768 ||
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) ||
+        "ontouchstart" in window;
+      setIsMobile(isMobileDevice);
     };
 
-    const handleMouseEnter = () => setIsHovering(true);
-    const handleMouseLeave = () => setIsHovering(false);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
-    document.addEventListener("mousemove", moveCursor);
+    // Only add cursor functionality on non-mobile devices
+    if (!isMobile) {
+      const moveCursor = (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      };
 
-    // Add observers for dynamic content
-    const addHoverListeners = () => {
-      const interactiveElements = document.querySelectorAll(
-        'a, button, [role="button"], .card-container, .tag, input, textarea, select, .github-logo'
-      );
-      interactiveElements.forEach((element) => {
-        element.addEventListener("mouseenter", handleMouseEnter);
-        element.addEventListener("mouseleave", handleMouseLeave);
-      });
-    };
+      const handleMouseEnter = () => setIsHovering(true);
+      const handleMouseLeave = () => setIsHovering(false);
 
-    // Initial setup
-    addHoverListeners();
+      document.addEventListener("mousemove", moveCursor);
 
-    // Observer for dynamically added content
-    const observer = new MutationObserver(() => {
+      // Add observers for dynamic content
+      const addHoverListeners = () => {
+        const interactiveElements = document.querySelectorAll(
+          'a, button, [role="button"], .card-container, .tag, input, textarea, select, .github-logo'
+        );
+        interactiveElements.forEach((element) => {
+          element.addEventListener("mouseenter", handleMouseEnter);
+          element.addEventListener("mouseleave", handleMouseLeave);
+        });
+      };
+
+      // Initial setup
       addHoverListeners();
-    });
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+      // Observer for dynamically added content
+      const observer = new MutationObserver(() => {
+        addHoverListeners();
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+
+      return () => {
+        document.removeEventListener("mousemove", moveCursor);
+        observer.disconnect();
+        window.removeEventListener("resize", checkMobile);
+      };
+    }
 
     return () => {
-      document.removeEventListener("mousemove", moveCursor);
-      observer.disconnect();
+      window.removeEventListener("resize", checkMobile);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <Router className="router">

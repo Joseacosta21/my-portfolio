@@ -1,9 +1,33 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./CS.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard.jsx";
 
 const CS = () => {
   const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollButtons = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      updateScrollButtons();
+      container.addEventListener("scroll", updateScrollButtons);
+      window.addEventListener('resize', updateScrollButtons);
+      return () => {
+        container.removeEventListener("scroll", updateScrollButtons);
+        window.removeEventListener('resize', updateScrollButtons);
+      };
+    }
+  }, []);
 
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
@@ -38,7 +62,10 @@ const CS = () => {
     <>
       <div className="cs-container" id="cs">
         <div className="projects-wrapper">
-          <button className="scroll-button left" onClick={() => scroll("left")}>
+          <button
+            className={`scroll-button scroll-button--dark left ${!canScrollLeft ? 'hidden' : ''}`}
+            onClick={() => scroll("left")}
+          >
             ‹
           </button>
           <div className="projects-container" ref={scrollContainerRef}>
@@ -159,7 +186,7 @@ const CS = () => {
             <ProjectsCard {...portfolioPage} />
           </div>
           <button
-            className="scroll-button right"
+            className={`scroll-button scroll-button--dark right ${!canScrollRight ? 'hidden' : ''}`}
             onClick={() => scroll("right")}
           >
             ›
