@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import FeedEmbed from "./feed-embed/feed-embed";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import "./photo_filmmaking.css";
 
 const PhotoFilmmaking = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    const scrollAmount = 350; // Adjust this value as needed
+    if (direction === "left") {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
   const steelRack = {
     projectImg: "/assets/project-card-photos/photo-filmmaking/SteelRack.jpg",
     projectTitle: "Steelrack",
@@ -72,24 +83,35 @@ const PhotoFilmmaking = () => {
   return (
     <>
       <div className="photo-container" id="photoFilmmaking">
-        <div className="projects-container">
-          {/* Text */}
-          <div class="text-container">
-            <h1 className="title">Visual Media</h1>
-            <br />
-            <p>Me, my camera & my drone.</p>
-            <br />
-            <p>Commissioned work & collaborations:</p>
-            <br />
+        <div className="projects-wrapper">
+          <button className="scroll-button left" onClick={() => scroll("left")}>
+            ‹
+          </button>
+          <div className="projects-container" ref={scrollContainerRef}>
+            {/* Text */}
+            <div className="text-container">
+              <h1 className="title">Visual Media</h1>
+              <br />
+              <p>Me, my camera & my drone.</p>
+              <br />
+              <p>Commissioned work & collaborations:</p>
+              <br />
+            </div>
+            {/* Project Cards */}
+            <ProjectsCard {...steelRack} />
+            <ProjectsCard {...hoodClub} />
+            <ProjectsCard {...djDuck} />
+            <ProjectsCard {...solenDance} />
+            <ProjectsCard {...santaUrsula} />
+            <ProjectsCard {...stingers} />
+            <ProjectsCard {...AELAUM} />
           </div>
-          {/* Project Cards */}
-          <ProjectsCard {...steelRack} />
-          <ProjectsCard {...hoodClub} />
-          <ProjectsCard {...djDuck} />
-          <ProjectsCard {...solenDance} />
-          <ProjectsCard {...santaUrsula} />
-          <ProjectsCard {...stingers} />
-          <ProjectsCard {...AELAUM} />
+          <button
+            className="scroll-button right"
+            onClick={() => scroll("right")}
+          >
+            ›
+          </button>
         </div>
         {/* IG Embed */}
         <p className="text-center">Personal photography page: </p>

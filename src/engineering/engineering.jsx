@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./engineering.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 
 const Engineering = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    const scrollAmount = 350; // Adjust this value as needed
+    if (direction === "left") {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
   // Project Cards
   const pillDispenser = {
     projectImg: "/assets/project-card-photos/engineering/PillDispenser.png",
@@ -83,36 +94,46 @@ const Engineering = () => {
       "Peltier powered car for Concordia's Thermodynamics II course.",
     projectTags: ["SolidWorks", "3D Printing", "Soldering"],
     projectGitHub: "",
-    projectLink:
-      "",
+    projectLink: "",
   };
 
   return (
     <>
       <div className="engineering-container" id="engineering">
-        <div className="projects-container">
-          {/* Text */}
-          <div className="text-container">
-            <h1 className="title">Engineering</h1>
-            <br />
-            <p>
-              I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
-              University.
-            </p>
-            <br />
-            <p>The brown puffle from Club Penguin is my spirit animal.</p>
-            <br />
-            <p>Bit of my engineering stuff:</p>
+        <div className="projects-wrapper">
+          <button className="scroll-button left" onClick={() => scroll("left")}>
+            ‹
+          </button>
+          <div className="projects-container" ref={scrollContainerRef}>
+            {/* Text */}
+            <div className="text-container">
+              <h1 className="title">Engineering</h1>
+              <br />
+              <p>
+                I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
+                University.
+              </p>
+              <br />
+              <p>The brown puffle from Club Penguin is my spirit animal.</p>
+              <br />
+              <p>Bit of my engineering stuff:</p>
+            </div>
+            {/* Project Cards */}
+            <ProjectsCard {...Baja} />
+            <ProjectsCard {...Research} />
+            <ProjectsCard {...ThermoCar} />
+            <ProjectsCard {...EcoFlow} />
+            <ProjectsCard {...pillDispenser} />
+            <ProjectsCard {...PrintedLens} />
+            <ProjectsCard {...LocKick} />
+            <ProjectsCard {...SOS} />
           </div>
-          {/* Project Cards */}
-          <ProjectsCard {...Baja} />
-          <ProjectsCard {...Research} />
-          <ProjectsCard {...ThermoCar} />
-          <ProjectsCard {...EcoFlow} />
-          <ProjectsCard {...pillDispenser} />
-          <ProjectsCard {...PrintedLens} />
-          <ProjectsCard {...LocKick} />
-          <ProjectsCard {...SOS} />
+          <button
+            className="scroll-button right"
+            onClick={() => scroll("right")}
+          >
+            ›
+          </button>
         </div>
       </div>
     </>

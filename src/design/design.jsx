@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./design.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 
 const Design = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scroll = (direction) => {
+    const container = scrollContainerRef.current;
+    const scrollAmount = 350; // Adjust this value as needed
+    if (direction === "left") {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
   // Project Cards
   const theMeatSweats = {
     projectImg: "/assets/project-card-photos/design/The Meat Sweats.jpg",
@@ -73,22 +84,31 @@ const Design = () => {
   return (
     <>
       <div className="design-container" id="design">
-        <div className="projects-container">
-          {/* Text */}
-          <div class="text-container">
-            <h1>Design</h1>
-            <p>
-              Several designs I've made for fun, friends, and comissions.
-            </p>
+        <div className="projects-wrapper">
+          <button className="scroll-button left" onClick={() => scroll("left")}>
+            ‹
+          </button>
+          <div className="projects-container" ref={scrollContainerRef}>
+            {/* Text */}
+            <div className="text-container">
+              <h1>Design</h1>
+              <p>Several designs I've made for fun, friends, and comissions.</p>
+            </div>
+            {/* Project Cards */}
+            <ProjectsCard {...mockUps} />
+            <ProjectsCard {...theMeatSweats} />
+            <ProjectsCard {...academicWeapon} />
+            <ProjectsCard {...artekPatch} />
+            <ProjectsCard {...badIdeasGoodTimes} />
+            <ProjectsCard {...peanutsJoe} />
+            <ProjectsCard {...phoneStand} />
           </div>
-          {/* Project Cards */}
-          <ProjectsCard {...mockUps} />
-          <ProjectsCard {...theMeatSweats} />
-          <ProjectsCard {...academicWeapon} />
-          <ProjectsCard {...artekPatch} />
-          <ProjectsCard {...badIdeasGoodTimes} />
-          <ProjectsCard {...peanutsJoe} />
-          <ProjectsCard {...phoneStand} />
+          <button
+            className="scroll-button right"
+            onClick={() => scroll("right")}
+          >
+            ›
+          </button>
         </div>
       </div>
     </>
