@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 99;
+  z-index: var(--z-modal);
 }
 
 /* TODO , scrolling shi*/
@@ -14,12 +14,12 @@
 
 /* TODO shadow color*/
 .header-links {
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 2rem;
-  z-index: 99; /* ??? */
+  margin: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-xl);
+  z-index: var(--z-modal);
   width: 40rem;
-  transition: 0.3s ease;
+  transition: var(--transition-medium) ease;
   display: flex;
   justify-content: space-around;
   white-space: nowrap; /* Prevent text from wrapping */
@@ -28,7 +28,7 @@
 
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.56);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-light);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.36);
@@ -37,25 +37,25 @@
 .link {
   font-size: 0.9rem;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   color: #333333;
-  transition: 0.6s;
+  transition: var(--transition-slow);
   opacity: 0.7;
 }
 
 .link.scrolling {
-  transition: ease 0.3s;
+  transition: ease var(--transition-medium);
 }
 
 .link:hover {
-  transition: 0.6s;
+  transition: var(--transition-slow);
   opacity: 1;
   color: inherit;
-  color: black;
+  color: var(--color-primary-text);
 }
 
 @media (max-width: 800px) {
   .link {
-    margin-right: 1.5rem;
+    margin-right: var(--spacing-sm);
   }
 }

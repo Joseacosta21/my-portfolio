@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./ProjectsCard.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,15 +13,46 @@ const ProjectsCard = ({
   projectGitHub,
   projectLink,
   fitType,
+  animationDelay = 0, // Add optional animation delay prop
 }) => {
   const cardRef = useRef(null);
   const [transform, setTransform] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Intersection Observer for fade-in animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Add delay before making visible for staggered effect
+          setTimeout(() => {
+            setIsVisible(true);
+          }, animationDelay);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the card is visible (more centered)
+        rootMargin: "-10% 0px -10% 0px", // Start animation when card is closer to center of viewport
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [animationDelay]);
 
   const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
+    const imgContainer = e.currentTarget; // Use the img-container as reference
+    if (!imgContainer) return;
 
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
+    const rect = imgContainer.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
@@ -33,7 +64,6 @@ const ProjectsCard = ({
     const mouseYPercent = (y / rect.height) * 100;
 
     // Set CSS custom properties for the gradient
-    const imgContainer = card.querySelector(".img-container");
     if (imgContainer) {
       imgContainer.style.setProperty("--mouse-x", `${mouseXPercent}%`);
       imgContainer.style.setProperty("--mouse-y", `${mouseYPercent}%`);
@@ -63,23 +93,33 @@ const ProjectsCard = ({
     );
   };
 
+  // Helper function to combine fade animation with 3D hover transform
+  const getFinalTransform = () => {
+    const fadeTransform = isVisible
+      ? "translateY(0) scale(1)"
+      : "translateY(30px) scale(0.95)";
+    if (transform) {
+      // When hovering, apply both fade transform and 3D hover effect
+      return `${fadeTransform} ${transform}`;
+    }
+    return fadeTransform;
+  };
+
   return (
-    <div
-      ref={cardRef}
-      className="card-container"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div ref={cardRef} className="card-container">
       {projectLink ? (
         <a href={projectLink} target="_blank" rel="noopener noreferrer">
           <div
             className="img-container"
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             style={{
-              transform: transform,
+              transform: getFinalTransform(),
+              opacity: isVisible ? 1 : 0,
               transition: transform
-                ? "none"
-                : "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1)",
+                ? "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out"
+                : "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out",
             }}
           >
             <img
@@ -101,11 +141,15 @@ const ProjectsCard = ({
       ) : (
         <div
           className="img-container"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           style={{
-            transform: transform,
+            transform: getFinalTransform(),
+            opacity: isVisible ? 1 : 0,
             transition: transform
-              ? "none"
-              : "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1)",
+              ? "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out"
+              : "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out",
           }}
         >
           <img

@@ -2,19 +2,19 @@
   width: 100%;
   margin: 0 auto;
   min-height: 100vh;
-  background-color: white;
-  color: black;
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary-text);
   flex-direction: column;
   position: sticky;
   display: flex;
-  padding: 2rem;
+  padding: var(--spacing-md);
   justify-items: center;
   justify-content: center;
   z-index: 1;
 }
 
 .my-name {
-  padding: 2rem;
+  padding: var(--spacing-md);
   font-size: 6rem;
   font-weight: 700;
   background-clip: text;
@@ -44,13 +44,13 @@
 }
 
 #bio {
-  padding: 1rem 7rem 1rem 7rem;
+  padding: var(--spacing-sm) 7rem var(--spacing-sm) 7rem;
   text-align: justify;
 }
 
 .chevron-arrow {
-  height: 4rem;
-  transition: 0.6s;
+  height: var(--spacing-lg);
+  transition: var(--transition-slow);
   opacity: 0.5;
   position: absolute;
   bottom: 0;
@@ -60,5 +60,5 @@
 
 .chevron-arrow:hover {
   opacity: 1;
-  transition: 0.6s;
+  transition: var(--transition-slow);
 }
