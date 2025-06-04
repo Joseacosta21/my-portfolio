@@ -56,7 +56,7 @@
   z-index: -1;
 }
 
-.card-container:hover .img-container::before {
+.img-container:hover::before {
   opacity: 1;
 }
 
@@ -107,7 +107,7 @@
   opacity: 1;
 }
 
-.card-container:hover .img-container {
+.img-container:hover {
   box-shadow: var(--shadow-glow);
 }
 

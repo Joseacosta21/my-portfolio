@@ -138,10 +138,10 @@ a:hover {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   flex: 1;
-  align-content: center;
+  align-content: flex-start;
   gap: 10px;
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 0;
-  height: 90vh;
+  padding: var(--spacing-xl) var(--spacing-md) calc(var(--spacing-xl) + 3rem) 0;
+  min-height: 500px; /* Minimum height but can grow with content */
 }
 
 .projects-container::-webkit-scrollbar {
@@ -151,39 +151,32 @@ a:hover {
 /* Scroll Button Base Styles */
 .scroll-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--color-glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  width: 45px;
-  height: 45px;
-  font-size: 18px;
-  font-weight: var(--font-weight-light);
+  bottom: 1rem; /* Closer to content since we reduced bottom padding */
+  transform: translateY(0);
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
   z-index: var(--z-sticky);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-medium) ease;
-  box-shadow: var(--shadow-light);
+  transition: all var(--transition-medium) cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .scroll-button:hover {
-  background: var(--color-glass-bg-hover);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--color-border-medium);
-  transform: translateY(-50%) scale(1.05);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(0) scale(1.1);
 }
 
 /* Hidden scroll button state */
 .scroll-button.hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-50%) scale(0.8);
+  transform: translateY(0) scale(0.8);
 }
 
 .scroll-button.left {
@@ -196,12 +189,22 @@ a:hover {
 
 /* Light theme scroll buttons */
 .scroll-button--light {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--color-primary-text); /* Black on white background */
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.scroll-button--light:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Dark theme scroll buttons */
 .scroll-button--dark {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-secondary-text); /* White on dark background */
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.scroll-button--dark:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Text Container */
