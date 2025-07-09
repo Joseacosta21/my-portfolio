@@ -17,6 +17,14 @@
   overflow: hidden;
 }
 
+/* Mobile engineering container adjustments */
+@media (max-width: 768px) {
+  .engineering-container {
+    display: block !important; /* Stack elements vertically on mobile */
+    overflow: visible !important;
+  }
+}
+
 .engineering-container p {
   color: var(--color-accent-text);
 }

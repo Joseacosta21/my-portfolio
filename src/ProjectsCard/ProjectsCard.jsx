@@ -18,6 +18,47 @@ const ProjectsCard = ({
   const cardRef = useRef(null);
   const [transform, setTransform] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // Actually detects touch vs mouse devices
+
+  // Detect touch device (not just mobile)
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      // Primary detection: Check if touch is supported and no mouse is detected
+      const isTouchDevice =
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0;
+
+      // Check if it's primarily a touch device (no mouse/trackpad)
+      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const hasHover = window.matchMedia("(hover: hover)").matches;
+
+      // Show mobile description if:
+      // 1. Touch is supported AND (coarse pointer OR no hover capability)
+      // 2. Small screen (mobile/tablet)
+      const shouldShowMobileDescription =
+        (isTouchDevice && (hasCoarsePointer || !hasHover)) ||
+        window.innerWidth <= 768;
+
+      setIsMobile(shouldShowMobileDescription);
+    };
+
+    checkTouchDevice();
+    window.addEventListener("resize", checkTouchDevice);
+
+    // Also listen for pointer/hover capability changes
+    const coarsePointerQuery = window.matchMedia("(pointer: coarse)");
+    const hoverQuery = window.matchMedia("(hover: hover)");
+
+    coarsePointerQuery.addListener(checkTouchDevice);
+    hoverQuery.addListener(checkTouchDevice);
+
+    return () => {
+      window.removeEventListener("resize", checkTouchDevice);
+      coarsePointerQuery.removeListener(checkTouchDevice);
+      hoverQuery.removeListener(checkTouchDevice);
+    };
+  }, []);
 
   // Intersection Observer for fade-in animation
   useEffect(() => {
@@ -49,6 +90,9 @@ const ProjectsCard = ({
   }, [animationDelay]);
 
   const handleMouseMove = (e) => {
+    // Skip 3D effects on touch devices for better performance
+    if (isMobile) return;
+
     const imgContainer = e.currentTarget; // Use the img-container as reference
     if (!imgContainer) return;
 
@@ -83,10 +127,15 @@ const ProjectsCard = ({
   };
 
   const handleMouseLeave = () => {
-    setTransform("");
+    if (!isMobile) {
+      setTransform("");
+    }
   };
 
   const handleMouseEnter = () => {
+    // Skip 3D effects on touch devices
+    if (isMobile) return;
+
     // Pre-warm the transition for smoother entry with subtle effect
     setTransform(
       "perspective(1000px) translateZ(5px) scale3d(1.01, 1.01, 1.01)"
@@ -98,6 +147,12 @@ const ProjectsCard = ({
     const fadeTransform = isVisible
       ? "translateY(0) scale(1)"
       : "translateY(30px) scale(0.95)";
+
+    // On touch devices, only apply fade transform for better performance
+    if (isMobile) {
+      return fadeTransform;
+    }
+
     if (transform) {
       // When hovering, apply both fade transform and 3D hover effect
       return `${fadeTransform} ${transform}`;
@@ -179,6 +234,10 @@ const ProjectsCard = ({
             )}
           </div>
         </div>
+        {/* Touch device description under title */}
+        {isMobile && (
+          <div className="card-description-mobile">{projectDescription}</div>
+        )}
         {projectTags.length > 0 && (
           <div className="card-tags">
             {projectTags.map((tag, index) => (

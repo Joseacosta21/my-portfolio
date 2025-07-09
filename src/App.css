@@ -296,12 +296,206 @@ a:hover {
   .github-logo {
     cursor: pointer !important;
   }
+
+  /* Mobile-optimized project containers */
+  .projects-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack text above horizontal scroll */
+    width: 100%;
+    align-items: center; /* Center everything */
+  }
+
+  /* Projects container on mobile - horizontal scrolling area only */
+  .projects-container {
+    display: flex !important;
+    flex-direction: row !important; /* Keep horizontal layout for card scrolling */
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    padding: 0.5rem var(--spacing-sm) calc(var(--spacing-lg) + 2rem)
+      var(--spacing-sm); /* Reduced top padding */
+    gap: var(--spacing-sm);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  /* Hide text-container from horizontal scroll on mobile */
+  .projects-container .text-container {
+    display: none !important;
+  }
+
+  /* Mobile card optimization */
+  .card-container {
+    width: 280px !important; /* Slightly smaller for mobile */
+    min-width: 280px !important; /* Ensure minimum width */
+    flex-shrink: 0 !important; /* Prevent shrinking */
+    flex-grow: 0 !important; /* Prevent growing */
+    flex-basis: auto !important; /* Allow natural sizing */
+    scroll-snap-align: center; /* Snap to center */
+    margin: 0 !important; /* Remove any margins that could cause stacking */
+  }
+
+  /* Touch-friendly scroll buttons */
+  .scroll-button {
+    width: 44px; /* Apple's recommended minimum touch target */
+    height: 44px;
+    font-size: 20px;
+    bottom: 1rem;
+    z-index: var(--z-modal);
+  }
+
+  /* Larger touch targets for mobile */
+  .scroll-button--mobile {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Mobile typography adjustments */
+  h1,
+  .title {
+    font-size: 3rem; /* Smaller for mobile screens */
+  }
+
+  /* Image container mobile optimization */
+  .img-container {
+    height: 22rem; /* Slightly smaller for mobile */
+  }
+
+  /* Mobile tag optimization */
+  .tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    min-width: 4rem;
+  }
+
+  /* Hide scroll buttons on mobile devices */
+  .scroll-button {
+    display: none !important;
+  }
+
+  /* Scroll progress bar for mobile */
+  .scroll-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    z-index: var(--z-sticky);
+  }
+
+  .scroll-progress--light {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .scroll-progress--dark {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Mobile Text Container - appears above scroll area */
+.mobile-text-container {
+  display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  /* Show mobile text container */
+  .mobile-text-container {
+    display: block !important;
+    width: 100%;
+    padding: 2rem 1rem;
+    margin-bottom: 0.25rem; /* Reduced gap between text and cards */
+    text-align: center;
+    background: transparent;
+  }
+
+  .mobile-text-container h1 {
+    font-size: 2rem !important; /* 32px - Industry standard mobile heading */
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .mobile-text-container p {
+    font-size: 1rem !important; /* 16px - Standard mobile body text */
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    color: rgb(155, 161, 166);
+  }
+
+  /* Mobile skills layout adjustments */
+  .mobile-text-container .skills {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-text-container .skills ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Specific styling for curriculum links */
+  .mobile-text-container .skills ul.no-list li {
+    margin-bottom: 0.2rem; /* Even tighter spacing for curriculum list */
+    line-height: 1.4;
+  }
+
+  .mobile-text-container .skills ul.no-list li a {
+    color: var(--color-accent-text);
+    text-decoration: none;
+    display: block;
+    padding: 0.1rem 0;
+  }
+
+  .mobile-text-container .skills ul.no-list li a:hover {
+    color: var(--color-secondary-text);
+    text-decoration: underline;
+  }
+
+  .mobile-text-container .skills li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem; /* Reduced from 0.5rem to 0.25rem for tighter spacing */
+    font-size: 0.9rem;
+    line-height: 1.3; /* Added line-height for better text alignment */
+  }
+
+  .mobile-text-container .skills img {
+    height: 1rem;
+    width: 1rem;
+    flex-shrink: 0; /* Prevent icons from shrinking */
+    object-fit: contain; /* Ensure consistent icon display */
+  }
+
+  .mobile-text-container .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Increased gap between skill sections */
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  /* Ensure skills sections have consistent spacing */
+  .mobile-text-container .skills:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  .mobile-text-container .skills p {
+    margin-bottom: 0.4rem; /* Reduced from 0.5rem for tighter spacing */
+    font-weight: 600;
+  }
 }
 
 /* Tablet and Mobile Layout */
 @media (max-width: 800px) {
   .projects-container {
-    flex-direction: column;
     margin: 0;
   }
 
@@ -311,5 +505,32 @@ a:hover {
 
   .contactform {
     flex-direction: column;
+  }
+}
+
+/* iPhone and Mobile Device Specific Optimizations */
+@media screen and (max-width: 428px) {
+  .projects-container {
+    padding: 1rem 0.5rem 3rem 0.5rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .card-container {
+    width: 260px !important;
+    min-width: 260px !important;
+  }
+
+  .mobile-text-container {
+    padding: 1.5rem 1rem !important; /* Reduced padding for small screens */
+  }
+
+  .mobile-text-container h1 {
+    font-size: 1.75rem !important; /* 28px - Smaller for very small screens */
+    margin-bottom: 0.5rem !important;
+  }
+
+  .mobile-text-container p {
+    font-size: 0.9rem !important; /* 14.4px for small screens */
+    margin-bottom: 0.5rem !important;
   }
 }

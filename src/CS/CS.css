@@ -4,3 +4,11 @@
   background-color: #1e1e1e;
   color: var(--color-secondary-text);
 }
+
+/* Mobile CS container adjustments */
+@media (max-width: 768px) {
+  .cs-container {
+    display: block !important;
+    overflow: visible !important;
+  }
+}
