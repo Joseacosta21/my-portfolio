@@ -2,14 +2,34 @@ import React, { useRef, useState, useEffect } from "react";
 import "./engineering.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import { useDragScroll } from "../utils/useDragScroll";
+import {
+  checkMobile,
+  createMobileScrollFunction,
+  useScrollProgress,
+} from "../utils/mobileUtils";
 
 const Engineering = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Initialize drag scroll functionality
   useDragScroll(scrollContainerRef, true);
+
+  // Get scroll progress for mobile progress bar
+  const scrollProgress = useScrollProgress(scrollContainerRef);
+
+  // Detect mobile device
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(checkMobile());
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const updateScrollButtons = () => {
     const container = scrollContainerRef.current;
@@ -39,15 +59,7 @@ const Engineering = () => {
     }
   }, []);
 
-  const scroll = (direction) => {
-    const container = scrollContainerRef.current;
-    const scrollAmount = 350; // Adjust this value as needed
-    if (direction === "left") {
-      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    } else {
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
+  const scroll = createMobileScrollFunction(scrollContainerRef, isMobile);
   // Project Cards
   const pillDispenser = {
     projectImg: "/assets/project-card-photos/engineering/PillDispenser.png",
@@ -134,11 +146,22 @@ const Engineering = () => {
   return (
     <>
       <div className="engineering-container" id="engineering">
+        {/* Mobile Text Container - appears above scroll area on mobile only */}
+        <div className="mobile-text-container">
+          <h1 className="title">Engineering</h1>
+          <p>
+            I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
+            University.
+          </p>
+          <p>The brown puffle from Club Penguin is my spirit animal.</p>
+          <p>Bit of my engineering stuff:</p>
+        </div>
+
         <div className="projects-wrapper">
           <button
-            className={`scroll-button scroll-button--dark left ${
-              !canScrollLeft ? "hidden" : ""
-            }`}
+            className={`scroll-button scroll-button--dark ${
+              isMobile ? "scroll-button--mobile" : ""
+            } left ${!canScrollLeft ? "hidden" : ""}`}
             onClick={() => scroll("left")}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -170,15 +193,22 @@ const Engineering = () => {
             <ProjectsCard {...SOS} animationDelay={700} />
           </div>
           <button
-            className={`scroll-button scroll-button--dark right ${
-              !canScrollRight ? "hidden" : ""
-            }`}
+            className={`scroll-button scroll-button--dark ${
+              isMobile ? "scroll-button--mobile" : ""
+            } right ${!canScrollRight ? "hidden" : ""}`}
             onClick={() => scroll("right")}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
             </svg>
           </button>
+          {/* Mobile scroll progress bar */}
+          {isMobile && (
+            <div
+              className="scroll-progress scroll-progress--dark"
+              style={{ width: `${scrollProgress}%` }}
+            />
+          )}
         </div>
       </div>
     </>

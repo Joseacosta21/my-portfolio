@@ -177,7 +177,82 @@
   transition: transform var(--transition-medium) ease;
 }
 
-.card-container:hover .github-logo {
-  /* Removed 3D transform - keep stable */
-  transform: scale(1.1);
+/* Mobile and iPhone Optimizations */
+@media (max-width: 768px), (hover: none) {
+  .card-container {
+    width: 280px; /* Optimized width for mobile screens */
+    margin: 0 var(--spacing-xs); /* Reduced margin for mobile */
+  }
+
+  .img-container {
+    height: 20rem; /* Slightly smaller height for mobile */
+    /* Disable 3D effects on mobile for better performance */
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Disable hover effects on mobile */
+  .img-container:hover::before {
+    opacity: 0;
+  }
+
+  /* Hide overlay completely on mobile since we show description under title */
+  .overlay {
+    display: none !important;
+  }
+
+  .img-container:hover .overlay {
+    display: none !important;
+  }
+
+  /* Touch-friendly card info */
+  .card-info {
+    padding: 0.8rem 0.4rem;
+  }
+
+  /* Industry standard mobile font sizes */
+  .card-title {
+    font-size: 1.125rem; /* 18px - Standard mobile headline */
+    font-weight: 600; /* Semibold for better readability */
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Mobile description under title */
+  .card-description-mobile {
+    font-size: 0.875rem; /* 14px - Standard mobile body text */
+    color: rgb(75, 85, 99); /* text-gray-600 equivalent */
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    font-weight: 400; /* Regular weight */
+  }
+
+  .card-tags {
+    gap: 0.4rem; /* Tighter spacing on mobile */
+    flex-wrap: wrap; /* Allow tags to wrap on small screens */
+  }
+
+  .tag {
+    padding: 0.25rem 0.5rem; /* 4px 8px - Standard mobile chip padding */
+    font-size: 0.75rem; /* 12px - Standard mobile small text */
+    min-width: 3rem;
+    font-weight: 500;
+  }
+
+  /* Mobile-specific GitHub logo sizing */
+  .github-logo {
+    font-size: 1.25rem; /* 20px - Standard mobile icon size */
+  }
+}
+
+/* iPhone specific optimizations */
+@media only screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3),
+  only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .card-container {
+    width: 300px; /* Optimized for iPhone screen sizes */
+  }
+
+  .img-container {
+    height: 22rem;
+  }
 }

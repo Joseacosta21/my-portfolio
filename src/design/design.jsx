@@ -2,14 +2,34 @@ import React, { useRef, useState, useEffect } from "react";
 import "./design.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import { useDragScroll } from "../utils/useDragScroll";
+import {
+  checkMobile,
+  createMobileScrollFunction,
+  useScrollProgress,
+} from "../utils/mobileUtils";
 
 const Design = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Initialize drag scroll functionality
   useDragScroll(scrollContainerRef, true);
+
+  // Get scroll progress for mobile progress bar
+  const scrollProgress = useScrollProgress(scrollContainerRef);
+
+  // Detect mobile device
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(checkMobile());
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const updateScrollButtons = () => {
     const container = scrollContainerRef.current;
@@ -39,15 +59,7 @@ const Design = () => {
     }
   }, []);
 
-  const scroll = (direction) => {
-    const container = scrollContainerRef.current;
-    const scrollAmount = 350; // Adjust this value as needed
-    if (direction === "left") {
-      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    } else {
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
+  const scroll = createMobileScrollFunction(scrollContainerRef, isMobile);
   // Project Cards
   const theMeatSweats = {
     projectImg: "/assets/project-card-photos/design/The Meat Sweats.jpg",
@@ -118,11 +130,17 @@ const Design = () => {
   return (
     <>
       <div className="design-container" id="design">
+        {/* Mobile Text Container - appears above scroll area on mobile only */}
+        <div className="mobile-text-container">
+          <h1>Design</h1>
+          <p>Several designs I've made for fun, friends, and comissions.</p>
+        </div>
+
         <div className="projects-wrapper">
           <button
-            className={`scroll-button scroll-button--light left ${
-              !canScrollLeft ? "hidden" : ""
-            }`}
+            className={`scroll-button scroll-button--light ${
+              isMobile ? "scroll-button--mobile" : ""
+            } left ${!canScrollLeft ? "hidden" : ""}`}
             onClick={() => scroll("left")}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -145,15 +163,22 @@ const Design = () => {
             <ProjectsCard {...phoneStand} animationDelay={600} />
           </div>
           <button
-            className={`scroll-button scroll-button--light right ${
-              !canScrollRight ? "hidden" : ""
-            }`}
+            className={`scroll-button scroll-button--light ${
+              isMobile ? "scroll-button--mobile" : ""
+            } right ${!canScrollRight ? "hidden" : ""}`}
             onClick={() => scroll("right")}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
             </svg>
           </button>
+          {/* Mobile scroll progress bar */}
+          {isMobile && (
+            <div
+              className="scroll-progress scroll-progress--light"
+              style={{ width: `${scrollProgress}%` }}
+            />
+          )}
         </div>
       </div>
     </>
