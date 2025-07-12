@@ -64,7 +64,6 @@ body::-webkit-scrollbar {
 * {
   margin: 0;
   box-sizing: border-box;
-  cursor: none !important; /* Hide default cursor everywhere */
 }
 
 /* Reset cursor for interactive elements */
@@ -79,7 +78,7 @@ select,
 .card-container,
 .tag,
 .github-logo {
-  cursor: none !important;
+  cursor: pointer;
 }
 
 body {
@@ -246,57 +245,10 @@ a:hover {
   font-size: var(--font-size-small);
 }
 
-/* ===== CUSTOM CURSOR ===== */
-.custom-cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: var(--z-cursor);
-  transition: all var(--transition-fast) cubic-bezier(0.23, 1, 0.32, 1);
-  mix-blend-mode: difference;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
-    0 0 40px rgba(255, 255, 255, 0.2);
-}
-
-.custom-cursor.hover {
-  transform: scale(1.4);
-  background: #ffffff;
-  border: 3px solid #ffffff;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
-    0 0 60px rgba(255, 255, 255, 0.3);
-}
-
 /* ===== RESPONSIVE DESIGN ===== */
 
 /* Mobile Optimizations */
 @media (max-width: 768px), (hover: none) {
-  .custom-cursor {
-    display: none !important;
-  }
-
-  /* Restore default cursor behavior on mobile */
-  * {
-    cursor: auto !important;
-  }
-
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  [role="button"],
-  .scroll-button,
-  .link,
-  .card-container,
-  .tag,
-  .github-logo {
-    cursor: pointer !important;
-  }
-
   /* Mobile-optimized project containers */
   .projects-wrapper {
     display: flex;
@@ -316,9 +268,10 @@ a:hover {
     padding: 0.5rem var(--spacing-sm) calc(var(--spacing-lg) + 2rem)
       var(--spacing-sm); /* Reduced top padding */
     gap: var(--spacing-sm);
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: none; /* Disable snap scrolling for smoother experience */
     -webkit-overflow-scrolling: touch;
     width: 100%;
+    scroll-behavior: smooth; /* Ensure smooth scrolling */
   }
 
   /* Hide text-container from horizontal scroll on mobile */
@@ -333,7 +286,7 @@ a:hover {
     flex-shrink: 0 !important; /* Prevent shrinking */
     flex-grow: 0 !important; /* Prevent growing */
     flex-basis: auto !important; /* Allow natural sizing */
-    scroll-snap-align: center; /* Snap to center */
+    scroll-snap-align: none; /* Disable snap alignment for smoother scrolling */
     margin: 0 !important; /* Remove any margins that could cause stacking */
   }
 
@@ -409,7 +362,7 @@ a:hover {
   .mobile-text-container {
     display: block !important;
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 3.5rem 1rem 2rem 1rem; /* Increased top padding from 2rem to 3.5rem */
     margin-bottom: 0.25rem; /* Reduced gap between text and cards */
     text-align: center;
     background: transparent;

@@ -79,7 +79,7 @@ const Header = () => {
           to="engineering"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-50}
           duration={1200}
           className="link"
         >
@@ -96,7 +96,7 @@ const Header = () => {
           to="cs"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-50}
           duration={1200}
           className="link"
         >
@@ -113,7 +113,7 @@ const Header = () => {
           to="music"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-50}
           duration={1200}
           className="link"
         >
@@ -130,7 +130,7 @@ const Header = () => {
           to="photoFilmmaking"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-50}
           duration={1200}
           className="link"
         >
@@ -148,7 +148,7 @@ const Header = () => {
           to="design"
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-50}
           duration={1200}
           className="link"
         >

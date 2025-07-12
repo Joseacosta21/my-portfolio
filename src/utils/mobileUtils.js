@@ -39,9 +39,9 @@ export const getScrollAmount = (isMobile) => {
   if (isMobile) {
     // Dynamic scroll amount based on screen width for mobile
     const screenWidth = window.innerWidth;
-    if (screenWidth <= 375) return 250; // iPhone SE and smaller
-    if (screenWidth <= 414) return 280; // Standard iPhone sizes
-    return 300; // Larger mobile devices
+    if (screenWidth <= 375) return 220; // iPhone SE and smaller - reduced for smoother scrolling
+    if (screenWidth <= 414) return 250; // Standard iPhone sizes - reduced for smoother scrolling
+    return 270; // Larger mobile devices - reduced for smoother scrolling
   }
   return 350; // Desktop scroll amount
 };
