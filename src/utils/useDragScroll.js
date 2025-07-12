@@ -23,13 +23,15 @@ export const useDragScroll = (elementRef, enabled = true) => {
 
     // Momentum scrolling function
     const applyMomentum = () => {
-      if (Math.abs(velocity.current) < 0.5) {
+      if (Math.abs(velocity.current) < 0.3) {
         velocity.current = 0;
+        element.style.scrollBehavior = 'smooth'; // Re-enable smooth scrolling
+        console.log('Momentum ended');
         return;
       }
 
       element.scrollLeft += velocity.current;
-      velocity.current *= 0.95; // Friction factor for natural deceleration
+      velocity.current *= 0.92; // More aggressive friction for natural feel
       
       momentumAnimationFrame.current = requestAnimationFrame(applyMomentum);
     };
@@ -67,16 +69,8 @@ export const useDragScroll = (elementRef, enabled = true) => {
       const deltaX = Math.abs(x - startX.current);
       const deltaY = Math.abs(y - startY.current);
       
-      // Calculate velocity for momentum
-      const timeDelta = currentTime - lastTime.current;
-      if (timeDelta > 0) {
-        velocity.current = (touch.pageX - lastX.current) / timeDelta * -16; // Scale for 60fps
-      }
-      lastX.current = touch.pageX;
-      lastTime.current = currentTime;
-      
       // Determine scroll direction on first significant movement
-      if (deltaX > 8 || deltaY > 8) {
+      if (deltaX > 5 || deltaY > 5) {
         if (deltaY > deltaX && !isVerticalScroll.current) {
           // User is trying to scroll vertically, allow default behavior
           isDragging.current = false;
@@ -88,9 +82,20 @@ export const useDragScroll = (elementRef, enabled = true) => {
         }
       }
       
-      if (deltaX > 3) { // Reduced threshold for more responsive scrolling
+      // Calculate velocity for momentum (only when horizontal scrolling is confirmed)
+      if (deltaX > deltaY) {
+        const timeDelta = currentTime - lastTime.current;
+        if (timeDelta > 0) {
+          const currentVelocity = (touch.pageX - lastX.current) / timeDelta * -20; // Increased scale
+          velocity.current = currentVelocity;
+        }
+        lastX.current = touch.pageX;
+        lastTime.current = currentTime;
+      }
+      
+      if (deltaX > 2) { // Very responsive threshold
         e.preventDefault();
-        const walk = (x - startX.current) * 1.2; // Smoother scrolling multiplier
+        const walk = (x - startX.current) * 1.0; // Direct 1:1 ratio for responsive feel
         element.scrollLeft = scrollLeft.current - walk;
       }
     };
@@ -100,8 +105,13 @@ export const useDragScroll = (elementRef, enabled = true) => {
       isVerticalScroll.current = false;
       element.style.scrollBehavior = 'smooth';
       
+      // Debug log to verify momentum is triggered
+      console.log('Touch end - velocity:', velocity.current);
+      
       // Apply momentum if there's significant velocity
-      if (Math.abs(velocity.current) > 1) {
+      if (Math.abs(velocity.current) > 0.5) {
+        console.log('Applying momentum with velocity:', velocity.current);
+        element.style.scrollBehavior = 'auto'; // Disable smooth during momentum
         applyMomentum();
       }
     };
@@ -141,12 +151,13 @@ export const useDragScroll = (elementRef, enabled = true) => {
       // Calculate velocity for momentum
       const timeDelta = currentTime - lastTime.current;
       if (timeDelta > 0) {
-        velocity.current = (e.pageX - lastX.current) / timeDelta * -16; // Scale for 60fps
+        const currentVelocity = (e.pageX - lastX.current) / timeDelta * -20; // Increased scale
+        velocity.current = currentVelocity;
       }
       lastX.current = e.pageX;
       lastTime.current = currentTime;
       
-      const walk = (x - startX.current) * 2; // Multiply by 2 for faster scrolling
+      const walk = (x - startX.current) * 1.8; // Slightly faster for desktop
       element.scrollLeft = scrollLeft.current - walk;
     };
 
@@ -159,7 +170,8 @@ export const useDragScroll = (elementRef, enabled = true) => {
       }
       
       // Apply momentum if there's significant velocity
-      if (Math.abs(velocity.current) > 1) {
+      if (Math.abs(velocity.current) > 0.5) {
+        element.style.scrollBehavior = 'auto'; // Disable smooth during momentum
         applyMomentum();
       }
     };
@@ -173,7 +185,8 @@ export const useDragScroll = (elementRef, enabled = true) => {
       }
       
       // Apply momentum if there's significant velocity
-      if (Math.abs(velocity.current) > 1) {
+      if (Math.abs(velocity.current) > 0.5) {
+        element.style.scrollBehavior = 'auto'; // Disable smooth during momentum
         applyMomentum();
       }
     };
@@ -185,8 +198,12 @@ export const useDragScroll = (elementRef, enabled = true) => {
     element.style.webkitOverflowScrolling = 'touch'; // iOS momentum scrolling
     element.style.scrollSnapType = 'none'; // Disable snap scrolling for smoother experience
     
-    // Enable smooth scrolling behavior
+    // Enable smooth scrolling behavior by default
     element.style.scrollBehavior = 'smooth';
+    
+    // Add momentum scrolling CSS for iOS devices
+    element.style.webkitOverflowScrolling = 'touch';
+    element.style.overscrollBehaviorX = 'contain'; // Prevent overscroll effects
 
     // Add event listeners for both mouse and touch
     element.addEventListener('mousedown', handleMouseDown, { passive: false });
