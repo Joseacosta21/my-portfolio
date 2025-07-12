@@ -34,6 +34,19 @@
   border: 1px solid rgba(255, 255, 255, 0.36);
 }
 
+/* Mobile-specific header styling - consistent size regardless of scroll state */
+@media (max-width: 768px) {
+  .header-links {
+    width: 20rem !important; /* Force consistent width on mobile */
+    margin: var(--spacing-xs); /* Slightly smaller margin on mobile */
+    padding: var(--spacing-xs) var(--spacing-sm); /* Optimized padding for mobile */
+  }
+  
+  .header-links.scrolling {
+    width: 20rem !important; /* Ensure no size change when scrolling on mobile */
+  }
+}
+
 .link {
   font-size: 0.9rem;
   text-decoration: none;
@@ -56,6 +69,7 @@
 
 @media (max-width: 800px) {
   .link {
-    margin-right: var(--spacing-sm);
+    margin-right: var(--spacing-xs); /* Reduced spacing for mobile consistency */
+    font-size: 0.85rem; /* Slightly smaller font for better mobile fit */
   }
 }
