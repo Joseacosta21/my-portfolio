@@ -20,6 +20,7 @@ const Header = () => {
   const [isNarrowScreen, setIsNarrowScreen] = useState(
     window.innerWidth <= 800
   );
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [iconDisplay, setIconDisplay] = useState(false);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const Header = () => {
 
     const handleResize = () => {
       setIsNarrowScreen(window.innerWidth <= 800);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -58,7 +60,9 @@ const Header = () => {
 
   return (
     <header className={`header-container ${scrolling ? "scrolling" : ""}`}>
-      <nav className={`header-links ${scrolling ? "scrolling" : ""}`}>
+      <nav
+        className={`header-links ${!isMobile && scrolling ? "scrolling" : ""}`}
+      >
         <ScrollLink
           to="about"
           spy={true}
