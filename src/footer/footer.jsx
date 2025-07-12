@@ -1,9 +1,8 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
-  faWhatsapp,
   faLinkedin,
   faYoutube,
   faInstagram,
@@ -11,81 +10,15 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
-import emailjs from "@emailjs/browser";
 
 const Footer = () => {
-  const form = useRef();
-  const [isSending, setIsSending] = useState(false);
-  const [isSent, setIsSent] = useState(false);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setIsSending(true);
-
-    emailjs
-      .sendForm(
-        "service_p92yzsm",
-        "template_ytgpmqs",
-        form.current,
-        "knFF7WO7GqcIeYPth"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent");
-          setIsSending(false);
-          setIsSent(true);
-        },
-        (error) => {
-          console.log(error.text);
-          setIsSending(false);
-        }
-      );
-  };
-
   return (
     <>
       <div className="footer-container" id="contact">
         <div className="column-container">
           <div className="column">
-            <h2>Contact Me!</h2>
-            <p>Enter your info and I'll get back to you</p>
-          </div>
-        </div>
-        <div className="column-container">
-          <div className="column px-0 gap-10">
-            <form
-              id="contactForm"
-              ref={form}
-              className="contactform gap-10"
-              onSubmit={sendEmail}
-            >
-              <input
-                type="text"
-                id="from_name"
-                name="from_name"
-                placeholder="Name"
-                className="custom-input"
-                required
-              />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-                className="custom-input"
-                required
-              />
-              <input
-                type="submit"
-                className={`submit ${isSending ? "sending" : ""} ${
-                  isSent ? "sent" : ""
-                }`}
-                value={isSending ? "Sending..." : isSent ? "Sent" : "Send"}
-                id="submitButton"
-                disabled={isSending || isSent}
-              />
-            </form>
+            <h2>Let's Connect!</h2>
+            <p>Reach out through any of these platforms</p>
           </div>
         </div>
         <div className="column-container">
@@ -104,11 +37,6 @@ const Footer = () => {
               <li>
                 <a href="https://github.com/Joseacosta21" target="_blank">
                   <FontAwesomeIcon icon={faGithub} />
-                </a>
-              </li>
-              <li>
-                <a href="https://wa.me/524441737109" target="_blank">
-                  <FontAwesomeIcon icon={faWhatsapp} />
                 </a>
               </li>
               <li>
