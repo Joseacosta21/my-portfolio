@@ -79,7 +79,7 @@ const Music = () => {
   };
 
   const EnjoytheSilence = {
-    projectImg: "/assets/project-card-photos/music/EnjoytheSilence.jpg",
+    projectImg: "/assets/project-card-photos/music/EnjoytheSilence.webp",
     projectTitle: "Enjoy the Silence - Dirty Hands Mix",
     projectDescription:
       "Depeche Mode - Enjoy the Silence (Hands and Feet Mix) Bootleg",

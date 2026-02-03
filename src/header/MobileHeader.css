@@ -1,0 +1,332 @@
+/* ===== MOBILE HEADER - FIXED TOP BAR ===== */
+.mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: var(--z-modal);
+  display: none;
+  pointer-events: none;
+  /* Blend mode applied to the container so it blends with the page body (root context) */
+  mix-blend-mode: difference;
+  color: white;
+}
+
+/* Show mobile header only on mobile devices */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: block;
+  }
+}
+
+.mobile-header-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  
+  /* Completely transparent - no background */
+  background: transparent;
+  pointer-events: auto;
+  
+  /* Safari Hack: Force hardware acceleration to prevent blend mode artifacts */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ===== PAGE TITLE WITH MIX-BLEND-MODE ===== */
+.mobile-header-title-container {
+  position: relative;
+  height: 100%; /* Use full height of header */
+  display: flex; /* Use flexbox for perfect centering */
+  align-items: center;
+  flex: 1;
+  /* Removed overflow: hidden to prevent descender cutoff */
+}
+
+.mobile-header-title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  color: white !important; 
+  margin: 0;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  transition: opacity 0.3s ease;
+  /* Optically align with burger menu */
+  transform: translateY(2px);
+}
+
+/* ===== ROLLING TEXT ANIMATIONS ===== */
+@keyframes slideUpIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(2px); /* Maintain offset */
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(2px); /* Maintain offset */
+    opacity: 1;
+  }
+}
+
+.mobile-header-title.slide-up {
+  animation: slideUpIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.mobile-header-title.slide-down {
+  animation: slideDownIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ===== BURGER MENU ICON ===== */
+.burger-menu {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: calc(var(--z-modal) + 2);
+  transition: transform 0.2s ease;
+  /* Removed mix-blend-mode from container to fix blending issues */
+}
+
+.burger-menu:active {
+  transform: scale(0.92);
+}
+
+.burger-menu span {
+  width: 24px;
+  height: 2.5px;
+  background: white !important; /* Force white for mix-blend-mode inversion */
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  /* Removed mix-blend-mode for robust manual theming */
+}
+
+/* ===== THEME STYLES (Manual Color Switching) ===== */
+/* REMOVED: Theme overrides that were turning icons black (invisible in difference mode) */
+
+/* Burger to X animation */
+.burger-menu.open span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.burger-menu.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger-menu.open span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* ===== MENU BACKDROP ===== */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: calc(var(--z-modal) + 1);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== SLIDE-IN MENU DRAWER ===== */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 85vw;
+  height: 100%;
+  z-index: calc(var(--z-modal) + 2);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Enhanced glassmorphism with dark tint */
+  background: rgba(20, 20, 25, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: -10px 0 50px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-content {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===== NAVIGATION LINKS - MONOCHROME ===== */
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+}
+
+.mobile-nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.9);
+  transform: scaleY(0);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-link:active {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.98);
+}
+
+.mobile-nav-link.active::before {
+  transform: scaleY(1);
+}
+
+.mobile-nav-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.mobile-nav-icon {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  min-width: 18px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 428px) {
+  .mobile-header {
+    height: 60px;
+  }
+  
+  .mobile-header-content {
+    padding: 12px 16px;
+  }
+  
+  .mobile-header-title {
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 24px;
+  }
+  
+  .mobile-header-title-container {
+    height: 24px;
+  }
+  
+  .mobile-menu-drawer {
+    width: 280px;
+  }
+  
+  .mobile-nav-link {
+    font-size: 14px;
+    padding: 16px 20px;
+    gap: 14px;
+  }
+  
+  .mobile-nav-icon {
+    font-size: 16px;
+    min-width: 16px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+  .mobile-header-title {
+    font-size: 14px;
+    letter-spacing: 1.8px;
+  }
+  
+  .mobile-nav-link {
+    font-size: 13px;
+    padding: 14px 18px;
+  }
+}
+
+/* ===== SAFE AREA SUPPORT (iPhone notch) ===== */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .mobile-header-content {
+    padding-top: max(16px, calc(12px + env(safe-area-inset-top)));
+  }
+  
+  .mobile-menu-content {
+    padding-top: max(24px, calc(24px + env(safe-area-inset-top)));
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+.burger-menu:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.mobile-nav-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -2px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-header-title,
+  .burger-menu span,
+  .mobile-menu-drawer,
+  .mobile-nav-link {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

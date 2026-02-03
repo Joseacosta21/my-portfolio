@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./CS.css";
+import "./CS-mobile.css";
 import ProjectsCard from "../ProjectsCard/ProjectsCard";
 import { useDragScroll } from "../utils/useDragScroll";
 import {
@@ -62,7 +63,7 @@ const CS = () => {
   const scroll = createMobileScrollFunction(scrollContainerRef, isMobile);
   // Project cards
   const casinoStic = {
-    projectImg: "/assets/project-card-photos/CS/Casino_Stic.png",
+    projectImg: "/assets/project-card-photos/CS/Casino_Stic.webp",
     projectTitle: "Casino STIC",
     projectDescription: "A landing webpage for a sports & events venues.",
     projectTags: ["HTML", "CSS", "JS"],
@@ -72,7 +73,7 @@ const CS = () => {
   };
 
   const portfolioPage = {
-    projectImg: "/assets/project-card-photos/CS/JoeCool.png",
+    projectImg: "/assets/project-card-photos/CS/JoeCool.webp",
     projectTitle: "Portfolio",
     projectDescription: "You are looking at it right now :)",
     projectTags: ["React", "JSX", "CSS", "TW"],
@@ -97,13 +98,15 @@ const CS = () => {
           <p style={{ color: "rgb(155, 161, 166)" }}>
             Who said mechies can't code?
           </p>
-          <div className="flex justify-center gap-10">
-            <div className="skills">
-              <p>Curriculum</p>
-              <ul className="no-list">
+          
+          {/* ICONS ONLY - No text labels for cleaner mobile view */}
+          <div className="cs-mobile-skills">
+            <div className="cs-skill-group">
+              <p className="cs-skill-title">Curriculum</p>
+              <ul className="no-list cs-curriculum-list">
                 <li>
                   <a href="https://cs50.harvard.edu/x/2021/" target="_blank">
-                    Harvard CS50x 2021
+                    Harvard CS50x
                   </a>
                 </li>
                 <li>
@@ -126,41 +129,34 @@ const CS = () => {
                 </li>
               </ul>
             </div>
-            <div className="skills">
-              <p>Languages</p>
-              <ul>
-                <li>
-                  <img src="/assets/svgs/cpp-svgrepo-com.svg" />
-                  <p>C++</p>
-                </li>
-                <li>
-                  <img src="/assets/svgs/python-svgrepo-com.svg" />
-                  <p>Python</p>
-                </li>
-                <li>
-                  <img src="/assets/svgs/C_Programming_Language.svg" />
-                  <p>C</p>
-                </li>
-                <li>
-                  <img src="/assets/svgs/js-svgrepo-com.svg" />
-                  <p>JS</p>
-                </li>
-                <li>
-                  <img src="/assets/svgs/html-5-svgrepo-com.svg" />
-                  <p>HTML</p>
-                </li>
-                <li className="flex">
-                  <img src="/assets/svgs/css-3-svgrepo-com.svg" />
-                  <p>CSS</p>
-                </li>
-                <li className="flex">
-                  <img src="/assets/svgs/arduino-svgrepo-com.svg" />
-                  <p>Arduino</p>
-                </li>
+            
+            <div className="cs-skill-group">
+              <p className="cs-skill-title">Languages</p>
+              <ul className="cs-icon-grid">
+                <li><img src="/assets/svgs/cpp-svgrepo-com.svg" alt="C++" title="C++" /></li>
+                <li><img src="/assets/svgs/python-svgrepo-com.svg" alt="Python" title="Python" /></li>
+                <li><img src="/assets/svgs/C_Programming_Language.svg" alt="C" title="C" /></li>
+                <li><img src="/assets/svgs/js-svgrepo-com.svg" alt="JavaScript" title="JavaScript" /></li>
+                <li><img src="/assets/svgs/html-5-svgrepo-com.svg" alt="HTML" title="HTML" /></li>
+                <li><img src="/assets/svgs/css-3-svgrepo-com.svg" alt="CSS" title="CSS" /></li>
+                <li><img src="/assets/svgs/arduino-svgrepo-com.svg" alt="Arduino" title="Arduino" /></li>
+              </ul>
+            </div>
+            
+            <div className="cs-skill-group">
+              <p className="cs-skill-title">Frameworks & Tools</p>
+              <ul className="cs-icon-grid">
+                <li><img src="/assets/svgs/react-svgrepo-com.svg" alt="ReactJS" title="ReactJS" /></li>
+                <li><img src="/assets/svgs/vite-svgrepo-com.svg" alt="Vite" title="Vite" /></li>
+                <li><img src="/assets/svgs/tailwind-svgrepo-com.svg" alt="TailwindCSS" title="TailwindCSS" /></li>
+                <li><img src="/assets/svgs/git-svgrepo-com.svg" alt="Git" title="Git" /></li>
+                <li><img src="/assets/svgs/github-142-svgrepo-com.svg" alt="GitHub" title="GitHub" /></li>
               </ul>
             </div>
           </div>
         </div>
+
+
 
         <div className="projects-wrapper">
           <button

@@ -62,62 +62,62 @@ const Design = () => {
   const scroll = createMobileScrollFunction(scrollContainerRef, isMobile);
   // Project Cards
   const theMeatSweats = {
-    projectImg: "/assets/project-card-photos/design/The Meat Sweats.jpg",
+    projectImg: "/assets/project-card-photos/design/The Meat Sweats.webp",
     projectTitle: "The Meat sweats",
     projectDescription: "They really are a thing.",
     projectTags: ["Gimp"],
     projectGitHub: "",
-    projectLink: "src/assets/project-card-photos/design/The Meat Sweats.jpg",
+    projectLink: "src/assets/project-card-photos/design/The Meat Sweats.webp",
     fitType: "contain",
   };
   const academicWeapon = {
-    projectImg: "/assets/project-card-photos/design/Academic Weapon 1.1.jpg",
+    projectImg: "/assets/project-card-photos/design/Academic Weapon 1.1.webp",
     projectTitle: "Absolute Academic Weapon",
     projectDescription: "Absolute. Academic. Weapon. ",
     projectTags: ["Gimp"],
     projectGitHub: "",
     projectLink:
-      "src/assets/project-card-photos/design/Academic Weapon 1.1.jpg",
+      "src/assets/project-card-photos/design/Academic Weapon 1.1.webp",
     fitType: "contain",
   };
   const artekPatch = {
-    projectImg: "/assets/project-card-photos/design/Artek Patch V2.0.png",
+    projectImg: "/assets/project-card-photos/design/Artek Patch V2.0.webp",
     projectTitle: "Artek Patch",
     projectDescription: "Artek summer camp style patch/sticker design",
     projectTags: ["Gimp"],
     projectGitHub: "",
-    projectLink: "src/assets/project-card-photos/design/Artek Patch V2.0.png",
+    projectLink: "src/assets/project-card-photos/design/Artek Patch V2.0.webp",
     fitType: "contain",
   };
   const badIdeasGoodTimes = {
-    projectImg: "/assets/project-card-photos/design/BadIdeasGoodTimes.jpg",
+    projectImg: "/assets/project-card-photos/design/BadIdeasGoodTimes.webp",
     projectTitle: "Bad Ideas, Good Times",
     projectDescription: "Right?",
     projectTags: ["Gimp"],
     projectGitHub: "",
-    projectLink: "src/assets/project-card-photos/design/BadIdeasGoodTimes.jpg",
+    projectLink: "src/assets/project-card-photos/design/BadIdeasGoodTimes.webp",
     fitType: "contain",
   };
   const peanutsJoe = {
-    projectImg: "/assets/project-card-photos/design/PeanutsJoe.jpg",
+    projectImg: "/assets/project-card-photos/design/PeanutsJoe.webp",
     projectTitle: "Peanuts Self-portrait",
     projectDescription: "",
     projectTags: ["Procreate"],
     projectGitHub: "Self portrait drawing in Peanuts style",
-    projectLink: "src/assets/project-card-photos/design/PeanutsJoe.jpg",
+    projectLink: "src/assets/project-card-photos/design/PeanutsJoe.webp",
   };
   const phoneStand = {
-    projectImg: "/assets/project-card-photos/design/PhoneStand.jpg",
+    projectImg: "/assets/project-card-photos/design/PhoneStand.webp",
     projectTitle: "Phone Stand",
     projectDescription: "Industrial design sketch for phone stand",
     projectTags: ["Procreate"],
     projectGitHub: "",
-    projectLink: "src/assets/project-card-photos/design/PhoneStand.jpg",
+    projectLink: "src/assets/project-card-photos/design/PhoneStand.webp",
     fitType: "contain",
   };
 
   const mockUps = {
-    projectImg: "/assets/project-card-photos/design/MockupApp.jpg",
+    projectImg: "/assets/project-card-photos/design/MockupApp.webp",
     projectTitle: "App UI Design and Mockup",
     projectDescription:
       "Complete UI design and mockup for a diabetes managment app; an incomplete app venture.",

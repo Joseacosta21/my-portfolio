@@ -66,14 +66,17 @@
 /* Mobile responsive styles for about section */
 @media (max-width: 768px) {
   .about-container {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-sm);
     overflow-x: hidden;
     width: 100%;
     box-sizing: border-box;
+   /* Reduced height - not full viewport on mobile */
+    min-height: 75vh;
+    max-height: 75vh;
   }
 
   .my-name {
-    font-size: 3.5rem;
+    font-size: clamp(3.5rem, 12vw, 4.5rem); /* INCREASED - Larger hero name on mobile */
     padding: var(--spacing-sm);
     word-break: break-word;
     overflow-wrap: break-word;
@@ -85,4 +88,15 @@
     overflow-wrap: break-word;
     word-break: break-word;
   }
+
+  #bio h2 {
+    font-size: clamp(0.85rem, 3.5vw, 0.95rem); /* REDUCED - Smaller hero description */
+    line-height: 1.5;
+  }
+
+  /* Hide chevron arrow on mobile */
+  .chevron-arrow {
+    display: none;
+  }
 }
+

@@ -1,0 +1,80 @@
+/* CS-specific mobile styles */
+@media (max-width: 768px) {
+  .cs-mobile-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cs-skill-group {
+    text-align: center;
+  }
+
+  .cs-skill-title {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    /* Removed font overrides to inherit original styles */
+  }
+
+  /* Icon grid - clean, compact layout */
+  .cs-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 0.5rem; /* Reduced gap from 1rem */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-items: center;
+    max-width: 100%;
+  }
+
+  .cs-icon-grid li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .cs-icon-grid img {
+    width: 24px !important; /* Reduced from 32px */
+    height: 24px !important; /* Reduced from 32px */
+    object-fit: contain;
+    /* Removed transition/transform for cleaner mobile feel */
+  }
+
+  /* Curriculum list - text only */
+  .cs-curriculum-list {
+    text-align: left;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .cs-curriculum-list li {
+    margin-bottom: 0.1rem; /* Reduced further from 0.2rem */
+    font-size: 0.85rem !important;
+    line-height: 1.3; /* Tighter line height */
+  }
+
+  .cs-curriculum-list a {
+    color: rgb(155, 161, 166);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cs-curriculum-list a:hover {
+    color: var(--color-primary-text);
+    text-decoration: underline;
+  }
+  
+  /* Make GitHub logo white for better visibility on dark background */
+  .cs-icon-grid img[alt="GitHub"] {
+    filter: brightness(0) invert(1);
+  }
+}

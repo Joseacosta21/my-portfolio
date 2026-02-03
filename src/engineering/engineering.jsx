@@ -62,7 +62,7 @@ const Engineering = () => {
   const scroll = createMobileScrollFunction(scrollContainerRef, isMobile);
   // Project Cards
   const pillDispenser = {
-    projectImg: "/assets/project-card-photos/engineering/PillDispenser.png",
+    projectImg: "/assets/project-card-photos/engineering/PillDispenser.webp",
     projectTitle: "Automatic pill dispenser",
     projectDescription: "3D-printed pill dispenser",
     projectTags: ["Arduino", "Solidworks", "Prusa Splicer"],
@@ -83,7 +83,7 @@ const Engineering = () => {
   };
 
   const Research = {
-    projectImg: "/assets/project-card-photos/engineering/Rheology.png",
+    projectImg: "/assets/project-card-photos/engineering/Rheology.webp",
     projectTitle: "Research Assistant Project",
     projectDescription:
       "Investigating constitutive equations for low-viscosity polymer solutions in rheology using machine learning.",
@@ -150,7 +150,7 @@ const Engineering = () => {
         <div className="mobile-text-container">
           <h1 className="title">Engineering</h1>
           <p>
-            I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
+            I am pursuing my B.Eng. in Mechanical Engineering at Concordia
             University.
           </p>
           <p>The brown puffle from Club Penguin is my spirit animal.</p>
@@ -174,7 +174,7 @@ const Engineering = () => {
               <h1 className="title">Engineering</h1>
               <br />
               <p>
-                I am a B.Eng. Mechanical Engineering Co-Op Student at Concordia
+                I am pursuing my B.Eng. in Mechanical Engineering at Concordia
                 University.
               </p>
               <br />

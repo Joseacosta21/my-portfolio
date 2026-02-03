@@ -121,9 +121,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-sm);
-    font-size: 1.4rem;
-    max-width: 320px;
+    gap: var(--spacing-md);
+    font-size: 2rem; /* INCREASED from 1.4rem for better visibility */
+    max-width: 360px;
     margin: 0 auto;
   }
 
@@ -152,10 +152,10 @@
 
 .tiles {
   width: 100%;
-  height: 60px; /* Replace with your image's height */
+  height: 30px; /* REDUCED - More repetitions, shorter pattern */
   background-image: url("/assets/photos/tile.webp");
   background-repeat: repeat-x;
-  background-size: auto 100%; /* Fit the image height to the div height */
+  background-size: auto 100%;
   background-position: bottom;
 }
 
