@@ -17,7 +17,7 @@ export const checkMobile = () => {
   const isMobile = hasTouch || userAgent || screenSize || isIOS;
   
   // Debug logging for development
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.DEV) {
     console.log('Mobile Detection:', {
       hasTouch,
       userAgent: userAgent,
