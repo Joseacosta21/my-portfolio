@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./layout/layout";
-import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
@@ -27,11 +26,9 @@ const App = () => {
   }, []);
 
   return (
-    <Router className="router">
-      <div className="layout-container">
-        <Layout />
-      </div>
-    </Router>
+    <div className="layout-container">
+      <Layout />
+    </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./ProjectsCard.css";
-import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
@@ -224,13 +223,13 @@ const ProjectsCard = ({
           <div className="card-title">{projectTitle}</div>
           <div className="card-links">
             {projectGitHub && (
-              <NavLink
-                to={projectGitHub}
+              <a
+                href={projectGitHub}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FontAwesomeIcon icon={faGithub} className="github-logo" />
-              </NavLink>
+              </a>
             )}
           </div>
         </div>
