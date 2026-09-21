@@ -62,7 +62,7 @@ const Music = () => {
   const scroll = createMobileScrollFunction(scrollContainerRef, isMobile);
 
   const TimeoutMarket = {
-    projectImg: "/assets/project-card-photos/music/Timeout.PNG",
+    projectImg: "/assets/project-card-photos/music/Timeout.webp",
     projectTitle: "TimeOut Market Montreal",
     projectDescription: "Resident DJ @ TimeOut Market Bar, Montreal",
     projectTags: "",
@@ -70,7 +70,7 @@ const Music = () => {
     projectLink: "",
   };
   const FanaBox = {
-    projectImg: "/assets/project-card-photos/music/FanaBox.JPG",
+    projectImg: "/assets/project-card-photos/music/FanaBox.webp",
     projectTitle: "FanaBox GP",
     projectDescription: "DJ @ FanaBox GP F1 Store, 2023 Montreal GP weekend",
     projectTags: "",

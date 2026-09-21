@@ -102,7 +102,7 @@ Access in code via `process.env.NEXT_PUBLIC_YOUTUBE_API_KEY` (used client-side i
 
 ## Deployment Notes
 
-- **Vercel** is the primary host. Push to `main` triggers automatic deployment. After merging the Next.js migration, confirm Vercel's dashboard framework-preset detection switches to "Next.js" (it was previously auto-detected as Vite) — this affects default build command detection.
+- **Vercel** is the primary host. Push to `main` triggers automatic deployment. The Next.js migration (`feat/nextjs-migration`) was merged to `main` and deployed to production on 2026-09-21; the Vercel project's framework preset was manually switched from "Vite" to "Next.js" in the dashboard (Settings → General → Framework Preset) since the Vercel API token used by tooling lacks permission to update project settings.
 - **GitHub Pages** is a secondary target: `pnpm deploy` runs `predeploy` (`pnpm build`, static export to `dist/`) then `gh-pages -d dist`.
 - Homepage for GH Pages: `https://joseacosta21.github.io/my-portfolio`
 

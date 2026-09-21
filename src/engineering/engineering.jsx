@@ -133,6 +133,17 @@ const Engineering = () => {
       "https://drive.google.com/drive/folders/14FA8nuLCU4KQCLuXx8hOvbH8zMwCel3-?usp=share_link",
   };
 
+  const CrankSliderML = {
+    projectImg:
+      "/assets/project-card-photos/engineering/CrankSliderML.webp",
+    projectTitle: "ML-Assisted Crank-Slider Design",
+    projectDescription:
+      "Team lead for a data-driven design of an offset crank-slider mechanism: a physics-based simulation pipeline paired with a PyTorch multi-task model to predict pass/fail and optimize mass, envelope, and motor power.",
+    projectTags: ["Python", "PyTorch", "Optuna", "ML"],
+    projectGitHub: "https://github.com/Joseacosta21/MECH390_ML_Model",
+    projectLink: "",
+  };
+
   const ThermoCar = {
     projectImg: "/assets/project-card-photos/engineering/ThermoCar.webp",
     projectTitle: "Peltier Powered Car",
@@ -183,14 +194,15 @@ const Engineering = () => {
               <p>Bit of my engineering stuff:</p>
             </div>
             {/* Project Cards */}
-            <ProjectsCard {...Baja} animationDelay={0} />
-            <ProjectsCard {...Research} animationDelay={100} />
-            <ProjectsCard {...ThermoCar} animationDelay={200} />
-            <ProjectsCard {...EcoFlow} animationDelay={300} />
-            <ProjectsCard {...pillDispenser} animationDelay={400} />
-            <ProjectsCard {...PrintedLens} animationDelay={500} />
-            <ProjectsCard {...LocKick} animationDelay={600} />
-            <ProjectsCard {...SOS} animationDelay={700} />
+            <ProjectsCard {...CrankSliderML} animationDelay={0} />
+            <ProjectsCard {...Baja} animationDelay={100} />
+            <ProjectsCard {...Research} animationDelay={200} />
+            <ProjectsCard {...ThermoCar} animationDelay={300} />
+            <ProjectsCard {...EcoFlow} animationDelay={400} />
+            <ProjectsCard {...pillDispenser} animationDelay={500} />
+            <ProjectsCard {...PrintedLens} animationDelay={600} />
+            <ProjectsCard {...LocKick} animationDelay={700} />
+            <ProjectsCard {...SOS} animationDelay={800} />
           </div>
           <button
             className={`scroll-button scroll-button--dark ${

@@ -72,6 +72,16 @@ const CS = () => {
     fitType: "contain",
   };
 
+  const mapcut = {
+    projectImg: "/assets/project-card-photos/CS/Mapcut.webp",
+    projectTitle: "Mapcut",
+    projectDescription:
+      "iOS app for instant ETAs on your go-to places, with a home-screen widget for driving, transit, biking, and walking times, plus local place discovery.",
+    projectTags: ["Expo", "React Native", "iOS"],
+    projectGitHub: "",
+    projectLink: "https://mapcut.app",
+  };
+
   const portfolioPage = {
     projectImg: "/assets/project-card-photos/CS/JoeCool.webp",
     projectTitle: "Portfolio",
@@ -283,8 +293,9 @@ const CS = () => {
               </div>
             </div>
             {/* Project Cards */}
-            <ProjectsCard {...casinoStic} animationDelay={0} />
-            <ProjectsCard {...portfolioPage} animationDelay={100} />
+            <ProjectsCard {...mapcut} animationDelay={0} />
+            <ProjectsCard {...casinoStic} animationDelay={100} />
+            <ProjectsCard {...portfolioPage} animationDelay={200} />
           </div>
           <button
             className={`scroll-button scroll-button--dark ${
