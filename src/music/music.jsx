@@ -89,7 +89,7 @@ const Music = () => {
   };
 
   // API key goober
-  const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 
   // Playlist ID
   const playlistId = "PL-JzMZN0fZdHMxgSf7JJpmp4JSLE2IojS";

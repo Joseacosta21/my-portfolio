@@ -171,7 +171,7 @@ const CS = () => {
           </button>
           <div className="projects-container" ref={scrollContainerRef}>
             {/* Text */}
-            <div class="text-container">
+            <div className="text-container">
               <h1
                 style={{
                   fontWeight: "normal",

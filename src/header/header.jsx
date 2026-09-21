@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,9 +17,11 @@ const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isNarrowScreen, setIsNarrowScreen] = useState(
-    window.innerWidth <= 800
+    () => typeof window !== "undefined" && window.innerWidth <= 800
   );
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth <= 768
+  );
   const [iconDisplay, setIconDisplay] = useState(false);
 
   useEffect(() => {

@@ -8,32 +8,35 @@ Personal portfolio website for Jose Acosta Aldrete. Built with React + Vite, dep
 
 | Layer | Tool |
 |---|---|
-| Framework | React 18.2 + Vite 5.1 |
-| Routing | React Router DOM 6 |
-| Styling | Tailwind CSS 3.4 + SASS + custom CSS |
+| Framework | React 19 + Next.js (App Router, static export) |
+| Styling | Tailwind CSS 4 (CSS-first config) + SASS + custom CSS |
 | Animation | Framer Motion 11 + React Scroll Parallax |
 | Icons | FontAwesome 6 + React Icons + React Social Icons |
 | UI | Semantic UI React |
 | Analytics | Vercel Analytics |
 | Package manager | pnpm |
-| Deploy | Vercel (primary) + GitHub Pages (`npm run deploy`) |
+| Deploy | Vercel (primary) + GitHub Pages (`pnpm deploy`) |
+
+There is no client-side router — this is a single-page scroller (see Entry Point Flow below). In-page nav uses `react-scroll`, not `next/link`.
 
 ## Commands
 
 ```bash
-pnpm dev          # Start dev server
-pnpm build        # Production build
-pnpm preview      # Preview production build locally
+pnpm dev          # Start Next.js dev server (next dev)
+pnpm build        # Production build — static export to dist/ (next build)
+pnpm preview      # Serve the static export locally (npx serve dist)
 pnpm lint         # ESLint (max warnings: 0 — strict)
-pnpm deploy       # Build + deploy to GitHub Pages
+pnpm deploy       # Build + deploy dist/ to GitHub Pages
 ```
 
 ## Architecture
 
 ### Entry Point Flow
 ```
-index.html → src/main.jsx → App.jsx → layout/layout.jsx → sections
+app/layout.jsx → app/[[...slug]]/page.jsx → app/[[...slug]]/client.jsx → src/App.jsx → src/layout/layout.jsx → sections
 ```
+
+The app is a static export (`output: 'export'` in `next.config.mjs`) rendered as a client-only SPA: `app/[[...slug]]/client.jsx` loads `src/App.jsx` via `next/dynamic` with `{ ssr: false }`, so `App` and everything beneath it (all 7 sections, `Header`/`MobileHeader`, `ProjectsCard`, hooks/utils) never runs server-side and needs no SSR-specific handling. `generateStaticParams` in `page.jsx` emits a single static `index.html` at the site root — there are no real Next.js routes. New sections still follow the existing `Layout`-array pattern in `src/layout/layout.jsx`, not new `app/` route files.
 
 ### Section Order (rendered in layout.jsx)
 1. `about/` — Hero / introduction
@@ -85,10 +88,10 @@ index.html → src/main.jsx → App.jsx → layout/layout.jsx → sections
 ## Environment Variables
 
 ```
-VITE_YOUTUBE_API_KEY=...   # YouTube Data API key (in .env, gitignored)
+NEXT_PUBLIC_YOUTUBE_API_KEY=...   # YouTube Data API key (in .env, gitignored)
 ```
 
-Access in code via `import.meta.env.VITE_YOUTUBE_API_KEY`.
+Access in code via `process.env.NEXT_PUBLIC_YOUTUBE_API_KEY` (used client-side in `src/music/music.jsx`).
 
 ## Assets
 
@@ -99,8 +102,8 @@ Access in code via `import.meta.env.VITE_YOUTUBE_API_KEY`.
 
 ## Deployment Notes
 
-- **Vercel** is the primary host. Push to `main` triggers automatic deployment.
-- **GitHub Pages** is a secondary target: `pnpm deploy` runs `predeploy` (build) then `gh-pages -d dist`.
+- **Vercel** is the primary host. Push to `main` triggers automatic deployment. After merging the Next.js migration, confirm Vercel's dashboard framework-preset detection switches to "Next.js" (it was previously auto-detected as Vite) — this affects default build command detection.
+- **GitHub Pages** is a secondary target: `pnpm deploy` runs `predeploy` (`pnpm build`, static export to `dist/`) then `gh-pages -d dist`.
 - Homepage for GH Pages: `https://joseacosta21.github.io/my-portfolio`
 
 ## Agents
@@ -142,5 +145,15 @@ Use for any security-related tasks: auditing dependencies, scanning for exposed 
 
 - **`.env` was committed** in commit `90822ab`. The `VITE_YOUTUBE_API_KEY` is exposed in public git history. **Rotate it immediately in Google Cloud Console**, then purge the file from history with `git filter-branch` or `git filter-repo` and force-push.
 - `.env` is listed in `.gitignore` — never override this.
-- All `VITE_*` env vars are **bundled into the client-side JS** at build time and visible to anyone who inspects the built output. Never put secrets (private API keys, tokens) in `VITE_*` variables. Only public/restricted keys (e.g., a YouTube Data API key scoped to your domain) belong here.
+- All `NEXT_PUBLIC_*` env vars are **bundled into the client-side JS** at build time and visible to anyone who inspects the built output. Never put secrets (private API keys, tokens) in `NEXT_PUBLIC_*` variables. Only public/restricted keys (e.g., a YouTube Data API key scoped to your domain) belong here.
 - Run `npm audit` after every dependency update and before every production deploy.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
