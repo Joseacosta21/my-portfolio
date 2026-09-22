@@ -15,7 +15,6 @@ const ProjectsCard = ({
   animationDelay = 0, // Add optional animation delay prop
 }) => {
   const cardRef = useRef(null);
-  const [transform, setTransform] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false); // Actually detects touch vs mouse devices
 
@@ -88,76 +87,8 @@ const ProjectsCard = ({
     };
   }, [animationDelay]);
 
-  const handleMouseMove = (e) => {
-    // Skip 3D effects on touch devices for better performance
-    if (isMobile) return;
-
-    const imgContainer = e.currentTarget; // Use the img-container as reference
-    if (!imgContainer) return;
-
-    const rect = imgContainer.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    // Calculate mouse position as percentage for gradient
-    const mouseXPercent = (x / rect.width) * 100;
-    const mouseYPercent = (y / rect.height) * 100;
-
-    // Set CSS custom properties for the gradient
-    if (imgContainer) {
-      imgContainer.style.setProperty("--mouse-x", `${mouseXPercent}%`);
-      imgContainer.style.setProperty("--mouse-y", `${mouseYPercent}%`);
-    }
-
-    // Reduced sensitivity for more subtle effect
-    const rotateX = ((y - centerY) / centerY) * -8; // Max rotation of 8 degrees
-    const rotateY = ((x - centerX) / centerX) * 8;
-
-    // Add slight translation for enhanced 3D effect
-    const translateX = ((x - centerX) / centerX) * 3;
-    const translateY = ((y - centerY) / centerY) * 3;
-
-    setTransform(
-      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateX(${translateX}px) translateY(${translateY}px) translateZ(15px) scale3d(1.03, 1.03, 1.03)`
-    );
-  };
-
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setTransform("");
-    }
-  };
-
-  const handleMouseEnter = () => {
-    // Skip 3D effects on touch devices
-    if (isMobile) return;
-
-    // Pre-warm the transition for smoother entry with subtle effect
-    setTransform(
-      "perspective(1000px) translateZ(5px) scale3d(1.01, 1.01, 1.01)"
-    );
-  };
-
-  // Helper function to combine fade animation with 3D hover transform
-  const getFinalTransform = () => {
-    const fadeTransform = isVisible
-      ? "translateY(0) scale(1)"
-      : "translateY(30px) scale(0.95)";
-
-    // On touch devices, only apply fade transform for better performance
-    if (isMobile) {
-      return fadeTransform;
-    }
-
-    if (transform) {
-      // When hovering, apply both fade transform and 3D hover effect
-      return `${fadeTransform} ${transform}`;
-    }
-    return fadeTransform;
-  };
+  const getFinalTransform = () =>
+    isVisible ? "translateY(0) scale(1)" : "translateY(30px) scale(0.95)";
 
   return (
     <div ref={cardRef} className="card-container">
@@ -165,15 +96,11 @@ const ProjectsCard = ({
         <a href={projectLink} target="_blank" rel="noopener noreferrer">
           <div
             className="img-container"
-            onMouseMove={handleMouseMove}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
             style={{
               transform: getFinalTransform(),
               opacity: isVisible ? 1 : 0,
-              transition: transform
-                ? "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out"
-                : "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out",
+              transition:
+                "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out",
             }}
           >
             <img
@@ -195,15 +122,11 @@ const ProjectsCard = ({
       ) : (
         <div
           className="img-container"
-          onMouseMove={handleMouseMove}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
           style={{
             transform: getFinalTransform(),
             opacity: isVisible ? 1 : 0,
-            transition: transform
-              ? "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out"
-              : "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out",
+            transition:
+              "transform 0.6s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.6s ease-out",
           }}
         >
           <img
