@@ -97,7 +97,6 @@ Access in code via `process.env.NEXT_PUBLIC_YOUTUBE_API_KEY` (used client-side i
 
 - Images: `public/assets/project-card-photos/<category>/` — use WebP format.
 - SVG tech icons: `public/assets/svgs/`.
-- Resume: `public/assets/files/Jose Acosta Aldrete.pdf`.
 - Fonts: `public/fonts/` (IBM Plex Mono, Junicode, Cotham Sans, Libre Baskerville).
 
 ## Deployment Notes

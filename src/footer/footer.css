@@ -96,16 +96,6 @@
   align-items: center;
 }
 
-#cv-link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#cv-link:hover {
-  text-decoration: underline;
-}
-
 /* Screen width */
 @media (max-width: 800px) {
   .submit {
