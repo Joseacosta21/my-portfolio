@@ -15,7 +15,12 @@
   box-shadow: var(--shadow-light);
 }
 
+.footer-container h2 {
+  font-size: var(--font-size-lg);
+}
+
 .footer-container p {
+  font-size: var(--font-size-sm);
   color: var(--color-accent-text);
 }
 
@@ -145,7 +150,6 @@
   .custom-input {
     width: 100%;
     box-sizing: border-box;
-    font-size: 16px;
     padding: 8px 0;
   }
 }

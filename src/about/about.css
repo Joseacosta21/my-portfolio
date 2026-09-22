@@ -15,7 +15,7 @@
 
 .my-name {
   padding: var(--spacing-md);
-  font-size: 6rem;
+  font-size: var(--font-size-display);
   font-weight: 700;
   background-clip: text;
   color: transparent;
@@ -48,6 +48,10 @@
   text-align: center;
 }
 
+#bio h2 {
+  font-size: var(--font-size-base);
+}
+
 .chevron-arrow {
   height: var(--spacing-lg);
   transition: var(--transition-slow);
@@ -76,7 +80,6 @@
   }
 
   .my-name {
-    font-size: clamp(3.5rem, 12vw, 4.5rem); /* INCREASED - Larger hero name on mobile */
     padding: var(--spacing-sm);
     word-break: break-word;
     overflow-wrap: break-word;
@@ -87,11 +90,6 @@
     text-align: center;
     overflow-wrap: break-word;
     word-break: break-word;
-  }
-
-  #bio h2 {
-    font-size: clamp(0.85rem, 3.5vw, 0.95rem); /* REDUCED - Smaller hero description */
-    line-height: 1.5;
   }
 
   /* Hide chevron arrow on mobile */

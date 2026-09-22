@@ -47,7 +47,7 @@
 }
 
 .mobile-header-title {
-  font-size: 17px;
+  font-size: clamp(0.875rem, 0.6961rem + 0.7634vw, 1.0625rem); /* 14px -> 17px */
   font-weight: 700;
   letter-spacing: 2.2px;
   color: white !important; 
@@ -203,7 +203,7 @@
   align-items: center;
   gap: 16px;
   padding: 18px 24px;
-  font-size: 15px;
+  font-size: clamp(0.8125rem, 0.6932rem + 0.5089vw, 0.9375rem); /* 13px -> 15px */
   font-weight: 600;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.9);
@@ -242,7 +242,7 @@
 }
 
 .mobile-nav-icon {
-  font-size: 18px;
+  font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem); /* 16px -> 18px */
   color: rgba(255, 255, 255, 0.8);
   min-width: 18px;
 }
@@ -258,27 +258,24 @@
   }
   
   .mobile-header-title {
-    font-size: 15px;
     letter-spacing: 2px;
     line-height: 24px;
   }
-  
+
   .mobile-header-title-container {
     height: 24px;
   }
-  
+
   .mobile-menu-drawer {
     width: 280px;
   }
-  
+
   .mobile-nav-link {
-    font-size: 14px;
     padding: 16px 20px;
     gap: 14px;
   }
-  
+
   .mobile-nav-icon {
-    font-size: 16px;
     min-width: 16px;
   }
 }
@@ -286,12 +283,10 @@
 /* Extra small devices */
 @media (max-width: 375px) {
   .mobile-header-title {
-    font-size: 14px;
     letter-spacing: 1.8px;
   }
-  
+
   .mobile-nav-link {
-    font-size: 13px;
     padding: 14px 18px;
   }
 }
