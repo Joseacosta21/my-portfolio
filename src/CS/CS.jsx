@@ -82,6 +82,16 @@ const CS = () => {
     projectLink: "https://mapcut.app",
   };
 
+  const byod = {
+    projectImg: "/assets/project-card-photos/CS/BYOD.webp",
+    projectTitle: "BYOD",
+    projectDescription:
+      "Hack 2 the Future 2026 build. Upload your sales data and BYOD finds where margin leaks and tells the right team what to do. Data stays in the browser.",
+    projectTags: ["TypeScript", "Python", "AI", "Hackathon"],
+    projectGitHub: "https://github.com/Joseacosta21/hack-2-the-future-2026",
+    projectLink: "https://hack-2-the-future-2026.vercel.app",
+  };
+
   const portfolioPage = {
     projectImg: "/assets/project-card-photos/CS/JoeCool.webp",
     projectTitle: "Portfolio",
@@ -135,6 +145,11 @@ const CS = () => {
                 <li>
                   <a href="https://www.athackctf.com" target="_blank">
                     @Hack 2025
+                  </a>
+                </li>
+                <li>
+                  <a href="https://hack2thefuture.com" target="_blank">
+                    Hack 2 the Future 2026
                   </a>
                 </li>
               </ul>
@@ -226,6 +241,11 @@ const CS = () => {
                         @Hack 2025
                       </a>
                     </li>
+                    <li>
+                      <a href="https://hack2thefuture.com" target="_blank">
+                        Hack 2 the Future 2026
+                      </a>
+                    </li>
                   </ul>
                 </div>
                 <div className="skills">
@@ -293,9 +313,10 @@ const CS = () => {
               </div>
             </div>
             {/* Project Cards */}
-            <ProjectsCard {...mapcut} animationDelay={0} />
-            <ProjectsCard {...casinoStic} animationDelay={100} />
-            <ProjectsCard {...portfolioPage} animationDelay={200} />
+            <ProjectsCard {...byod} animationDelay={0} />
+            <ProjectsCard {...mapcut} animationDelay={100} />
+            <ProjectsCard {...casinoStic} animationDelay={200} />
+            <ProjectsCard {...portfolioPage} animationDelay={300} />
           </div>
           <button
             className={`scroll-button scroll-button--dark ${
